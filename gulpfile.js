@@ -11,7 +11,8 @@ var gulp           = require('gulp'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
 		notify         = require("gulp-notify"),
-		rsync          = require('gulp-rsync');
+		rsync          = require('gulp-rsync'),
+		babel          = require('gulp-babel')
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
@@ -46,7 +47,12 @@ gulp.task('js', function() {
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Минимизировать весь js (на выбор)
+	// можете закомментировать babel и uglify для ускорения компиляции в режиме разработки
+	// не забудьте раскомментировать при сборке
+	// .pipe(babel({
+	// 	presets: ['@babel/env']
+	// }))
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });
