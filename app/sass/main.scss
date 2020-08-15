@@ -40,13 +40,12 @@ body textarea:required:valid{
 }
 html, body{
 	height: 100%;
+	font-size: 10px;
 }
 body{
-	font-size: 16px;
+	@extend %text-default;
 	min-width: 320px;
 	position: relative;
-	line-height: 1.65;
-	font-family: $default-font;
 	overflow-x: hidden;
 }
 .img-responsive{
@@ -64,9 +63,6 @@ body{
 }
 // your styles
 
-p{
-	color: red;
-}
 
 // your styles end
 @import "media"; // IT SHOULD ALWAYS BE IN THE END OF THE DOCUMENT

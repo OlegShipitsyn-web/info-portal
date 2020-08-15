@@ -1,2 +1,127 @@
-$default-font: "roboto-example", sans-serif;
 $accent: orange;
+$dark-accent: #1A237E;
+$dark-accent-gradient: gradient(180deg, #1A237E 0%, #5A68BE 100%);
+$dark-accent-lighten: #5C6AC0;
+$rare-accent: #FC6C54;
+$light-accent: #86BE16;
+$dark: #212121;
+$semi-dark: #666666;
+$semi-dark-lighten: #999999;
+$semi-lighten: #BDBDBD;
+$lighten: #D3D3D3;
+$light: #F8FAFF;
+$white: #ffffff;
+
+%text-default{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 145%;
+}
+%heading-default{
+    font-family: Eczar;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%;
+}
+
+// text defaults
+.heading{
+    @extend %heading-default;
+}
+.text{
+    @extend %text-default;
+}
+
+// heading modificators
+.heading--biggest{
+    font-size: 3rem;
+}
+.heading--big{
+    font-size: 2rem;
+}
+.heading--medium{
+    font-size: 1.6rem;
+}
+.heading--small{
+    font-size: 1.4rem;
+}
+
+// text-modificators
+.text--biggest{
+    font-size: 3rem;
+}
+.heading--big{
+    font-size: 2rem;
+}
+.heading--medium{
+    font-size: 1.6rem;
+}
+.heading--small{
+    font-size: 1.4rem;
+}
+
+// background modificators
+*[class*="--bg-dark-accent"]{
+    background-color: $dark-accent;
+}
+*[class*="--bg-dark-accent-gradient"]{
+    background-color: $dark-accent-gradient;
+}
+*[class*="--bg-light-accent"]{
+    background-color: $light-accent;
+}
+*[class*="--bg-dark-accent-lighten"]{
+    background-color: $dark-accent-lighten;
+}
+*[class*="--bg-dark"]{
+    background-color: $dark;
+}
+*[class*="--bg-dark"]{
+    background-color: $dark;
+}
+*[class*="--bg-lighten"]{
+    background-color: $lighten;
+}
+*[class*="--bg-light"]{
+    background-color: $light;
+}
+*[class*="--bg-white"]{
+    background-color: $white;
+}
+
+// color modificators
+*[class*="--color-dark-accent"]{
+    color: $dark-accent;
+}
+*[class*="--color-light-accent"]{
+    color: $light-accent;
+}
+*[class*="--color-dark-accent-lighten"]{
+    color: $dark-accent-lighten;
+}
+*[class*="--color-dark"]{
+    color: $dark;
+}
+*[class*="--color-dark"]{
+    color: $dark;
+}
+*[class*="--color-lighten"]{
+    color: $lighten;
+}
+*[class*="--color-light"]{
+    color: $light;
+}
+*[class*="--color-semi-dark"]{
+    color: $semi-dark;
+}
+*[class*="--color-semi-dark-lighten"]{
+    color: $semi-dark-lighten;
+}
+*[class*="--color-semi-lighten"]{
+    color: $semi-lighten;
+}
+*[class*="--color-white"]{
+    color: $white;
+}
