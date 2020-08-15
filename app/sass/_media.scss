@@ -43,24 +43,132 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px){
-	
+	.footer{
+        .row-upper, .row-lower{
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+
+            & > *{
+                width: 47%;
+                max-width: 47%;
+                justify-content: flex-start;
+            }
+        }
+    }
+    .logo{
+        .logo__subtitle{
+            display: flex;
+        }
+    }
 }
 
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
-	
+	.footer{
+        &__logo{
+            margin-top: 4.3rem;
+        }
+        .footer__row-global{
+            flex-direction: row;
+            padding-bottom: 4.1rem;
+        }
+        .row-upper{
+            flex-direction: column;
+            width: 30%;
+            & > *{
+                width: 90%;
+                max-width: 90%;
+            }
+        }
+        .row-lower{
+            margin: 0;
+            margin-top: auto;
+            justify-content: flex-end;
+            width: 70%;
+            & > *{
+                width: unset;
+                max-width: unset;
+            }
+            .footer__link-list{
+                margin-bottom: 0;
+                margin-left: 4rem;
+            }
+        }
+    }
 }
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px){
-	
+	.footer{
+        .row-upper, .row-lower{
+            flex-direction: row;
+            width: 100%;
+            max-width: unset;
+            justify-content: space-around;
+        }
+        &__logo, &__feedback-btn{
+            margin-top: 0;
+        }
+        .footer__row-global{
+            padding: 4.1rem 0;
+        }
+    }
 }
 
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px){
-	
+    .container{
+        max-width: 1170px;
+    }
+	.link-list{
+        &__wrapper{
+            flex-direction: row;
+            width: 100%;
+            margin-left: 5.5rem;
+
+            ul:last-child{
+                margin-top: 0rem;
+            }
+        }
+    }
+    .footer{
+        .row-upper, .row-lower{
+            align-items: flex-start;
+            margin-top: 0;
+        }
+        .row-upper{
+            width: auto;
+        }
+        .row-upper *{
+            white-space: nowrap;
+        }
+        .row-lower{
+            justify-content: flex-end;
+            width: auto;
+            margin-left: auto;
+        }
+        .footer__feedback-btn{
+            max-width: 19rem;
+            margin-left: 5.5rem;
+        }
+        .footer__logo{
+            width: auto;
+        }
+        .row-lower .footer__link-list{
+            margin-left: 0;
+        }
+        .footer__translate-row{
+            display: flex;
+        }
+        .link-list__item{
+            a{
+                white-space: nowrap;
+            }
+        }
+    }
 }
 

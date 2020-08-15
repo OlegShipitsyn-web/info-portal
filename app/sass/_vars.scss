@@ -1,6 +1,5 @@
-$accent: orange;
 $dark-accent: #1A237E;
-$dark-accent-gradient: gradient(180deg, #1A237E 0%, #5A68BE 100%);
+$dark-accent-gradient: linear-gradient(180deg, #1A237E 0%, #5A68BE 100%);
 $dark-accent-lighten: #5C6AC0;
 $rare-accent: #FC6C54;
 $light-accent: #86BE16;
@@ -11,6 +10,64 @@ $semi-lighten: #BDBDBD;
 $lighten: #D3D3D3;
 $light: #F8FAFF;
 $white: #ffffff;
+$acc-light-gradient: linear-gradient(159.86deg, #8CCA12 29.36%, #B1EF45 91.5%);
+
+.global-wrapper{
+    overflow: hidden;
+}
+.container{
+    display: block;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.container *{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+// main axis (justify content)
+div[class*="--between"]{
+    justify-content: space-between;
+}
+div[class*="--center"]{
+    justify-content: center;
+}
+div[class*="--start"]{
+    justify-content: flex-start;
+}
+div[class*="--end"]{
+    justify-content: flex-end;
+}
+
+// second axis (align items)
+div[class*="--ai-center"]{
+    align-items: center;
+}
+div[class*="--ai-start"]{
+    align-items: flex-start;
+}
+div[class*="--ai-end"]{
+    align-items: flex-end;
+}
+div[class*="--ai-stretch"]{
+    align-items: stretch;
+}
+// directions
+div[class*="--d-row"]{
+    flex-direction: row;
+}
+div[class*="--d-col"]{
+    flex-direction: column;
+}
+
+
+
 
 %text-default{
     font-family: Raleway;
@@ -20,7 +77,7 @@ $white: #ffffff;
     line-height: 145%;
 }
 %heading-default{
-    font-family: Eczar;
+    font-family: Raleway;
     font-style: normal;
     font-weight: 600;
     line-height: 145%;
@@ -50,46 +107,59 @@ $white: #ffffff;
 
 // text-modificators
 .text--biggest{
-    font-size: 3rem;
-}
-.heading--big{
     font-size: 2rem;
 }
-.heading--medium{
+.text--big{
     font-size: 1.6rem;
 }
-.heading--small{
+.text--medium{
     font-size: 1.4rem;
 }
-
+.text--small{
+    font-size: 1.1rem;
+}
+// btn
+button{
+    background-color: transparent;
+}
+.btn{
+    border-radius: 4px;
+}
+button[class*="--bordered"]{
+    border: 1px solid #D3D3D3
+}
 // background modificators
 *[class*="--bg-dark-accent"]{
     background-color: $dark-accent;
 }
-*[class*="--bg-dark-accent-gradient"]{
-    background-color: $dark-accent-gradient;
+*[class*="--bg-acc-dark-gradient"]{
+    background: $dark-accent-gradient;
 }
 *[class*="--bg-light-accent"]{
     background-color: $light-accent;
 }
-*[class*="--bg-dark-accent-lighten"]{
+*[class*="--bg-acc-light-gradient"]{
+    background: $acc-light-gradient;
+}
+*[class*="--bg-dark-ac-lighten"]{
     background-color: $dark-accent-lighten;
 }
-*[class*="--bg-dark"]{
-    background-color: $dark;
-}
-*[class*="--bg-dark"]{
+*[class*="--bg-black"]{
     background-color: $dark;
 }
 *[class*="--bg-lighten"]{
     background-color: $lighten;
 }
-*[class*="--bg-light"]{
+*[class*="--bg-lighter"]{
     background-color: $light;
 }
 *[class*="--bg-white"]{
     background-color: $white;
 }
+*[class*="--bg-transparent"]{
+    background-color: transparent;
+}
+
 
 // color modificators
 *[class*="--color-dark-accent"]{
@@ -104,13 +174,13 @@ $white: #ffffff;
 *[class*="--color-dark"]{
     color: $dark;
 }
-*[class*="--color-dark"]{
+*[class*="--color-black"]{
     color: $dark;
 }
 *[class*="--color-lighten"]{
     color: $lighten;
 }
-*[class*="--color-light"]{
+*[class*="--color-lighter"]{
     color: $light;
 }
 *[class*="--color-semi-dark"]{

@@ -58,11 +58,91 @@ body{
 	text-align: center;
 }
 ::selection{
-	background-color: $accent;
+	background-color: $rare-accent;
 	color: #fff;
 }
 // your styles
+.p-10{
+    padding: 1rem!important;
+}
+.m-10{
+	margin: 1rem!important;
+}
+.header{
+	padding: .9rem 0;
+}
+.logo{
+	.logo__square{
+		width: 1.3rem;
+		height: 1.3rem;
+		&--rounded{
+			border-radius: 2.70533px 0px 0px 0px;
+		}
+	}
+	.logo__text{
+		margin-left: 10px;
+	}
+	.logo__subtitle{
+		display: none;
+		margin-top: 1.4rem;
+	}
+}
+.sign-in-btn{
+    padding: 1.15rem 2rem;
+}
 
+.greenline{
+	width: 4.9rem;
+	height: 0px;
+	border: 3px solid #86BE16;
+}
+.feedback-btn{
+	padding: 2.2rem 2.4rem;
+	span{
+		width: 100%;
+		text-align: center;
+	}
+}
+.srolltop-btn{
+	padding: 1.7rem 2.2rem;
+	box-shadow: 0rem .6rem .8rem rgba(116, 167, 16, 0.3);
+}
+.footer{
+	.row-upper{
+		.footer__feedback-btn{
+			width: 100%;
+		}
+	}
+	.row-lower{
+		margin-top: 2.5rem;
+		margin-bottom: 3.3rem;
+	}
+	&__feedback-btn, &__logo{
+		margin-top: 3rem;
+	}
+	&__link-list{
+		margin-bottom: 2rem;
+	}
+	.footer__translate-row{
+		display: none;
+	}
+}
+.link-list{
+	&__item{
+		margin-bottom: .6rem;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		& a:hover{
+			color: $rare-accent;
+		}
+	}
+	&__wrapper{
+		ul:last-child{
+			margin-top: .6rem;
+		}
+	}
+}
 
 // your styles end
 @import "media"; // IT SHOULD ALWAYS BE IN THE END OF THE DOCUMENT
