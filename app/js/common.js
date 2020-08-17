@@ -20,6 +20,7 @@ $(function() {
 
 	// взаимодействие модальных окон на странице
 	multipleModalCallButtons('.sign-in-btn', '#login-modal')
+	multipleModalCallButtons('.registration__btn', '#register-modal')
 	multipleModalCallButtons('.call-signin-btn', '#login-modal', '#register-modal')
 	multipleModalCallButtons('.call-register-btn', '#register-modal', '#login-modal')
 	multipleModalCallButtons('.call-pass-restore', '#pass-restore', '#login-modal')

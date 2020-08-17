@@ -28,6 +28,9 @@ button[class*="--bg-light-accent"]{
     padding: 0 1.5rem;
     position: relative;
 }
+.title-std-container{
+	margin-bottom: 2rem;
+}
 .container *{
     display: flex;
     flex-direction: column;
@@ -97,6 +100,25 @@ div[class*="--d-col"]{
     @extend %text-default;
 }
 
+.title-big{
+    @extend %heading-default;
+    font-size: 2rem;
+    color: $dark-accent;
+    max-width: 54.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.subtitle-std{
+    @extend %text-default;
+    font-size: 1.4em;
+    text-align: center;
+    max-width: 57.7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 // heading modificators
 .uc{
     text-transform: uppercase;
@@ -142,6 +164,9 @@ div[class*="--d-col"]{
 .heading--huge-adaptive-to-3{
     font-size: 2rem;
 }
+.heading--medium-adaptive-to-2{
+    font-size: 1.6rem;
+}
 
 // text-modificators
 .text--biggest{
@@ -160,6 +185,10 @@ div[class*="--d-col"]{
 .text--medium--adaptive-to-18{
     font-size: 1.4rem;
 }
+.text--medium--adaptive-to-16{
+    font-size: 1.4rem;
+}
+
 // btn
 button{
     background-color: transparent;

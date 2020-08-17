@@ -52,10 +52,10 @@ gulp.task('js', function() {
 	.pipe(concat('scripts.min.js'))
 	// можете закомментировать babel и uglify для ускорения компиляции в режиме разработки
 	// не забудьте раскомментировать при сборке
-	.pipe(babel({
-		presets: ['@babel/env']
-	}))
-	.pipe(uglify())
+	// .pipe(babel({
+	// 	presets: ['@babel/env']
+	// }))
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });
