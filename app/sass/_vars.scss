@@ -12,6 +12,12 @@ $light: #F8FAFF;
 $white: #ffffff;
 $acc-light-gradient: linear-gradient(159.86deg, #8CCA12 29.36%, #B1EF45 91.5%);
 
+button[class*="--bg-light-accent"]{
+	&:hover{
+		background-color: lighten($light-accent, 5%)!important
+	}
+}
+
 .global-wrapper{
     overflow: hidden;
 }
@@ -20,6 +26,7 @@ $acc-light-gradient: linear-gradient(159.86deg, #8CCA12 29.36%, #B1EF45 91.5%);
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    position: relative;
 }
 .container *{
     display: flex;
@@ -73,7 +80,6 @@ div[class*="--d-col"]{
     font-family: Raleway;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.4rem;
     line-height: 145%;
 }
 %heading-default{
@@ -92,10 +98,35 @@ div[class*="--d-col"]{
 }
 
 // heading modificators
+.uc{
+    text-transform: uppercase;
+}
+.tc{
+    text-align: center;
+}
+.flex{
+    display: flex;
+}
+.upper{
+    margin-top: -1.5rem;
+}
+.mw-dynamic{
+    max-width: calc(100% - 15vw);
+}
+.bold{
+    font-weight: bold;
+}
+.w-100{
+    width: 100%;
+}
+.p-dynamic{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
 .heading--biggest{
     font-size: 3rem;
 }
-.heading--big{
+.heading--huge{
     font-size: 2rem;
 }
 .heading--medium{
@@ -103,6 +134,13 @@ div[class*="--d-col"]{
 }
 .heading--small{
     font-size: 1.4rem;
+}
+
+.heading--huge-adaptive-to-4{
+    font-size: 2rem;
+}
+.heading--huge-adaptive-to-3{
+    font-size: 2rem;
 }
 
 // text-modificators
@@ -116,7 +154,11 @@ div[class*="--d-col"]{
     font-size: 1.4rem;
 }
 .text--small{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+}
+
+.text--medium--adaptive-to-18{
+    font-size: 1.4rem;
 }
 // btn
 button{
@@ -170,9 +212,6 @@ button[class*="--bordered"]{
 }
 *[class*="--color-dark-accent-lighten"]{
     color: $dark-accent-lighten;
-}
-*[class*="--color-dark"]{
-    color: $dark;
 }
 *[class*="--color-black"]{
     color: $dark;

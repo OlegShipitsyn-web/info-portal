@@ -45,16 +45,17 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/dynamic-adapt/dynamic-adapt.js',
-		
+		'app/libs/arcticmodal/jquery.arcticmodal-0.3.min.js',
+
 		'app/js/common.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// можете закомментировать babel и uglify для ускорения компиляции в режиме разработки
 	// не забудьте раскомментировать при сборке
-	// .pipe(babel({
-	// 	presets: ['@babel/env']
-	// }))
-	// .pipe(uglify())
+	.pipe(babel({
+		presets: ['@babel/env']
+	}))
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });

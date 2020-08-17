@@ -14,3 +14,17 @@
 		}
 	}
 }
+
+@mixin font-face_ICON($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false, $font-display: block ){
+	@font-face{
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		font-display: $font-display;
+		@if $asset-pipeline == false {
+			src: url('#{$file-path}.eot?sk3bh');
+			src: url('#{$file-path}.eot?sk3bh#iefix') format('embedded-opentype'), url('#{$file-path}.woff?sk3bh') format('woff'), url('#{$file-path}.ttf?sk3bh') format('truetype'), url('#{$file-path}.svg?sk3bh#icomoon') format('svg');
+		}
+
+	}
+}
