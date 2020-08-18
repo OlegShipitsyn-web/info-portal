@@ -1,5 +1,6 @@
 $(function() {
 
+	const body = $('body');
 	// <МОДАЛЬНЫЕ ОКНА>
 	// дефолтная скорость анимации модального окна
 	$.arcticmodal('setDefault', {
@@ -47,4 +48,13 @@ $(function() {
 		}
 	})
 	// </Окно поиска>
+
+	$(".accordion-header").on("click", function() {
+		$(this).toggleClass("accordion-header--active").next().slideToggle();
+	});
+
+	$('.scrolltop-btn').click(function(){
+		$("html, body").animate({ scrollTop: 0 }, 600);
+		return false;
+	}); 
 });

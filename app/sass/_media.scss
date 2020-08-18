@@ -105,10 +105,11 @@
 }
 
 @media only screen and (min-width: 576px){
+
     .title-std-container{
         margin-bottom: 3.2rem;
     }
-    .readmore{
+    .more{
         margin-left: 2rem;
     }
     .promo-main-header{
@@ -170,11 +171,26 @@
     .registration__text{
         text-align: left;
     }
+    .registration__btn-part{
+        margin-top: 0;
+    }
+    .summary, .summary__count{
+        flex-direction: row;
+    }
+    .summary__date{
+        margin-right: 3rem;
+    }
+    .summary__count{
+        margin-right: 1rem;
+    }
+    .summary{
+        margin-top: 2rem;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
-    .readmore{
+    .more{
         margin-left: 1.4rem;
     }
     .heading--huge-adaptive-to-4{
@@ -222,6 +238,49 @@
             margin-bottom: -1.5rem;
         }
     }
+    .main-info__cards{
+        .card{
+            flex-direction: row;
+        }
+        .card__img{
+            flex-grow: 1;
+        }
+        .card__text{
+            flex-grow: 2;
+        }
+        .card__number{}
+    }
+    .accordion-header__heading{
+        font-size: 1.6rem;
+    }
+    .extended-search{
+        .xs-list__heading{
+            h4{
+                font-size: 1.6rem; 
+            }
+        }
+        .xs-table__code-number, .xs-item__activity-type{
+            font-size: 1.6rem;
+        }
+    }
+    .accordion-content{
+        .tag{
+            font-size: 1.6rem;
+            margin-right: 3rem;
+        }
+    }
+    .summary__date{
+        margin-right: 4rem;
+    }
+    .summary{
+        margin-top: 3rem;
+    }
+    .accordion-content .sorts{
+        margin-bottom: 3rem;
+    }
+    .extended-search{
+        margin-bottom: 6rem;
+    }
 }
 
 
@@ -255,7 +314,7 @@
 		font-size: 3rem;
 	}
     .main{
-        margin-top: 2rem;
+        padding-top: 2rem;
     }
     .header{
         padding: 1.4rem 0;
@@ -341,7 +400,7 @@
             padding-bottom: 1.25rem;
         }
     }
-    .readmore{
+    .more{
         margin-left: 0rem;
     }
     .title-container{
@@ -405,6 +464,12 @@
     .registration{
         padding-left: 6rem;
         padding-right: 6rem;
+    }
+    .extended-search{
+        margin-bottom: 9rem;
+    }
+    .scrolltop-btn{
+        display: flex;
     }
 }
 

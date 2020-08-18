@@ -17,7 +17,15 @@ button[class*="--bg-light-accent"]{
 		background-color: lighten($light-accent, 5%)!important
 	}
 }
-
+// hr в некоторых местах кроссбраузерно фиксит баг с верхними отступами на мобильных устройствах
+hr{
+    background: transparent;
+    width: 1px;
+    height: 1px;
+}
+.ml-0{
+    margin-left: 0!important;
+}
 .global-wrapper{
     overflow: hidden;
 }
@@ -35,6 +43,21 @@ button[class*="--bg-light-accent"]{
     display: flex;
     flex-direction: column;
 }
+// .container table{
+//     display: table;
+// }
+// .container th, .container td{
+//     display: table-cell;
+// }
+// .container tr{
+//     display: table-row;
+// }
+// .container thead{
+//     display: table-header-group;
+// }
+// .container tbody{
+//     display: table-row-group;
+// }
 .row{
     display: flex;
     flex-direction: row;
