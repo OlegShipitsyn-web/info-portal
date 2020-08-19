@@ -1,3 +1,9 @@
+window.addEventListener('resize', () => {
+	// We execute the same script as before
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+  
 $(function() {
 
 	const body = $('body');
@@ -6,6 +12,28 @@ $(function() {
 	$.arcticmodal('setDefault', {
 		speed: 200
 	});
+
+	function blockScroll() { 
+		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
+	}
+	function accessScroll() { 
+		return $('html, body').css({maxHeight: '100%', overflowY: 'auto'})
+	}
+
+	function closeOnSideTouch(itemWithClass, classToRemove){
+		$(document).on('mouseup',function (e){
+			var div = $(itemWithClass); 
+			if (!div.is(e.target) && div.has(e.target).length === 0) { 
+				div.removeClass(classToRemove)
+				accessScroll()
+			}
+			if(div.hasClass(classToRemove)){
+				$('.overlay').css({zIndex: 100, display: 'block'})
+			}else{
+				$('.overlay').css({zIndex: -100, display: 'none'})
+			}
+		})
+	}
 
 	// функция для объявления нового модального окна
 	// первый параметр - элемент, при нажатии на который открывается окно
@@ -41,12 +69,8 @@ $(function() {
 
 	input.click(() => $('.search-input .search-list').addClass('show-results'))
 
-	$(document).on('mouseup',function (e){
-		var div = $(".search-input .search-list"); 
-		if (!div.is(e.target) && div.has(e.target).length === 0) { 
-			div.removeClass('show-results')
-		}
-	})
+
+	closeOnSideTouch(".search-input .search-list", 'show-results')
 	// </Окно поиска>
 
 	$(".accordion-header").on("click", function() {
@@ -57,4 +81,22 @@ $(function() {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		return false;
 	}); 
+
+	$('.usercard__menu-toggle-btn').click(() => {
+		$('.usercard__sidebar').toggleClass('usercard__sidebar--active');
+		if($('.usercard__sidebar--active').length){
+			blockScroll()
+			$('.overlay').css({zIndex: 100, display: 'block'})
+		} else{
+			accessScroll()
+			$('.overlay').css({zIndex: -100,  display: 'none'})
+		}
+	})
+
+	closeOnSideTouch('.usercard__sidebar', 'usercard__sidebar--active')
+
+	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 });

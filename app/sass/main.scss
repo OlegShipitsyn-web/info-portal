@@ -41,12 +41,27 @@ body textarea:required:valid{
 html, body{
 	height: 100%;
 	font-size: 10px;
+	-webkit-overflow-scrolling-y: touch!important;
 }
 body{
 	@extend %text-default;
 	min-width: 320px;
 	position: relative;
 	overflow-x: hidden;
+	-webkit-overflow-scrolling-y: touch!important;
+	z-index: 1;
+}
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: black;
+	z-index: -100;
+	opacity: .5;
+	transition: .2s ease;
+	display: none;
 }
 .img-responsive{
 	display: block;
@@ -725,6 +740,115 @@ body{
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
+.usercard{
+	position: relative;
+	align-items: flex-start;
+	.usercard__header{
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	.usercard__heading{
+		position: relative;
+		margin-left: 2.5rem;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 2rem;
+		line-height: 145%;
+		color: $dark;
+	}
+	.usercard__menu-toggle-btn{
+	}
+	.usercard__menu-toggle-btn img{
+		width: 2.65rem;
+	}
+	.usercard__sidebar{
+		max-width: 100%;
+		flex-grow: 1;
+		transform: translateX(-150%);
+		transition: .2s ease;
+		transition: .3s cubic-bezier(.86,.67,.07,1);
+		position: fixed;
+		top: 0;
+		z-index: 101;
+		margin-left: -1.5rem;
+		overflow-y: scroll;
+	}
+	.usercard__sidebar--active{
+		transform: translateX(0%);
+	}
+	.usercard__navigation{
+		background-color: $white;
+		padding-left: 4px;
+		height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
+		overflow-y: auto;
+		padding-top: 3rem;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	.navigation-list{
+		padding: 1rem 0;
+		padding-bottom: 5rem;
+	}
+	.navigation-list__item{
+		box-shadow: -4px 0px 0px 0px transparent;
+		padding-right: 1.4rem;
+		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
+		&:hover{
+			background-color: $light;
+		}
+	}
+	.navigation-list__link{
+		flex-direction: row;
+		align-items: center;
+		font-weight: bold;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	.link-icon{
+		margin: 0 1.1rem;
+		font-size: 1.6rem;
+		height: 100%;
+		width: 1.5rem;
+	}
+	.link-text{
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		color: $semi-dark;
+		letter-spacing: 0.03em;
+		line-height: 1.6rem;
+	}
+	.navigation-list__item--active{
+		box-shadow: -4px 0px 0px 0px $light-accent;
+		.navigation-list__link{
+			color: $light-accent;
+		}
+		.link-icon:before{
+			color: $light-accent;
+		}
+		.link-text{
+			color: $light-accent;
+		}
+	}
+	.usercard__content{
+		height: 100%;
+		flex-grow: 2;
+		align-items: flex-start;
+	}
+	.adc-baner{
+		width: 100%;
+		height: 200px;
+		background: grey;
+	}
+	.usercard__close-nav-btn{
+		position: absolute;
+		top: 0;
+		right: 0;
+		img{
+			width: 2rem;
+		}
+	}
+}
 // social icons
 [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
@@ -740,7 +864,87 @@ body{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   }
-  
+
+  .icon-nav-icon20:before {
+	content: "\e905";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon19:before {
+	content: "\e906";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon18:before {
+	content: "\e907";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon17:before {
+	content: "\e908";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon16:before {
+	content: "\e909";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon15:before {
+	content: "\e904";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon14:before {
+	content: "\e90a";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon13:before {
+	content: "\e90b";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon12:before {
+	content: "\e90c";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon11:before {
+	content: "\e90d";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon10:before {
+	content: "\e90e";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon9:before {
+	content: "\e90f";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon8:before {
+	content: "\e910";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon7:before {
+	content: "\e911";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon6:before {
+	content: "\e912";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon5:before {
+	content: "\e913";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon4:before {
+	content: "\e914";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon3:before {
+	content: "\e915";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon2:before {
+	content: "\e916";
+	color: #bdbdbd;
+  }
+  .icon-nav-icon1:before {
+	content: "\e917";
+	color: #bdbdbd;
+  }
   .icon-youtube:before {
 	content: "\e900";
 	color: #bdbdbd;
