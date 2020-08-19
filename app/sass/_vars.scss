@@ -27,7 +27,8 @@ hr{
     margin-left: 0!important;
 }
 .global-wrapper{
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .container{
     display: block;

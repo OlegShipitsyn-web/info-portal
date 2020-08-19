@@ -50,6 +50,7 @@ body{
 	overflow-x: hidden;
 	-webkit-overflow-scrolling-y: touch!important;
 	z-index: 1;
+	overflow-y: auto;
 }
 .overlay{
 	position: fixed;
@@ -85,6 +86,20 @@ body{
 }
 .header{
 	padding: .9rem 0;
+	.search-input{
+		padding: 0!important;
+		flex-grow: 1;
+		width: auto;
+		margin: 0 4rem;
+		border-radius: .5rem;
+		input{
+			padding: 0;
+			padding-left: 2rem;
+		}
+		.search-input__btn{
+			margin-right: 0;
+		}
+	}
 }
 .logo{
 	.logo__square{
@@ -96,6 +111,7 @@ body{
 	}
 	.logo__text{
 		margin-left: 10px;
+		white-space: nowrap;
 	}
 	.logo__subtitle{
 		display: none;
@@ -263,13 +279,16 @@ body{
 		padding: 0 15px;
 		display: none;
 		box-shadow: 0px 10.00655px 15.0245px rgba(42, 51, 141, 0.3);
+		overflow: hidden;
 		.search-input__divider{
 			background: $lighten;
-			width: 100%;
+			width: 120%;
 			height: 1px;
-			margin-top: .5rem;
+			margin-top: .3rem;
 			margin-bottom: .5rem;
 			z-index: 10;
+			padding-left: 15px;
+			margin-left: -15px;
 		}
 		.search-input__results{
 			z-index: 10;
@@ -329,6 +348,14 @@ body{
 	.show-results{
 		display: block;
 	}
+	.search-input__delete-close-btn{
+		position: absolute;
+		top: 50%;
+		z-index: 100;
+		transform: translateY(-50%);
+		right: 2rem;
+		display: none;
+	}
 }
 .promo-main-header__main-container{
 	padding: 0!important;
@@ -343,7 +370,7 @@ body{
 	display: flex;
 	padding: 4rem 1.5rem;
 	flex-direction: column;
-	min-width: 24rem;
+	min-width: 19rem;
 	border-radius: .5rem;
 	width: 100%;
 	max-width: 520px;
@@ -747,6 +774,12 @@ body{
 		margin-top: 2rem;
 		margin-bottom: 1rem;
 	}
+	.usercard__heading-row{
+		align-items: flex-start;
+	}
+	.usercard__status{
+		margin-left: 1rem;
+	}
 	.usercard__heading{
 		position: relative;
 		margin-left: 2.5rem;
@@ -754,9 +787,11 @@ body{
 		font-weight: 600;
 		font-size: 2rem;
 		line-height: 145%;
+		flex-direction: row;
 		color: $dark;
 	}
 	.usercard__menu-toggle-btn{
+		margin-top: .3em;
 	}
 	.usercard__menu-toggle-btn img{
 		width: 2.65rem;
@@ -771,7 +806,9 @@ body{
 		top: 0;
 		z-index: 101;
 		margin-left: -1.5rem;
-		overflow-y: scroll;
+		overflow-y: auto;
+		overflow: scroll;
+    	height: 100%;
 	}
 	.usercard__sidebar--active{
 		transform: translateX(0%);
@@ -779,11 +816,17 @@ body{
 	.usercard__navigation{
 		background-color: $white;
 		padding-left: 4px;
-		height: 100vh;
-		height: calc(var(--vh, 1vh) * 100);
-		overflow-y: auto;
+		min-height: 250%;
+		// height: calc(var(--vh, 1vh) * 120);
+		overflow: auto!important;
 		padding-top: 3rem;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	.usercard__heading__text{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
 	}
 	.navigation-list{
 		padding: 1rem 0;
@@ -791,9 +834,9 @@ body{
 	}
 	.navigation-list__item{
 		box-shadow: -4px 0px 0px 0px transparent;
-		padding-right: 1.4rem;
-		padding-bottom: 1.5rem;
-		padding-top: 1.5rem;
+		// padding-right: 1.4rem;
+		// padding-bottom: 1.5rem;
+    	padding-top: 1.5rem;
 		&:hover{
 			background-color: $light;
 		}
@@ -802,8 +845,9 @@ body{
 		flex-direction: row;
 		align-items: center;
 		font-weight: bold;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		padding-right: .5rem;
 	}
 	.link-icon{
 		margin: 0 1.1rem;
@@ -812,16 +856,16 @@ body{
 		width: 1.5rem;
 	}
 	.link-text{
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		text-transform: uppercase;
 		color: $semi-dark;
 		letter-spacing: 0.03em;
 		line-height: 1.6rem;
 	}
 	.navigation-list__item--active{
-		box-shadow: -4px 0px 0px 0px $light-accent;
 		.navigation-list__link{
 			color: $light-accent;
+			box-shadow: -4px 0px 0px 0px $light-accent;
 		}
 		.link-icon:before{
 			color: $light-accent;
@@ -841,14 +885,15 @@ body{
 		background: grey;
 	}
 	.usercard__close-nav-btn{
-		position: absolute;
-		top: 0;
-		right: 0;
+		position: fixed;
+		top: 20px;
+		right: 20px;
 		img{
-			width: 2rem;
+			width: 2rem
 		}
 	}
 }
+
 // social icons
 [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
@@ -865,6 +910,10 @@ body{
 	-moz-osx-font-smoothing: grayscale;
   }
 
+  .icon-status:before {
+	content: "\e918";
+	color: #86be16;
+  }
   .icon-nav-icon20:before {
 	content: "\e905";
 	color: #bdbdbd;

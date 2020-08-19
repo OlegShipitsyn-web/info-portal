@@ -1,9 +1,3 @@
-window.addEventListener('resize', () => {
-	// We execute the same script as before
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-  
 $(function() {
 
 	const body = $('body');
@@ -23,14 +17,15 @@ $(function() {
 	function closeOnSideTouch(itemWithClass, classToRemove){
 		$(document).on('mouseup',function (e){
 			var div = $(itemWithClass); 
-			if (!div.is(e.target) && div.has(e.target).length === 0) { 
+			if (!div.is(e.target) && div.has(e.target).length === 0 && $(body).has(e.target)) { 
 				div.removeClass(classToRemove)
-				accessScroll()
+				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
 			}
 			if(div.hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
 			}else{
 				$('.overlay').css({zIndex: -100, display: 'none'})
+				accessScroll()
 			}
 		})
 	}
@@ -59,7 +54,7 @@ $(function() {
 	// <Окно поиска>
 	// Функция проверяет текущую ширину окна и меняет текст внутри поискового Input
 	// в соответствии с дизайном
-	const input = $('.search-input--cross-section input');
+	const input = $('.search-input input');
 	const changeSearchPlaceholder = (smallText, bigText) => {
 		const query = window.matchMedia('all and (min-width: 479px)');
 		return (query.matches) ? input.attr("placeholder", bigText) : input.attr("placeholder", smallText);
@@ -67,7 +62,7 @@ $(function() {
 	// При ресайзе и загрузке страницы запускам функцию changeSearchPlaceholder, с нужными параметрами
 	$(window).on("resize load", () => changeSearchPlaceholder("Название, адрес, руководитель", "Искать по названию, адресу, ФИО, ОГРН и ИНН"))
 
-	input.click(() => $('.search-input .search-list').addClass('show-results'))
+	input.click(() => $('.search-input .search-list').addClass('show-results') && $('.search-input').css({borderRadius: '5px 5px 0 0'}))
 
 
 	closeOnSideTouch(".search-input .search-list", 'show-results')
@@ -82,7 +77,7 @@ $(function() {
 		return false;
 	}); 
 
-	$('.usercard__menu-toggle-btn').click(() => {
+	$('.usercard__menu-toggle-btn, .usercard__close-nav-btn').click(() => {
 		$('.usercard__sidebar').toggleClass('usercard__sidebar--active');
 		if($('.usercard__sidebar--active').length){
 			blockScroll()
@@ -95,8 +90,12 @@ $(function() {
 
 	closeOnSideTouch('.usercard__sidebar', 'usercard__sidebar--active')
 
-	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-	let vh = window.innerHeight * 0.01;
-	// Then we set the value in the --vh custom property to the root of the document
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	const makeSeparatedHeading = heading =>{
+		let textArr = heading.text().split(" ").reverse()
+		heading.text("")
+		textArr.forEach((word) => heading.prepend(`<span>${word}&nbsp;</span>`) && $('.usercard__status').appendTo(heading))
+		
+	}
+	makeSeparatedHeading($('.usercard__heading__text'))
 });
+
