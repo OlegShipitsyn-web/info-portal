@@ -23,7 +23,7 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px){
-	
+
 }
 
 
@@ -112,6 +112,20 @@
     .search-input input{
         font-size: 1.4rem;
     }
+    .main-block{
+        .config-btn{
+            background: linear-gradient(90deg, #FC6B54 0%, #FC7A47 100%);
+            padding: .8rem 2rem;
+            width: auto;
+            font-size: 1.2rem;
+            color: $white;
+            align-items: center;
+            line-height: 2.6rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        
+    }
 }
 
 @media only screen and (min-width: 576px){
@@ -196,10 +210,88 @@
     .summary{
         margin-top: 2rem;
     }
+    %card-padding-adaptive{
+        padding: 1.7rem 1.2rem 1.7rem 1.2rem;
+    }
+    %adaptive-text-14{
+        font-size: 1.4rem;
+    }
+    .main-block .main-block__updated{
+        display: flex;
+    }
+    .main-block{
+        .main-block__info-content{
+            justify-content: flex-start;
+        }
+        .main-block__info-item{
+            width: 100%;
+            flex-direction: row;
+        }
+        .info-item__key{
+            width: 35%;
+        }
+        .info-item__value{
+            flex-direction: column;
+            margin-top: 0;
+        }
+        .multi{
+            flex-direction: row;
+        }
+        .main-block__link{
+            margin-left: 35%;
+        }
+        .main-block__link-text{
+            margin-right: .8rem;
+        }
+        .main-block__bottom{
+            flex-direction: row!important;
+        }
+        .config-btn{
+           margin-left: 3rem;
+           margin-top: 0;
+        }
+        .config-btn-row{
+            flex-direction: column!important;
+            .config-btn-wrap{
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+    .logo-text-scalable{
+        font-size: 1.4rem;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
+    .level{
+		font-size: 20px;
+	}
+    .logo{
+        .logo__square{
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+        .logo__text{
+            margin-top: 0px;
+        }
+    }
+    .call-search-btn{
+        display: none;
+    }
+    %adaptive-text-16{
+        font-size: 1.6rem;
+    }
+    %adaptive-text-18{
+        font-size: 1.8rem;
+    }
+    .logo-text-scalable{
+        font-size: 1.6rem;
+    }
+    %card-padding-adaptive{
+        padding: 2rem 1.5rem 2rem 1,5rem;
+    }
     .more{
         margin-left: 1.4rem;
     }
@@ -309,7 +401,10 @@
             transform: translateX(0%);
         }
         .usercard__content{
-            padding-left: 1.5rem;
+            padding-left: 2rem;
+        }
+        .usercard__content .container{
+            margin-top: 2rem;
         }
         .usercard__heading{
             margin-left: 0;
@@ -339,12 +434,29 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
+        .btn-row{
+            .btn-wrap{
+                width: 33%;
+                max-width: 18rem;
+                padding-top: 1.7rem;
+                margin-right: 1rem!important;
+            }
+            .btn-std{
+                white-space: nowrap;
+            }
+            .get-egrul{
+                padding-right: 1rem;
+            }
+        }
     }
     .overlay{
         display: none!important;
     }
     .usercard__close-nav-btn{
         display: none;
+    }
+    .sign-in-btn{
+        padding: 1.15rem 2rem;
     }
 }
 
@@ -460,6 +572,18 @@
     }
 }
 @media only screen and (min-width : 1200px){
+    .logo-text-scalable{
+        font-size: 1.8rem;
+    }
+    %card-padding-adaptive{
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    .usercard__content{
+        padding-left: 2.4rem;
+    }
+    .usercard__content .container{
+        margin-top: 2.4rem;
+    }
     .title-std-container{
         margin-bottom: 6.4rem;
     }
@@ -548,7 +672,11 @@
         display: flex;
     }
 }
-
+@media only screen and (max-width: 587px){
+    .config-btn{
+		width: 100%!important;
+	}
+}
 @media only screen and (max-width : 620px){
 	.mw-dynamic {
         

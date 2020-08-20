@@ -12,6 +12,12 @@ $light: #F8FAFF;
 $white: #ffffff;
 $acc-light-gradient: linear-gradient(159.86deg, #8CCA12 29.36%, #B1EF45 91.5%);
 
+
+$high: #1FAA00;
+$medium: #F06F11;
+$low: #D31A1A;
+$negative: #0B0909;
+
 button[class*="--bg-light-accent"]{
 	&:hover{
 		background-color: lighten($light-accent, 5%)!important
@@ -30,6 +36,9 @@ hr{
     overflow-y: auto;
     overflow-x: hidden;
 }
+.ul{
+    text-decoration: underline;
+}
 .container{
     display: block;
     max-width: 1170px;
@@ -37,13 +46,23 @@ hr{
     padding: 0 1.5rem;
     position: relative;
 }
+.usercard__content .container{
+    padding: 0;
+    width: 100%;
+    margin-top: 2rem;
+    &:last-child{
+        margin-bottom: 4rem;
+    }
+}
 .title-std-container{
 	margin-bottom: 2rem;
 }
 .container *{
     display: flex;
     flex-direction: column;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
+
 // .container table{
 //     display: table;
 // }
@@ -104,16 +123,19 @@ div[class*="--d-col"]{
 
 
 %text-default{
-    font-family: Raleway;
+    font-family: 'rawline', sans-serif; 
     font-style: normal;
+    font-variant-numeric: lining-nums  ;
     font-weight: 500;
     line-height: 145%;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
 %heading-default{
-    font-family: Raleway;
+    font-family: sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 145%;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 // text defaults
@@ -165,6 +187,9 @@ div[class*="--d-col"]{
 .w-100{
     width: 100%;
 }
+.w-50{
+    width: 50%;
+}
 .p-dynamic{
     padding-left: 5vw;
     padding-right: 5vw;
@@ -209,8 +234,20 @@ div[class*="--d-col"]{
 .text--medium--adaptive-to-18{
     font-size: 1.4rem;
 }
+.logo-text-scalable{
+    font-size: 1.2rem;
+}
 .text--medium--adaptive-to-16{
     font-size: 1.4rem;
+}
+%adaptive-text-16{
+    font-size: 1.4rem;
+}
+%adaptive-text-18{
+    font-size: 1.4rem;
+}
+%adaptive-text-14{
+    font-size: 1.2rem;
 }
 
 // btn

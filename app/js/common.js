@@ -1,6 +1,7 @@
 $(function() {
 
 	const body = $('body');
+	$('html, body').css({maxHeight: 'unset', overflowY: 'auto'})
 	// <МОДАЛЬНЫЕ ОКНА>
 	// дефолтная скорость анимации модального окна
 	$.arcticmodal('setDefault', {
@@ -11,21 +12,30 @@ $(function() {
 		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
 	}
 	function accessScroll() { 
-		return $('html, body').css({maxHeight: '100%', overflowY: 'auto'})
+		return $('html, body').css({maxHeight: 'unset', overflowY: 'auto'})
 	}
 
-	function closeOnSideTouch(itemWithClass, classToRemove){
+	function closeOnSideTouch(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
-			var div = $(itemWithClass); 
-			if (!div.is(e.target) && div.has(e.target).length === 0 && $(body).has(e.target)) { 
+			var div = $(touchWithoutClosing); 
+			if (!div.is(e.target) && div.has(e.target).length === 0) { 
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
+				accessScroll()
 			}
 			if(div.hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
 			}else{
 				$('.overlay').css({zIndex: -100, display: 'none'})
-				accessScroll()
+			}
+		})
+	}
+
+	function closeOnSideTouch__noOverlay(touchWithoutClosing, classToRemove){
+		$(document).on('mouseup',function (e){
+			var div = $(touchWithoutClosing); 
+			if (!div.is(e.target) && div.has(e.target).length === 0) { 
+				div.removeClass(classToRemove)
 			}
 		})
 	}
@@ -97,5 +107,9 @@ $(function() {
 		
 	}
 	makeSeparatedHeading($('.usercard__heading__text'))
+
+
+	closeOnSideTouch__noOverlay('.mobile-search, .call-search-btn', 'mobile-search--active')
+	$('.call-search-btn').click(() => $('.mobile-search').toggleClass('mobile-search--active'))
 });
 
