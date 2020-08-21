@@ -123,7 +123,7 @@ div[class*="--d-col"]{
 
 
 %text-default{
-    font-family: 'rawline', sans-serif; 
+    font-family: 'rawline', sans-serif;
     font-style: normal;
     font-variant-numeric: lining-nums  ;
     font-weight: 500;
@@ -181,14 +181,64 @@ div[class*="--d-col"]{
 .mw-dynamic{
     max-width: calc(100% - 15vw);
 }
-.bold{
-    font-weight: bold;
+body{
+	.bold{
+	    font-weight: bold;
+	}
+	.ml-0{
+		margin-left: 0;
+	}
+	.mr-auto{
+		margin-right: auto;
+	}
+	.mr-0{
+		margin-right: 0;
+	}
+	.ml-auto{
+		margin-left: auto;
+	}
+	.strict-column{
+		flex-direction: column!important;
+	}
+	.strict-w-100{
+		width: 100%!important;
+	}
+	.pb-little{
+		padding-bottom: .5rem;
+	}
+	.col-to-row-576{
+		flex-direction: column;
+	}
 }
 .w-100{
     width: 100%;
 }
 .w-50{
     width: 50%;
+}
+.border-medium{
+	border-width: 2px;
+}
+.border-white{
+	border-color: $white;
+}
+.border-light-accent{
+	border-color: $light-accent;
+}
+.fz-12-to-14{
+	@extend %adaptive-text-14
+}
+.fz-14-to-16{
+	@extend %adaptive-text-16
+}
+.reverse{
+	flex-direction: row-reverse!important;
+}
+.lh-md{
+	line-height: 120%;
+}
+.fit-content{
+	width: fit-content;
 }
 .p-dynamic{
     padding-left: 5vw;

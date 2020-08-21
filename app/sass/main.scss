@@ -55,6 +55,15 @@ body{
 .scroll-blocked{
 
 }
+// translte placeholders
+.courts-placeholder, .debts-placeholder, .licenses-placeholder{
+	margin-top: 2rem;
+}
+// /translte placeholders
+
+// charts
+
+// /charts
 .overlay{
 	position: fixed;
 	top: 0;
@@ -157,7 +166,7 @@ body{
 	position: relative;
 	display: inline-block;
 }
- 
+
 
 .greenline{
 	width: calc(4.9rem + 2vw);
@@ -271,8 +280,8 @@ body{
 			border-radius: 5.00818px;
 			font-size: 14px;
 			z-index: 10;
-			
-			
+
+
 	}
 	input{
 		width: 100%;
@@ -369,6 +378,7 @@ body{
 			font-size: 1.4rem;
 		}
 	}
+
 	.show-results{
 		display: block;
 	}
@@ -384,6 +394,57 @@ body{
 .promo-main-header__main-container{
 	padding: 0!important;
 }
+
+//items from search without searchbar scope
+.search-list__item, .search-item{
+	padding-top: 1.5rem;
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	cursor: pointer;
+	&:hover{
+		background-color: $light;
+	}
+}
+.search-item__row{
+	flex-wrap: wrap;
+	align-items: center;
+}
+.search-item__heading{
+	margin-bottom: .5rem;
+	color: $dark-accent;
+	font-size: 1.6rem;
+	line-height: 125%;
+}
+.search-item__status{
+	margin-bottom: .5rem;
+	font-size: 1.2rem;
+}
+.bad-status{
+	color: #D31A1A;
+}
+.search-item__city{
+
+}
+.search-item__identification-number,
+.identification-number, .search-item__city{
+	margin-right: 2rem;
+	font-size: 1.4rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+.identification-number__type{
+	color: $semi-dark-lighten;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+}
+.identification-number__number{
+	color: $dark;
+	margin-left: 1rem;
+	font-size: 1.4rem;
+}
+// =============================
 
 // modals
 .arcticmodal-container_i2{
@@ -922,7 +983,9 @@ body{
 		}
 	}
 }
-.main-block{ 
+
+// any block inside main parth of the page
+.main-block{
 	margin: 0;
 	background: $white;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -955,6 +1018,11 @@ body{
 }
 .main-block__subtitle{
 	@extend %adaptive-text-16;
+	padding-top: 1rem;
+	line-height: 145%;
+}
+.main-block__subtitle--white-header{
+	margin-top: -1.5rem;
 }
 .main-block .status{
 	flex-direction: row;
@@ -1025,20 +1093,10 @@ body{
 	}
 	.text-with-link{
 		display: block;
-		a, span{	
+		a, span{
 			display: inline;
 			line-height: 120%;
 		}
-	}
-	.level{
-		border-radius: 4px;
-		padding: .9em 2.2em;
-		font-size: 16px;
-		margin-right: auto;
-		color: $white;
-	}
-	.level--high{
-		background: $high;
 	}
 	.config-btn{
 		background: linear-gradient(90deg, #FC6B54 0%, #FC7A47 100%);
@@ -1068,6 +1126,8 @@ body{
 		}
 	}
 }
+// alert-block (witch company condition)
+// alerts are used like a usual BEM modificator to .main-block
 .main-block--alert{
 	background: #FFF8F8;
 	border: 1px solid $low;
@@ -1084,6 +1144,86 @@ body{
 		color: $semi-dark;
 	}
 }
+
+.owner-baner{
+	.btn-std{
+		svg{
+			margin-left: 1rem;
+		}
+	}
+	.main-block__info-item{
+		width: 100%;
+	}
+	.main-block__info-item{
+		margin-top: -2.5rem;
+		margin-bottom: 2.5rem;
+	}
+}
+
+// facts + level
+
+// body is for additional context (so i didn't have to use !important)
+// I'm not using top-level parent block for creating scope because I'm not
+// sure about the scope inside which it's gonna be using
+.facts__list--nowrapper{
+	margin-top: 1rem;
+	.fact__key{
+		flex-direction: row;
+		&:after{
+			content: ":"
+		}
+	}
+}
+body{
+	.changes{
+		.changes__buttons{
+			flex-direction: column-reverse;
+			a{
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	.facts{
+		flex-direction: column;
+	}
+	.level{
+		border-radius: 4px;
+		padding: .9em 2.2em;
+		font-size: 16px;
+		color: $white;
+		width: fit-content;
+		margin-bottom: 1.1rem;
+	}
+	.level--high{
+		background: $high;
+	}
+	.facts__heading{
+		@extend %heading-default;
+		@extend %adaptive-text-16;
+		margin-bottom: 1rem;
+	}
+	.facts__list{
+		width: fit-content
+	}
+	.facts__item, .fact{
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+	}
+	.fact__key, .fact__value{
+		@extend %text-default;
+		@extend %adaptive-text-16;
+	}
+	.fact__key{
+		margin-right: auto;
+		color: $dark;
+	}
+	.fact__value{
+		margin-left: 1rem;
+		color: $light-accent;
+		font-weight: bold!important;
+	}
+}
 // social icons
 [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
@@ -1094,7 +1234,7 @@ body{
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-  
+
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -1191,7 +1331,7 @@ body{
   .icon-youtube:hover::before{
 		color: red;
 		cursor: pointer;
-		
+
   }
   .icon-instagram:before {
 	content: "\e901";
@@ -1218,10 +1358,8 @@ body{
   .icon-vk:hover::before{
 	color: #597da3;
 	cursor: pointer;
-	
+
 }
-  
+
 // your styles end
 @import "media"; // IT SHOULD ALWAYS BE IN THE END OF THE DOCUMENT
-
-

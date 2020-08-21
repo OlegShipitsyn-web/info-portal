@@ -8,17 +8,17 @@ $(function() {
 		speed: 200
 	});
 
-	function blockScroll() { 
+	function blockScroll() {
 		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
 	}
-	function accessScroll() { 
+	function accessScroll() {
 		return $('html, body').css({maxHeight: 'unset', overflowY: 'auto'})
 	}
 
 	function closeOnSideTouch(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
-			var div = $(touchWithoutClosing); 
-			if (!div.is(e.target) && div.has(e.target).length === 0) { 
+			var div = $(touchWithoutClosing);
+			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
 				accessScroll()
@@ -33,8 +33,8 @@ $(function() {
 
 	function closeOnSideTouch__noOverlay(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
-			var div = $(touchWithoutClosing); 
-			if (!div.is(e.target) && div.has(e.target).length === 0) { 
+			var div = $(touchWithoutClosing);
+			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 			}
 		})
@@ -47,7 +47,7 @@ $(function() {
 	// каждому окну при нажатии на .modal__close__btn функция прикручивает закрытие окна
 	const multipleModalCallButtons = (nodeName_Btn, modal_ID, modalToClose) => {
 
-		return $(nodeName_Btn).bind( 'click', () => $(modalToClose).arcticmodal('close') 
+		return $(nodeName_Btn).bind( 'click', () => $(modalToClose).arcticmodal('close')
 				&& $(modal_ID).arcticmodal()
 				&& $(modal_ID).find('.modal__close__btn').click(() => $(modal_ID).arcticmodal('close')))
 	}
@@ -83,9 +83,9 @@ $(function() {
 	});
 
 	$('.scrolltop-btn').click(function(){
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 200);
 		return false;
-	}); 
+	});
 
 	$('.usercard__menu-toggle-btn, .usercard__close-nav-btn').click(() => {
 		$('.usercard__sidebar').toggleClass('usercard__sidebar--active');
@@ -104,12 +104,14 @@ $(function() {
 		let textArr = heading.text().split(" ").reverse()
 		heading.text("")
 		textArr.forEach((word) => heading.prepend(`<span>${word}&nbsp;</span>`) && $('.usercard__status').appendTo(heading))
-		
+
 	}
 	makeSeparatedHeading($('.usercard__heading__text'))
 
 
 	closeOnSideTouch__noOverlay('.mobile-search, .call-search-btn', 'mobile-search--active')
 	$('.call-search-btn').click(() => $('.mobile-search').toggleClass('mobile-search--active'))
-});
 
+	// graphics
+
+});
