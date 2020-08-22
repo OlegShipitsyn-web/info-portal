@@ -361,21 +361,24 @@ body{
 
 		}
 		.search-item__identification-number,
-		.identification-number, .search-item__city{
+		.identification-number, .search-item__city, .search-item__chief,
+		.search-item__share{
 			margin-right: 2rem;
 			font-size: 1.4rem;
 			margin-top: .5rem;
 			margin-bottom: .5rem;
 		}
-		.identification-number__type{
+		.identification-number__type, .search-item__key{
 			color: $semi-dark-lighten;
 			text-transform: uppercase;
 			font-size: 1.4rem;
+			line-height: 145%;
 		}
-		.identification-number__number{
+		.identification-number__number, .search-item__value{
 			color: $dark;
 			margin-left: 1rem;
 			font-size: 1.4rem;
+			line-height: 145%;
 		}
 	}
 
@@ -397,11 +400,8 @@ body{
 
 //items from search without searchbar scope
 .search-list__item, .search-item{
-	padding-top: 1.5rem;
-	margin-left: -1.5rem;
-	margin-right: -1.5rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	padding: 5px 0;
+	margin-top: .8em;
 	cursor: pointer;
 	&:hover{
 		background-color: $light;
@@ -418,11 +418,20 @@ body{
 	line-height: 125%;
 }
 .search-item__status{
-	margin-bottom: .5rem;
+	margin-bottom: 0;
 	font-size: 1.2rem;
 }
 .bad-status{
-	color: #D31A1A;
+	color: $low;
+}
+.negative-status{
+	color: $negative;
+}
+.middle-status{
+	color: $medium;
+}
+.good-status{
+	color: $high;
 }
 .search-item__city{
 
@@ -431,18 +440,23 @@ body{
 .identification-number, .search-item__city{
 	margin-right: 2rem;
 	font-size: 1.4rem;
-	margin-top: .5rem;
-	margin-bottom: .5rem;
+	margin-bottom: 0;
+	padding: 0!important;
 }
-.identification-number__type{
+.identification-number__type, .search-item__key{
 	color: $semi-dark-lighten;
 	text-transform: uppercase;
 	font-size: 1.4rem;
+	line-height: 145%;
 }
-.identification-number__number{
+.identification-number__number, .search-item__value{
 	color: $dark;
 	margin-left: 1rem;
 	font-size: 1.4rem;
+	line-height: 145%;
+}
+.search-item__row{
+	padding: 0.3em 0;
 }
 // =============================
 
@@ -670,7 +684,6 @@ body{
 
 .main-abilities__cards{
 	.cards{
-		flex-direction: row;
 		flex-wrap: wrap;
 		margin-bottom: -6rem;
 	}
@@ -752,20 +765,25 @@ body{
 	margin-bottom: 1.5rem;
 	margin-top: 1.5rem;
 }
-.accordion-content .sort-btn, .sorts .sort-btn{
-	border-radius: 4px;
+.sort-btn{
 	padding: 1.1rem 2rem;
+}
+.accordion-content .sort-btn, .sorts .sort-btn{
+	border-radius: 0;
 	color: $semi-dark;
 	border: 1px solid $semi-lighten;
+	border-left: none;
 	&:first-child{
 		border-radius: 4px 0px 0px 4px;
 		border-right: none;
+		border-left: 1px solid $semi-lighten;
 	}
 	&:last-child{
 		border-radius: 0px 4px 4px 0px;
 		border-left: none;
 	}
 }
+
 .accordion-content .sort-btn--active, .sorts .sort-btn--active{
 	border: 1px solid $light-accent;
 	background: $light-accent;
@@ -922,9 +940,7 @@ body{
 		// padding-right: 1.4rem;
 		// padding-bottom: 1.5rem;
     	padding-top: 1.5rem;
-		&:hover{
-			background-color: $light;
-		}
+		width: 100%;
 	}
 	.navigation-list__link{
 		flex-direction: row;
@@ -933,6 +949,12 @@ body{
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 		padding-right: .5rem;
+		flex-wrap: nowrap;
+		display: flex;
+		width: 100%;
+		&:hover{
+			background-color: $light;
+		}
 	}
 	.link-icon{
 		margin: 0 1.1rem;
@@ -963,6 +985,12 @@ body{
 		height: 100%;
 		flex-grow: 2;
 		align-items: flex-start;
+	}
+	aside .adc-baner{
+		margin-top: 2rem;
+	}
+	.main-block .adc-baner{
+		margin-top: 1.5rem;
 	}
 	.adc-baner{
 		width: 100%;
@@ -1008,7 +1036,7 @@ body{
 }
 .main-block__title{
 	@extend %heading-default;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	text-transform: uppercase;
 	font-weight: bold!important;
 }
@@ -1016,12 +1044,12 @@ body{
 	@extend %card-padding-adaptive;
 	padding-top: 0!important;
 }
-.main-block__subtitle{
+.main-block__text{
 	@extend %adaptive-text-16;
 	padding-top: 1rem;
 	line-height: 145%;
 }
-.main-block__subtitle--white-header{
+.main-block__text--white-header{
 	margin-top: -1.5rem;
 }
 .main-block .status{
@@ -1134,7 +1162,7 @@ body{
 	box-sizing: border-box;
 
 	.main-block__title{
-		color: $low;
+		color: $dark;
 	}
 	.message{
 		color: $dark;

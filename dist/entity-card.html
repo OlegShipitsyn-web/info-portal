@@ -62,11 +62,10 @@
 							<ul class="search-input__search-list search-list">
 								<hr class="search-input__divider">
 								<div class="search-input__results">
-									<span
-										class="row text text--small text--color-semi-dark-lighted">Результатов:&ensp;<span>8909</span></span>
+									<span class="row text text--small text--color-semi-dark-lighted">Результатов:&ensp;<span>8909</span></span>
 								</div>
 								<li class="search-list__item search-item">
-									<a href="#">
+									<a class="d-col ai-start" href="#">
 										<span class="search-item__heading">Август-с (ООО)</span>
 										<span class="search-item__status bad-status">Организация ликвидирована</span>
 										<div class="row search-item__row">
@@ -183,13 +182,17 @@
 			</div>
 		</header>
 		<!-- /HEADER COMPONENT -->
-		<!-- mobile search -->
+
+		<!-- MOBILE SEARCH CONTAINER -->
 		<section class="mobile-search">
 
 		</section>
-		<!-- mobile-search -->
+		<!-- /MOBILE SEARCH CONTAINER -->
+
 		<!-- PAGE CONTENT -->
 		<main class="usercard">
+
+			<!-- PAGE HEADER -->
 			<div class="usercard__header">
 				<div class="container">
 					<div class="row usercard__heading-row">
@@ -201,152 +204,170 @@
 					</div>
 				</div>
 			</div>
+			<!-- /PAGE HEADER -->
+
+			<!-- MAIN CONTAINER FOR CONTENT PART -->
 			<div class="container">
-				<div class="row row--ai-start">
-					<aside class="usercard__sidebar">
-						<nav class="usercard__navigation">
-							<ul class="usercard__navigation-list navigation-list">
+				<!-- ROW FOR SIDEBAR AND CENTRAL PARTS -->
+				<div class="flex ai-start">
+					<!-- SIDEBAR -->
+					<aside class="usercard__sidebar ai-start flex d-col">
+						<!-- NAVIGATION -->
+						<nav class="usercard__navigation flex w-100">
+							<ul class="usercard__navigation-list navigation-list flex d-col ai-start w-100">
 								<li>
 									<button class="usercard__close-nav-btn"><img src="./img/close.svg" alt=""></button>
 								</li>
-								<li class="navigation-list__item navigation-list__item--active">
+								<li class="navigation-list__item navigation-list__item--active flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon1"></span>
 										<span class="link-text">Общие данные</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon2"></span>
 										<span class="link-text">Надежность</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon3"></span>
 										<span class="link-text">Реквизиты</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon4"></span>
 										<span class="link-text">Контакты</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon5"></span>
 										<span class="link-text">оквэд</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon6"></span>
 										<span class="link-text">Лицензии</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon7"></span>
 										<span class="link-text">Руководители</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon8"></span>
 										<span class="link-text">Учредители</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon9"></span>
 										<span class="link-text">Подразделения</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon10"></span>
 										<span class="link-text">Правопредшественники</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon11"></span>
 										<span class="link-text">Правопреемники</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon12"></span>
 										<span class="link-text">Финансы</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon13"></span>
 										<span class="link-text">Госзакупки</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon14"></span>
 										<span class="link-text">Проверки</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon15"></span>
 										<span class="link-text">Долги</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon16"></span>
 										<span class="link-text">Суды</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon17"></span>
 										<span class="link-text">Связи</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon18"></span>
 										<span class="link-text">История изменений</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon19"></span>
 										<span class="link-text">Вакансии</span>
 									</a>
 								</li>
-								<li class="navigation-list__item">
+								<li class="navigation-list__item flex">
 									<a href="" class="navigation-list__link">
 										<span class="link-icon icon-nav-icon20"></span>
 										<span class="link-text">СРО</span>
 									</a>
 								</li>
 							</ul>
+							<!-- HR FIXES BOTTOM MARGINS -->
 							<hr>
+							<!-- /HR FIXES BOTTOM MARGINS -->
 						</nav>
+						<!-- /NAVIGATION -->
 
+						<!-- CONTAINERS FOR TRANSITIONING BLOCKS FROM CENTRAL PART TO SIDEBAR -->
 						<div class="owner-baner-placeholder"></div>
 						<div class="courts-placeholder"></div>
 						<div class="debts-placeholder"></div>
 						<div class="licenses-placeholder"></div>
+						<!-- /CONTAINERS FOR TRANSITIONING BLOCKS FROM CENTRAL PART TO SIDEBAR -->
 						<hr>
 					</aside>
+					<!-- /SIDEBAR -->
+
+					<!-- CENTRAL PART CONTENT -->
 					<div class="usercard__content">
+
+						<!-- ADC BANER -->
 						<div class="adc-baner">
 							<img class="img-responsive" src="https://via.placeholder.com/871x230.png" alt="">
 						</div>
+						<!-- /ADC BANER -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
-								<div class="main-block__header">
+								<div class="main-block__header d-row jc-between">
 									<div class="main-block__heading">
 										<h2 class="main-block__title">main-block (wrapper for card elements)</h2>
 										<span class="status"><span class="icon-status"></span>Действующая
@@ -379,7 +400,7 @@
 												<div class="info-item__key">ОГРН</div>
 												<div class="info-item__value">200 000 руб.</div>
 											</div>
-											<a href="#" class="main-block__link row">
+											<a href="#" class="main-block__link d-row">
 												<span class="main-block__link-text text--color-dark-accent-lighten">Все
 													реквизиты</span>
 												<img class="main-block__link-img" src="./img/arrow-right-blue.svg"
@@ -402,7 +423,7 @@
 
 											<div class="main-block__info-item info-item info-item--single">
 												<div class="info-item__key">Руководитель</div>
-												<div class="info-item__value">
+												<div class="info-item__value flex d-col ai-start">
 													<a href="" class="info-item__link"> Шумаков Григорий Анатольевич</a>
 													<span class="info-item__sub-value">Генеральный директор</span>
 													<span class="info-item__sub-value">с 14 июля 2010</span>
@@ -438,7 +459,7 @@
 
 											<div class="main-block__info-item info-item info-item--single">
 												<div class="info-item__key">Контакты</div>
-												<div class="info-item__value">
+												<div class="info-item__value flex d-col ai-start">
 													<span>+7 499 000 00 00</span>
 													<span>+7 499 000 00 00&nbsp;(Факс)</span>
 													<span>eser@informportal</span>
@@ -478,12 +499,12 @@
 											</div>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
-
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block main-block--alert">
 								<div class="main-block__header">
@@ -508,7 +529,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header">
@@ -516,21 +539,21 @@
 										<h2 class="main-block__title main-block__title--color-dark-accent">Надёжность</h2>
 									</div>
 								</div>
-								<div class="main-block__content reliability">
+								<div class="main-block__content reliability flex ai-start d-col d-lg-row">
 									<div class="level level--high">Высокая</div>
 									<div class="facts">
 										<h3 class="facts__heading">Выявлены 33 факта об организации:</h3>
-										<ul class="facts__list">
-											<li class="facts__item fact">
+										<ul class="facts__list d-col d-lg-row ai-start jc-start">
+											<li class="facts__item fact flex d-row d-sm-col ai-start w-100 w-lg-auto">
 												<span class="fact__key">Положительных</span>
 												<span class="fact__value">23</span>
 											</li>
-											<li class="facts__item fact">
+											<li class="facts__item fact flex d-row d-sm-col ai-start w-100 w-lg-auto">
 												<span class="fact__key">Отрицательных</span>
 												<span class="fact__value">4</span>
 											</li>
-											<li class="facts__item fact">
-												<span class="fact__key">Требующих внимания</span>
+											<li class="facts__item fact flex d-row d-sm-col ai-start w-100 w-lg-auto">
+												<span class="fact__key nowrap">Требующих внимания</span>
 												<span class="fact__value">2</span>
 											</li>
 										</ul>
@@ -538,7 +561,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container owner-baner">
 							<div class="main-block --bg-acc-light-gradient owner-baner-inner" data-da="owner-baner-placeholder,1,768,min">
 								<div class="main-block__header">
@@ -546,14 +571,14 @@
 										<h2 class="main-block__title main-block__title--color-white">Это ваша компания?</h2>
 									</div>
 								</div>
-								<div class="main-block__content owner-baner__content">
+								<div class="main-block__content owner-baner__content flex d-col d-sm-row ai-start">
 									<div class="main-block__info-item fz-14-to-16 --color-white lh-md">
 										Зарегистрируйтесь и получите возможность управлять отображением информации о ООО "Лютик"
 									</div>
 									<div class="text">
 
 									</div>
-									<button class="btn-std --bg-transparent --color-white border-medium border-white fit-content fz-12-to-14 reverse bold">
+									<button class="btn-std --bg-transparent --color-white border-medium border-white fit-content fz-12-to-14 flex jc-between reverse bold">
 										<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M13.6673 4.99906C13.6618 4.85011 13.6041 4.67794 13.508 4.56935L10.3707 1.02753C10.1582 0.82455 9.75051 0.740758 9.5129 0.975445C9.27886 1.20659 9.28582 1.65488 9.51898 1.88694L11.7249 4.37404H0.922219C0.597357 4.37404 0.333984 4.65388 0.333984 4.99906C0.333984 5.34425 0.597357 5.62409 0.922219 5.62409H11.7249L9.51898 8.11119C9.31826 8.32483 9.28116 8.78889 9.5129 9.02268C9.74459 9.25645 10.1669 9.18176 10.3707 8.97057L13.508 5.42878C13.6154 5.30757 13.6677 5.16536 13.6673 4.99906Z" fill="#ffffff"/>
 										</svg>
@@ -562,7 +587,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
@@ -571,10 +598,10 @@
 									</div>
 								</div>
 								<div class="main-block__content">
-									<p class="main-block__subtitle">Согласно данным ЕГРЮЛ учредителями ООО "Лютик" являются 1 российское юридическое лицо, 1 иностранное юридическое лицо и 1 физическое лицо. Учредители акционерных обществ могут не являться текущими акционерами.</p>
+									<p class="main-block__text">Согласно данным ЕГРЮЛ учредителями ООО "Лютик" являются 1 российское юридическое лицо, 1 иностранное юридическое лицо и 1 физическое лицо. Учредители акционерных обществ могут не являться текущими акционерами.</p>
 									<ul>
 										<li class="search-list__item search-item">
-											<a href="#">
+											<a class="flex d-col ai-start" href="#">
 												<span class="search-item__heading">Август-с (ООО)</span>
 												<span class="search-item__status bad-status">Организация ликвидирована</span>
 												<div class="row search-item__row">
@@ -625,7 +652,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
@@ -638,7 +667,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container hide-767">
 							<div class="main-block" data-da="courts-placeholder,1,768,min">
 								<div class="main-block__header --bg-white">
@@ -647,17 +678,17 @@
 									</div>
 								</div>
 								<div class="main-block__content">
-									<p class="main-block__subtitle main-block__subtitle--white-header">Найдены сведения о 26 рассматриваемых судебных делах с участием ООО "Лютик".</p>
+									<p class="main-block__text main-block__text--white-header">Найдены сведения о 26 рассматриваемых судебных делах с участием ООО "Лютик".</p>
 									<ul class="facts__list facts__list--nowrapper">
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Ответчик</span>
 											<span class="fact__value">16</span>
 										</li>
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Истец</span>
 											<span class="fact__value">12</span>
 										</li>
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Третье/инное лицо</span>
 											<span class="fact__value">16</span>
 										</li>
@@ -670,7 +701,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container hide-767">
 							<div class="main-block" data-da="debts-placeholder,1,768,min">
 								<div class="main-block__header --bg-dark-accent">
@@ -679,17 +712,17 @@
 									</div>
 								</div>
 								<div class="main-block__content">
-									<p class="main-block__subtitle">Найдены сведения о наличии исполнительных производств в отношении ООО "Лютик":</p>
+									<p class="main-block__text">Найдены сведения о наличии исполнительных производств в отношении ООО "Лютик":</p>
 									<ul class="facts__list facts__list--nowrapper">
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Производств</span>
 											<span class="fact__value">23</span>
 										</li>
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Штрафы</span>
 											<span class="fact__value">4</span>
 										</li>
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Взыскания</span>
 											<span class="fact__value">2</span>
 										</li>
@@ -702,7 +735,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container hide-767">
 							<div class="main-block" data-da="licenses-placeholder,1,768,min">
 								<div class="main-block__header --bg-dark-accent">
@@ -712,12 +747,12 @@
 								</div>
 								<div class="main-block__content">
 									<ul class="facts__list facts__list--nowrapper">
-										<li class="facts__item fact">
+										<li class="facts__item fact flex d-row">
 											<span class="fact__key bold">Всего</span>
 											<span class="fact__value">262</span>
 										</li>
 									</ul>
-									<p class="main-block__subtitle">Организация имеет 262 лицензии по 16 видам лицензируемой деятельности</p>
+									<p class="main-block__text">Организация имеет 262 лицензии по 16 видам лицензируемой деятельности</p>
 									<a href="#" class="main-block__link row mr-auto ml-0">
 										<span class="main-block__link-text text--color-dark-accent-lighten">Все</span>
 										<img class="main-block__link-img" src="./img/arrow-right-blue.svg"
@@ -727,7 +762,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block changes">
 								<div class="main-block__header --bg-dark-accent">
@@ -752,7 +789,7 @@
 										<div class="info-item__key strict-w-100 pb-little">13.09.2018</div>
 										<div class="info-item__value strict-w-100">Изменены сведения о лицензии № 40РПА0001343 от 14.09.2016, вид деятельности: Розничная продажа алкогольной продукции, лицензируемая субъектами Российской Федерации или органами местного самоуправления в соответствии с предоставленными законом полномочиями. Новая дата окончания: 13.09.2023. Добавлены сведения о дополнительном виде деятельности: Хранение и складирование прочих грузов (52.10.9)</div>
 									</div>
-									<div class="changes__buttons">
+									<div class="changes__buttons flex">
 										<button class="btn-std --bg-light-accent --color-white border-medium border-light-accent fit-content fz-12-to-14 bold">
 											<img src="./img/bell.svg" alt="">
 											Внести изменения
@@ -764,7 +801,9 @@
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
+						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
@@ -773,16 +812,20 @@
 									</div>
 								</div>
 								<div class="main-block__content --color-semi-dark">
-									<p class="main-block__subtitle">ООО "Лютик" зарегистрирована 3 мая 2006 г. регистратором ИНСПЕКЦИЯ ФЕДЕРАЛЬНОЙ НАЛОГОВОЙ СЛУЖБЫ ПО ЛЕНИНСКОМУ ОКРУГУ Г. КАЛУГИ. Руководитель организации: директор Шумаков Григорий Анатольевич. Юридический адрес ООО "Лютик" - 248002, Калужская область, город Калуга, улица Салтыкова-Щедрина, 76.</p>
-									<p class="main-block__subtitle"> Основным видом деятельности является «Торговля розничная напитками в специализированных магазинах», зарегистрированы 24 дополнительных вида деятельности. Организации ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЛЮТИК" присвоены ИНН 4027073395, ОГРН 1064027042991, ОКПО 79893975.</p>
-									<p class="main-block__subtitle">Телефон, адрес электронной почты, адрес официального сайта и другие контактные данные ООО "Лютик" отсутствуют в ЕГРЮЛ и могут быть добавлены представителем организации.</p>
+									<p class="main-block__text">ООО "Лютик" зарегистрирована 3 мая 2006 г. регистратором ИНСПЕКЦИЯ ФЕДЕРАЛЬНОЙ НАЛОГОВОЙ СЛУЖБЫ ПО ЛЕНИНСКОМУ ОКРУГУ Г. КАЛУГИ. Руководитель организации: директор Шумаков Григорий Анатольевич. Юридический адрес ООО "Лютик" - 248002, Калужская область, город Калуга, улица Салтыкова-Щедрина, 76.</p>
+									<p class="main-block__text"> Основным видом деятельности является «Торговля розничная напитками в специализированных магазинах», зарегистрированы 24 дополнительных вида деятельности. Организации ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ЛЮТИК" присвоены ИНН 4027073395, ОГРН 1064027042991, ОКПО 79893975.</p>
+									<p class="main-block__text">Телефон, адрес электронной почты, адрес официального сайта и другие контактные данные ООО "Лютик" отсутствуют в ЕГРЮЛ и могут быть добавлены представителем организации.</p>
 								</div>
 							</div>
 						</div>
+						<!-- /CENTRAL PART BLOCK -->
 
 					</div>
+					<!-- /CENTRAL PART CONTENT -->
 				</div>
+				<!-- /ROW FOR SIDEBAR AND CENTRAL PARTS -->
 			</div>
+			<!-- /MAIN CONTAINER FOR CONTENT PART -->
 		</main>
 		<!-- /PAGE CONTENT -->
 
@@ -794,13 +837,13 @@
 			</button>
 			<!-- /SCROLLTOP-BTN COMPONENT -->
 			<div class="container">
-				<div class="row footer__row-global row--d-col row--ai-start">
+				<div class="row footer__row-global d-col ai-start">
 
-					<div class="row row-upper row--d-col row--ai-start">
-						<div class="footer__logo footer__logo--d-col footer__logo--ai-start  logo row">
-							<div class="logo__wrap logo__wrap--d-row">
+					<div class="row row-upper flex d-col ai-start">
+						<div class="footer__logo ai-start logo d-col">
+							<div class="logo__wrap d-row">
 								<div class="logo__pic">
-									<div class="row">
+									<div class="d-row">
 										<div class="logo__square logo__square--rounded logo-square--bg-light-accent">
 										</div>
 										<div class="logo__square logo-square--bg-white"></div>

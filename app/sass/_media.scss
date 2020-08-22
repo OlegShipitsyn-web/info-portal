@@ -126,10 +126,15 @@
         }
 
     }
+    .fz-11-to-16{
+    	font-size: 1.25rem;
+    }
 }
 
 @media only screen and (min-width: 576px){
-
+    .fz-11-to-16{
+    	font-size: 1.4rem;
+    }
     .title-std-container{
         margin-bottom: 3.2rem;
     }
@@ -176,19 +181,15 @@
     }
     .main-abilities__cards{
         .cards{
-            flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
             margin-bottom: -4rem;
         }
         .card{
             width: 48%;
         }
     }
-    .registration{
-        flex-direction: row;
-        justify-content: space-between;
-    }
+
+// REGISTRATION
     .registration__heading{
         text-align: left;
     }
@@ -198,9 +199,9 @@
     .registration__btn-part{
         margin-top: 0;
     }
-    .summary, .summary__count{
-        flex-direction: row;
-    }
+// REGISTRATION ENDS
+
+// SUMMARY
     .summary__date{
         margin-right: 3rem;
     }
@@ -210,19 +211,23 @@
     .summary{
         margin-top: 2rem;
     }
+// SUMMARY ENDS
+
+// DYNAMIC PADDINGS
     %card-padding-adaptive{
         padding: 1.7rem 1.2rem 1.7rem 1.2rem;
     }
     %adaptive-text-14{
         font-size: 1.4rem;
     }
+// DYNAMIC PADDINGS ENDS
+
+// MAIN BLOCK
     .main-block .main-block__updated{
         display: flex;
     }
     .main-block{
-        .main-block__info-content{
-            justify-content: flex-start;
-        }
+
         .main-block__info-item{
             width: 100%;
             flex-direction: row;
@@ -297,7 +302,7 @@
 			.changes__buttons{
 				flex-direction: row;
 				margin-top: 1.5rem;
-				
+
 				a{
 					margin-bottom: 0;
 					margin-right: 0;
@@ -308,11 +313,20 @@
 			}
 		}
 	}
-
+    .founders-sorts .sort-btn{
+    	padding: 1rem 1.5rem;
+    	display: flex;
+    	justify-content: center;
+        white-space: nowrap;
+        flex-direction: row;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
+    .fz-11-to-16{
+    	font-size: 1.4rem;
+    }
     .level{
 		font-size: 20px;
 	}
@@ -527,7 +541,7 @@
 			margin-bottom: 2.5rem;
 		}
 	}
-	.main-block__subtitle{
+	.main-block__text{
 		padding-top: 1.5rem;
 	}
 
@@ -547,11 +561,26 @@
 		display: none!important;
 	}
 
+    .founders-sorts .sort-btn{
+    	padding: 1rem 2rem;
+    	display: flex;
+    	justify-content: center;
+        white-space: nowrap;
+        flex-direction: row;
+    }
+
+    .main-block__title{
+        font-size: 1.6rem;
+    }
+
 }
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px){
+    .fz-11-to-16{
+    	font-size: 1.6rem;
+    }
     .title-std-container{
         margin-bottom: 4rem;
     }
@@ -618,7 +647,8 @@
         }
 		.search-item__identification-number,
         .identification-number, .search-item__city,
-        .identification-number__type, .identification-number__number{
+        .identification-number__type, .identification-number__number,
+        .search-item__share, .search-item__chief {
 			font-size: 1.6rem;
 		}
     }
@@ -645,7 +675,7 @@
             padding-right: 1.4rem;
         }
     }
-	.main-block__subtitle{
+	.main-block__text{
 		padding-top: 2rem;
 	}
 	// reliability
@@ -667,6 +697,9 @@
 			margin-left: 0;
 		}
 	}
+    .main-block__title{
+        font-size: 2rem;
+    }
 }
 
 
