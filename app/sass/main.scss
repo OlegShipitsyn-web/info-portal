@@ -113,7 +113,7 @@ body{
 }
 .header{
 	position: relative;
-	z-index: 2;
+	z-index: 12;
 	padding: .9rem 0;
 	.search-input{
 		padding: 0!important;
@@ -131,13 +131,6 @@ body{
 	}
 }
 .logo{
-	.logo__square{
-		width: 1.1rem;
-		height: 1.1rem;
-		&--rounded{
-			border-radius: 2.70533px 0px 0px 0px;
-		}
-	}
 	.logo__text{
 		margin-left: 10px;
 		white-space: nowrap;
@@ -146,6 +139,9 @@ body{
 	.logo__subtitle{
 		display: none;
 		margin-top: 1.4rem;
+	}
+	.icon-logotype{
+		font-size: 3.4rem;
 	}
 }
 .search-btn-container{
@@ -257,7 +253,7 @@ body{
 }
 .mobile-search{
 	transform: translateY(-100%);
-	z-index: 1;
+	z-index: 3;
 	position: absolute;
 	transition: .2s ease;
 }
@@ -579,6 +575,11 @@ body{
 	}
 }
 
+.adc-cards{
+	.card, .card:hover{
+		box-shadow: none!important;
+	}
+}
 .main-info__cards, .main-sources__cards-equal{
 	margin-top: 2rem!important;
 	margin-bottom: 3rem!important;
@@ -775,7 +776,7 @@ body{
 	border-left: none;
 	&:first-child{
 		border-radius: 4px 0px 0px 4px;
-		border-right: none;
+		border-right: 1px solid $semi-lighten;;
 		border-left: 1px solid $semi-lighten;
 	}
 	&:last-child{
@@ -1188,11 +1189,6 @@ body{
 	}
 }
 
-// facts + level
-
-// body is for additional context (so i didn't have to use !important)
-// I'm not using top-level parent block for creating scope because I'm not
-// sure about the scope inside which it's gonna be using
 .facts__list--nowrapper{
 	margin-top: 1rem;
 	.fact__key{
@@ -1252,6 +1248,331 @@ body{
 		font-weight: bold!important;
 	}
 }
+
+// Table
+.table-wrapper{
+	margin-bottom: 1rem;
+}
+.table-layout{
+	margin-top: 1rem;
+}
+.table__title{
+	background: $light;
+	@extend %adaptive-text-18;
+	border: 1px solid #ECECEC;
+	border-bottom: 0;
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #ECECEC;
+	border-bottom: 0
+}
+
+.table__body{}
+
+.table__row{
+	display: flex;
+	flex-direction: column;
+	@extend %adaptive-text-16;
+}
+td, th, .table__title{
+	padding: .5em;
+	@extend %text-default;
+}
+td, th{
+	margin: 0;
+	// border: 1px solid #ECECEC;
+}
+.table__key{
+	width: 100%;
+	text-align: left;
+	font-weight: normal;
+}
+
+.table__value{
+	text-align: left;
+}
+.table__row .table__value:last-child{
+	border-bottom: 1px solid #ECECEC;
+}
+.table--minkey{
+	.table__key{
+		width: 10%;
+		border-bottom: 1px solid #ECECEC;
+		border-right: 1px solid #ECECEC;
+	}
+	.table__row{
+		display: table-row!important;
+	}
+}
+// /Table
+
+// adc
+	.promo{
+		background-color: #f4f4f4;
+	}
+	.promo__outer{
+		position: relative;
+	}
+	.promo__inner{
+		display: flex;
+		width: 100%;
+		position: relative;
+	}
+	.promo__placeholder{
+	}
+	.promo__text-part{
+		// position: absolute;
+		width: 60%;
+		height: 100%;
+		left: 0%;
+		height: 100%;
+		margin: auto;
+		margin-left: 0;
+		// 30%
+		max-width: 100%;
+		// 50%
+		width: 70%;
+		padding: 20px 0;
+		z-index: 1;
+	}
+	.promo__img-part{
+		height: 100%;
+		width: 40%;
+		position: absolute;
+		right: 0;
+		top: 10%;
+		z-index: 0;
+	}
+	.promo__img{
+		object-fit: contain;
+		// width: unset;
+		width: 250px;
+		transform: translateX(-5%);
+	}
+	.promo__heading{
+		font-size: 30px;
+		line-height: 43px;
+	}
+	.promo__text{
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 145%;
+	}
+	.buttons{
+		display: flex;
+		flex-direction: column;
+		padding-top: 2.5rem;
+	}
+	.button{
+		width: 24.2rem!important;
+		padding: 1.2em 3em;
+		font-size: 14px;
+		letter-spacing: 0.1em;
+		white-space: nowrap;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		width: fit-content;
+		text-transform: uppercase;
+		color: $white;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+	}
+	@media screen and (min-width: 350px){
+		.promo__text-part{
+			position: unset;
+		}
+		.promo__img-part{
+			position: unset;
+			margin-top: auto;
+		}
+		.promo__img{
+			transform: translateX(0%);
+			margin-top: auto;
+			width: 300px;
+		}
+	}
+	@media screen and (min-width: 500px){
+		.promo__text-part{
+			left: 0%;
+			max-width: 50%;
+		}
+		.promo__img{
+			width: 300px;
+			object-fit: cover;
+		}
+	}
+	@media screen and (min-width: 600px){
+		.promo__text-part{
+			margin-left: 1.5rem;
+		}
+		.promo__img{
+			width: 350px;
+			object-fit: cover;
+		}
+	}
+	@media screen and (min-width: 767px){
+		.promo__text-part{
+			left: 30%;
+			max-width: 50%;
+			margin-left: 3rem;
+		}
+		.buttons{
+			flex-direction: row;
+			justify-content: flex-start!important;
+		}
+		.button{
+			margin-right: 3rem;
+		}
+		.promo__img{
+			width: unset;
+			transform: translateX(0);
+		}
+	}
+	@media screen and (min-width: 1200px){
+		.promo__text-part{
+			left: 0%;
+			max-width: 43%;
+			padding: 12.2rem 0;
+			margin: auto 0;
+			margin-left: 4rem;
+		}
+		.promo__text{
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 145%;
+		}
+		.promo__heading{
+			font-size: 5rem;
+			margin-bottom: 3rem;
+		}
+		.promo__inner{
+			justify-content: space-between;
+		}
+		.promo__img-part{
+			width: 45%;
+			max-width: 70%;
+		}
+		.promo__img{
+			width: 100%;
+		}
+		.button{
+			width: unset!important;
+		}
+	}
+	.text-block{
+		p{
+			@extend %text-default;
+			@extend %adaptive-text-16;
+			color: #666666;
+			margin-bottom: 1.5rem;
+			&:last-child{
+				margin-bottom: 3rem;
+			}
+		}
+		h1{
+			@extend %heading-default;
+			@extend %heading-20-to-35;
+			color: $dark-accent;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+		}
+		h2{
+			@extend %heading-default;
+			@extend %heading-16-to-20;
+			color: $dark;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+		h3{
+			@extend %adaptive-text-16;
+			@extend %heading-default;
+			color: $dark;
+			font-weight: bold;
+			margin-top: .6rem;
+			margin-bottom: .4rem;
+		}
+		ul{
+			margin-bottom: 1.5rem;
+		}
+		li{
+			@extend %text-default;
+			@extend %adaptive-text-16;
+			color: #666666;
+			&:before{
+				content: "• "
+			}
+		}
+		a{
+			color: $dark-accent;
+			@extend %adaptive-text-16;
+			@extend %heading-default;
+			text-decoration: underline;
+		}
+		.goto-link{
+			@extend %adaptive-text-14;
+			color: $light-accent;
+			display: flex;
+			align-items: center;
+			span{
+				margin-right: .8rem;
+			}
+		}
+	}
+	.about-portal-promo{
+		display: flex;
+		flex-direction: row;
+		padding-bottom: 3rem;
+	}
+	.about-portal-promo__text-part{
+		max-width: 100%;
+		@media (min-width: 768px){
+			max-width: 70%;
+		}
+		@media (min-width: 992px){
+			max-width: 60%;
+		}
+	}
+	.about-portal-promo__image-part{
+		width: fit-content;
+	}
+	.about-portal-promo___image-mix{
+		position: relative;
+		width: fit-content;
+		width: 200px;
+		transform: translateX(-25%);
+		@media (min-width: 992px){
+			transform: translateX(0%);
+		}
+	}
+	.about-portal-promo__image{
+
+	}
+	.about-portal-promo__laptop{
+		width: 300px;
+		@media (min-width: 768px){
+			width: 400px
+		}
+		@media (min-width: 992px){
+			width: 450px
+		}
+	}
+	.about-portal-promo__phone{
+		width: 60px;
+		position: absolute;
+		bottom: -50%;
+		transform: translateY(-40%);
+		left: 20%;
+		@media (min-width: 768px){
+			width: 80px;
+			left: 30%;
+			// transform: translateY(-20%);
+		}
+	}
+// /adc
 // social icons
 [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
@@ -1268,6 +1589,10 @@ body{
 	-moz-osx-font-smoothing: grayscale;
   }
 
+  .icon-logotype:before {
+    content: "\e919";
+    color: #ffffff;
+  }
   .icon-status:before {
 	content: "\e918";
 	color: #86be16;
