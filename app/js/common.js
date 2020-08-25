@@ -1,7 +1,7 @@
 $(function() {
 
 	const body = $('body');
-	$('html, body').css({maxHeight: 'unset', overflowY: 'auto'})
+	$('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
 	// <МОДАЛЬНЫЕ ОКНА>
 	// дефолтная скорость анимации модального окна
 	$.arcticmodal('setDefault', {
@@ -12,7 +12,7 @@ $(function() {
 		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
 	}
 	function accessScroll() {
-		return $('html, body').css({maxHeight: 'unset', overflowY: 'auto'})
+		return $('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
 	}
 
 	function closeOnSideTouch(touchWithoutClosing, classToRemove){
@@ -22,6 +22,9 @@ $(function() {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
 				accessScroll()
+			}
+			else {
+				blockScroll()
 			}
 			if(div.hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
@@ -40,6 +43,8 @@ $(function() {
 		})
 	}
 
+	$('.datepicker-item').datepicker()
+	//
 	// функция для объявления нового модального окна
 	// первый параметр - элемент, при нажатии на который открывается окно
 	// второй параметр - ID окна, которое должно показаться при клике на элемент первого параметра
@@ -112,6 +117,8 @@ $(function() {
 	closeOnSideTouch__noOverlay('.mobile-search, .call-search-btn', 'mobile-search--active')
 	$('.call-search-btn').click(() => $('.mobile-search').toggleClass('mobile-search--active'))
 
-	// graphics
+	$('.datepicker-item').on('keypress', function(event){
+    	event.preventDefault()
+	})
 
 });

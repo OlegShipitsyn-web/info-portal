@@ -94,7 +94,9 @@ hr{
 	width: auto;
 }
 // /TD
-
+.hide{
+	display: none;
+}
 .d-row{
     display: flex;
     flex-direction: row;
@@ -218,6 +220,12 @@ hr{
 }
 
 @media only screen and (min-width: 992px){
+	.show-lg{
+		display: flex;
+	}
+	.d-lg-none{
+	    display: none;
+	}
 	.d-lg-row{
 	    display: flex;
 	    flex-direction: row;
@@ -473,6 +481,9 @@ body{
 }
 .fz-14-to-16{
 	@extend %adaptive-text-16
+}
+.fz-16-to-18{
+	font-size: 1.6rem;
 }
 .btn-padding-adaptive{
 	padding: .6em 1.2em;
