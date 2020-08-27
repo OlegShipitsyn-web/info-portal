@@ -86,6 +86,7 @@ $(function() {
 	$(".accordion-header").on("click", function() {
 		$(this).toggleClass("accordion-header--active").next().slideToggle();
 	});
+	$(".accordion-header--active").next().slideToggle()
 
 	$('.scrolltop-btn').click(function(){
 		$("html, body").animate({ scrollTop: 0 }, 200);

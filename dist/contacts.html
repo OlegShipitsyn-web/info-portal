@@ -28,14 +28,23 @@
 			<div class="container">
 				<div class="row row--between">
 					<div class="logo row">
-						<a href="#" class="logo row">
-							<div class="logo__pic">
-								<span class="icon-logotype"></span>
+						<div class="logo__pic">
+							<div class="row">
+								<div class="logo__square logo__square--rounded logo-square--bg-light-accent"></div>
+								<div class="logo__square logo-square--bg-white"></div>
+								<div class="logo__square logo-square--bg-transparent"></div>
+								<div class="logo__square logo-square--bg-white"></div>
 							</div>
-							<div class="logo__text">
-								<span href="#" class="text text--medium--adaptive-to-18 text--color-white">Информ портал</span>
+							<div class="row">
+								<div class="logo__square logo-square--bg-white"></div>
+								<div class="logo__square logo-square--bg-transparent"></div>
+								<div class="logo__square logo-square--bg-white"></div>
+								<div class="logo__square logo-square--bg-white"></div>
 							</div>
-						</a>
+						</div>
+						<div class="logo__text">
+							<a href="#" class="text text--medium--adaptive-to-18 text--color-white">Информ портал</a>
+						</div>
 					</div>
 					<!-- SEARCH INPUT -->
 					<div class="search-input search-input--bg-white container mw-dynamic"
@@ -350,21 +359,97 @@
 							<div class="main-block">
 								<div class="main-block__header d-row jc-between">
 									<div class="main-block__heading">
-										<h2 class="main-block__title">связи (2)</h2>
+										<h2 class="main-block__title">Учредители (3)</h2>
 									</div>
 								</div>
-								<!-- block content -->
 								<div class="main-block__content">
 									<p class="main-block__text pt-0">
-										Сведения об аффилированных организациях и лицах на основании анализа информации из ЕГРЮЛ и контактных данных.
+										Согласно данным ЕГРЮЛ учредителями ООО "Лютик" являются 1 российское юридическое лицо, 1 иностранное юридическое лицо и 1 физическое лицо. Учредители акционерных обществ могут не являться текущими акционерами.
 									</p>
+									<p class="main-block__text">
+										Уставной капитал: 835 000 000 руб.
+									</p>
+
 									<!-- ADC BANER -->
 									<div class="adc-baner">
 										<img class="img-responsive" src="https://via.placeholder.com/871x230.png" alt="">
 									</div>
 									<!-- /ADC BANER -->
+
+									<div class="sorts sorts--four-items w-100 flex d-row jc-start ai-stretch">
+										<button class="sort-btn sort-btn--active btn fz-11-to-16 flex ai-center btn-padding-adaptive">Все</button>
+										<button class="sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">По учредителю</button>
+										<button class="sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">По руководителю</button>
+										<button class="sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">По адресу</button>
+									</div>
+									<ul>
+										<li class="search-item">
+											<a href="#">
+												<span class="search-item__heading d-col ai-start --color-light-accent">ПАО “Аэрофлот”
+													<span class="search-item__status good-status">Организация ликвидирована</span>
+												</span>
+												<div class="search-item__row w-100">
+													<span class="search-item__filter">По адресу</span>
+												</div>
+												<div class="search-item__row d-row">
+													<div class="search-item__row w-100">
+														<span class="search-item__key">Доля</span>
+														<span class="search-item__value">47 000 000 руб. (5,68%)</span>
+													</div>
+													<div class="search-item__row w-100">
+														<span class="search-item__key">Генеральный директор</span>
+														<span class="search-item__value">Савельев Виталий Геннадьевич</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ИНН</span>
+														<span class="identification-number__number">780700299724</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ОГРН</span>
+														<span class="identification-number__number">1108880008880</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ОГРИП</span>
+														<span class="identification-number__number">317774600316680</span>
+													</div>
+												</div>
+											</a>
+										</li>
+
+										<li class="search-item">
+											<a href="#">
+												<span class="search-item__heading d-col ai-start --color-light-accent">ПАО “Аэрофлот”
+													<span class="search-item__status middle-status">Организация ликвидирована</span>
+												</span>
+												<div class="search-item__row w-100">
+													<span class="search-item__filter">По руководителю, по учредителю</span>
+												</div>
+												<div class="search-item__row d-row">
+													<div class="search-item__row w-100">
+														<span class="search-item__key">Доля</span>
+														<span class="search-item__value">47 000 000 руб. (5,68%)</span>
+													</div>
+													<div class="search-item__row w-100">
+														<span class="search-item__key">Генеральный директор</span>
+														<span class="search-item__value">Савельев Виталий Геннадьевич</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ИНН</span>
+														<span class="identification-number__number">780700299724</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ОГРН</span>
+														<span class="identification-number__number">1108880008880</span>
+													</div>
+													<div class="mt-0 identification-number search-item__row">
+														<span class="identification-number__type">ОГРИП</span>
+														<span class="identification-number__number">317774600316680</span>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
 								</div>
-								<!-- /block content -->
 
 							</div>
 						</div>
@@ -394,14 +479,24 @@
 						<div class="footer__logo ai-start logo d-col">
 							<div class="logo__wrap d-row">
 								<div class="logo__pic">
-									<a href="#" class="logo row">
-										<div class="logo__pic">
-											<span class="icon-logotype"></span>
+									<div class="d-row">
+										<div class="logo__square logo__square--rounded logo-square--bg-light-accent">
 										</div>
-										<div class="logo__text">
-											<span href="#" class="text text--medium--adaptive-to-18 text--color-white">Информ портал</span>
-										</div>
-									</a>
+										<div class="logo__square logo-square--bg-white"></div>
+										<div class="logo__square logo-square--bg-transparent"></div>
+										<div class="logo__square logo-square--bg-white"></div>
+									</div>
+									<div class="row">
+										<div class="logo__square logo-square--bg-white"></div>
+										<div class="logo__square logo-square--bg-transparent"></div>
+										<div class="logo__square logo-square--bg-white"></div>
+										<div class="logo__square logo-square--bg-white"></div>
+									</div>
+								</div>
+
+								<div class="logo__text">
+									<a href="#" class="heading text--medium--adaptive-to-18 text--color-white">Информ
+										портал</a>
 								</div>
 							</div>
 							<div class="logo__subtitle"><a class="text text--color-white" href="">информпортал.ru

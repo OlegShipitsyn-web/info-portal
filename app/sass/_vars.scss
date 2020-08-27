@@ -137,6 +137,9 @@ hr{
 
 // Small (sm)
 @media only screen and (min-width: 576px){
+	.show-sm{
+		display: flex;
+	}
 	.d-sm-row{
 	    display: flex;
 	    flex-direction: row;
@@ -395,6 +398,9 @@ div[class*="--d-col"]{
 .uc{
     text-transform: uppercase;
 }
+.fw-normal{
+	font-weight: normal!important;
+}
 .tc{
     text-align: center;
 }
@@ -405,11 +411,23 @@ div[class*="--d-col"]{
     max-width: calc(100% - 15vw);
 }
 body{
+	.p-0{
+		padding: 0!important;
+	}
+	.block{
+		display: block;
+	}
 	.bold{
 	    font-weight: bold;
 	}
 	.ml-0{
 		margin-left: 0;
+	}
+	.pl-0{
+		padding-left: 0!important;
+	}
+	.pl-2{
+		padding-left: 2rem!important;
 	}
 	.ml-1{
 		margin-left: 1rem;
@@ -437,6 +455,15 @@ body{
 	}
 	.mb-15{
 		margin-bottom: 1.5rem;
+	}
+	.mb-1{
+		margin-bottom: 1rem;
+	}
+	.mb-0{
+		margin-bottom: 0!important;
+	}
+	.nodecoration{
+		text-decoration: none!important;
 	}
 	.strict-column{
 		flex-direction: column!important;
@@ -480,7 +507,7 @@ body{
 	font-size: 1.1rem;
 }
 .fz-14-to-16{
-	@extend %adaptive-text-16
+	@extend %adaptive-text-16;
 }
 .fz-16-to-18{
 	font-size: 1.6rem;
@@ -493,6 +520,9 @@ body{
 }
 .lh-md{
 	line-height: 120%;
+}
+.lh-lg{
+	line-height: 145%;
 }
 .fit-content{
 	width: fit-content;
@@ -599,7 +629,7 @@ button[class*="--bordered"]{
     background-color: $light;
 }
 *[class*="--bg-white"]{
-    background-color: $white;
+    background-color: $white!important;
 }
 *[class*="--bg-transparent"]{
     background-color: transparent;
@@ -613,11 +643,11 @@ button[class*="--bordered"]{
 *[class*="--color-light-accent"]{
     color: $light-accent;
 }
-*[class*="--color-dark-accent-lighten"]{
+*[class*="--color-dark-acc-lighten"]{
     color: $dark-accent-lighten;
 }
 *[class*="--color-black"]{
-    color: $dark;
+    color: $dark!important;
 }
 *[class*="--color-lighten"]{
     color: $lighten;
@@ -626,7 +656,7 @@ button[class*="--bordered"]{
     color: $light;
 }
 *[class*="--color-semi-dark"]{
-    color: $semi-dark;
+    color: $semi-dark!important;
 }
 *[class*="--color-semi-dark-lighten"]{
     color: $semi-dark-lighten;

@@ -403,6 +403,13 @@ body{
 		background-color: $light;
 	}
 }
+.search-item__filter{
+	color: $dark;
+	background: #F5F5F5;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	padding: .4rem .6rem;
+}
 .search-item__row{
 	flex-wrap: wrap;
 	align-items: center;
@@ -490,7 +497,7 @@ body{
 		input{
 			padding: 1.3rem 2rem;
 			width: 100%;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 		}
 	}
 	.btn{
@@ -748,8 +755,8 @@ body{
 		margin-right: 1.5rem;
 	}
 	img{
-		width: 1.3rem;
-		margin-left: .6rem;
+		width: 1.2rem;
+		margin-left: 1rem;
 	}
 }
 .sorting-btn-naming{
@@ -1027,7 +1034,7 @@ body{
 		align-items: flex-start;
 	}
 	aside .adc-baner{
-		margin-top: 2rem;
+		margin: 2rem 0;
 	}
 	aside>*:not(.usercard__navigation) {
     	display:none;
@@ -1038,12 +1045,13 @@ body{
 		}
 	}
 	.main-block .adc-baner{
-		margin-top: 1.5rem;
+		margin: 2rem 0;
 	}
 	.adc-baner{
 		width: 100%;
 		flex-grow: 1;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		margin: 2rem 0;
 		img{
 			flex-grow: 1;
 			object-fit: cover;
@@ -1564,6 +1572,7 @@ td, th{
 			color: $light-accent;
 			display: flex;
 			align-items: center;
+			letter-spacing: 0.03em;
 			span{
 				margin-right: .8rem;
 			}
@@ -1643,22 +1652,28 @@ td, th{
 }
 
 .filter-wrapper{
-	background: #FFFFFF;
+	background: transparent;
 	border: 1px solid #BDBDBD;
 	border-radius: 4px;
 	width: fit-content;
 	padding: .7rem 1rem;
 	max-height: 3.5rem;
-	width: 220px;
+	width: 200px;
+	display: flex;
+	@media screen and (min-width: 992px){
+		width: 220px;
+	}
 }
 .filter-wrapper label{
 	width: 100%;
     flex-wrap: nowrap;
     display: flex;
     justify-content: space-between;
+	align-items: center;
 }
 .filter-wrapper input{
 	width: 100%;
+	background: transparent;
 }
 
 .filter-title, .filter-item, .filter[type='text']{
@@ -1666,8 +1681,12 @@ td, th{
 	@extend %adaptive-text-16;
 	color: $semi-dark;
 }
+.filter[type='text']{
+	font-size: 1.4rem!important;
+}
 
 .filter-unit{
+	padding-top: 1rem;
 	margin-bottom: 1rem;
 	margin-right: 1rem;
 	flex-grow: 0;
@@ -1675,12 +1694,19 @@ td, th{
 	flex-shrink: 0;
 	position: relative;
 	@media screen and (min-width: 992px){
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 		margin-right: 6rem;
+		.filter-title{
+			margin-right: 2rem;
+			width: 5rem;
+		}
 	}
 }
 
 .select-wrapper {
-    width: 220px;
+    width: 200px;
     position: relative;
     height: 38px;
     color: #444;
@@ -1691,22 +1717,27 @@ td, th{
 	align-items: center;
 	max-height: 3.5rem;
 	overflow: hidden;
+	@media screen and (min-width: 992px){
+		width: 220px;
+	}
 }
 
 .select-wrapper > select {
 	@extend %text-default;
 	@extend %adaptive-text-16;
-	color: $semi-dark;
+	color: $dark-accent;
     width: 100%;
     padding: .7rem 1rem;
     background: $white;
     border: 0;
     appearance: none;
-    z-index: 1;
     -webkit-appearance: none;
     -moz-appearance: none;
 	flex-shrink: 0;
 	flex-wrap: nowrap;
+	position: relative;
+	z-index: 2;
+	background: transparent;
 }
 
 .select-wrapper > select::-ms-expand{
@@ -1760,6 +1791,99 @@ td, th{
 	line-height: 120%;
 }
 // /filters
+.page-counter{
+	flex-direction: row;
+	color: $semi-dark;
+	@extend %adaptive-text-16;
+	line-height: 145%;
+}
+	.select-wrapper .pagination__select{
+			padding-right: 5rem;
+			padding-top: .3rem;
+			padding-bottom: .3rem;
+			position: relative;
+			z-index: 2;
+			background: transparent;
+	}
+	.select-wrapper{
+		height: unset;
+		.select-arrow{
+			z-index: 1
+		}
+	}
+.pagination-wrapper{}
+.pagination__page-list{}
+.pagination__item{}
+.pagination__total{}
+.pagination__more{
+	font-size: 16px;
+	line-height: 145%;
+	color: $dark-accent;
+	letter-spacing: 0.08em;
+	font-weight: 600;
+}
+.pagination__arrow{
+	margin: 0 1.5rem;
+	margin-top: 1px;
+	@media screen and (min-width: 992px){
+		margin: 0 2rem;
+		margin-top: -2px;
+	}
+}
+.pagination__arrow--reversed{
+	transform: rotate(180deg);
+}
+.pagination__link{
+	padding: .5rem .55rem;
+	@extend %adaptive-text-16;
+	line-height: 145%;
+	color: $dark-accent;
+	font-weight: 600;
+	border-radius: 2px;
+	margin: 0 .2rem;
+	@media screen and (min-width: 567px){
+		padding: .5rem .85rem;
+		margin: 0 .3rem;
+	}
+}
+.pagination__link--active{
+	background: $light-accent;
+	color: $white;
+}
+.sorts--four-items .sort-btn{
+		 padding: .3em .4em;
+}
+
+.process__text-block{
+	span, i{
+		line-height: 145%;
+	}
+	i, a{
+		color: $semi-dark;
+		font-weight: normal!important;
+		text-decoration: none;
+		margin-top: .3em;
+	}
+}
+.handbook{
+	.accordion-content{
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 2rem;
+		@media screen and (min-width: 576px){
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
+	padding: 1.5rem 0!important;
+}
+.handbook__region-btn{
+	margin-right: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.part-wrapper{
+}
 // social icons
 [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */

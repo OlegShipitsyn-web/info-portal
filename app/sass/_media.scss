@@ -49,10 +49,14 @@
         min-width: 30rem;
         padding: 4rem calc(2rem + 5vw);
     }
+    .sorts--four-items .sort-btn{
+        padding: .6em 1.1em;
+    }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px){
+
 	.footer{
         .row-upper, .row-lower{
             flex-direction: row;
@@ -164,7 +168,6 @@
 }
 
 @media only screen and (min-width: 576px){
-
     .fz-11-to-16{
     	font-size: 1.4rem;
     }
@@ -773,6 +776,9 @@
     }
     .btn-padding-adaptive{
     	padding: .7em 1.3em;
+    }
+    .sorts--four-items .sort-btn{
+        padding: .7em 1.3em;
     }
     %heading-16-to-20{
         font-size: 2rem;
