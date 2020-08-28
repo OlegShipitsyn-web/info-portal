@@ -47,6 +47,7 @@ gulp.task('js', function() {
 		'app/libs/dynamic-adapt/dynamic-adapt.js',
 		'app/libs/arcticmodal/jquery.arcticmodal-0.3.min.js',
 		'./app/libs/air-datepicker/datepicker.min.js',
+		'./app/libs/masked-input/jquery.maskedinput.min.js',
 
 		'app/js/common.js' // Всегда в конце
 		])

@@ -95,7 +95,7 @@ hr{
 }
 // /TD
 .hide{
-	display: none;
+	display: none!important;
 }
 .d-row{
     display: flex;
@@ -131,6 +131,9 @@ hr{
 .jc-between{
 	justify-content: space-between;
 }
+.flex-wrap{
+	flex-wrap: wrap;
+}
 .nowrap{
 	white-space: nowrap;
 }
@@ -138,7 +141,7 @@ hr{
 // Small (sm)
 @media only screen and (min-width: 576px){
 	.show-sm{
-		display: flex;
+		display: flex!important;
 	}
 	.d-sm-row{
 	    display: flex;
@@ -503,6 +506,9 @@ body{
 .fz-12-to-14{
 	@extend %adaptive-text-14
 }
+.fz-20-to-40{
+	font-size: 2rem!important;
+}
 .fz-11-to-16{
 	font-size: 1.1rem;
 }
@@ -655,7 +661,7 @@ button[class*="--bordered"]{
 *[class*="--color-lighter"]{
     color: $light;
 }
-*[class*="--color-semi-dark"]{
+*[class*="--color-semi-black"]{
     color: $semi-dark!important;
 }
 *[class*="--color-semi-dark-lighten"]{

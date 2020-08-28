@@ -1,4 +1,38 @@
+if ($('.adc-page').length) {
+
+	$(window).on('load resize', function(){
+		changePicture('.page-switcher__desktop', './img/desktop.png');
+		$('.page-pictures__show').css({marginLeft: `${$('.mobile').offset().left}px`})
+		$('.adc-cards .card').height(getAdcCardsMaxHeight())
+	})
+
+}
+
+function getAdcCardsMaxHeight(){
+	let heights = [];
+	$('.adc-cards .card__text').each(function(){
+		heights.push( $(this).height() )
+	})
+	return Math.max(...heights)
+}
+
+function changePicture(elem, imgPath){
+	const makeChange = function makeChange() {
+		$('.page-switcher .sort-btn').each(function() {
+			$(this).removeClass('sort-btn--active')
+		})
+		$(elem).addClass('sort-btn--active')
+		$('.desktop').attr('src', imgPath)
+	}
+	$(elem).click(makeChange)
+
+	return makeChange()
+}
+
 $(function() {
+
+	changePicture('.page-switcher__desktop', './img/desktop.png')
+	changePicture('.page-switcher__mobile', './img/mobile.png')
 
 	const body = $('body');
 	$('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
@@ -121,5 +155,7 @@ $(function() {
 	$('.datepicker-item').on('keypress', function(event){
     	event.preventDefault()
 	})
+
+	$('.masked-phone-input').mask('+7(999) 999 99 99');
 
 });
