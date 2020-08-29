@@ -854,6 +854,14 @@ body{
 .sort-btn{
 	padding: 1.1rem 2rem;
 }
+.raiting-block{
+	.fact{
+		flex-direction: column!important;
+		align-items: flex-start;
+		margin-bottom: 1rem;
+		font-size: 1.6rem;
+	}
+}
 .accordion-content .sort-btn, .sorts .sort-btn{
 	border-radius: 0;
 	color: $semi-dark;

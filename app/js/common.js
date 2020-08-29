@@ -1,5 +1,10 @@
-if ($('.adc-page').length) {
+// функции и эвент-листенеры вынесены за пределы jquery.ready
+// блока для корректной работы в firefox
 
+// если мы находимлся на странице adc.html
+if ($('.adc-page').length) {
+	// при загрузке и ресайзе запускаем функции для выравнивания высоты
+	// adc cards и смены изображений по клику
 	$(window).on('load resize', function(){
 		changePicture('.page-switcher__desktop', './img/desktop.png');
 		$('.page-pictures__show').css({marginLeft: `${$('.mobile').offset().left}px`})
@@ -7,8 +12,10 @@ if ($('.adc-page').length) {
 	})
 }
 
+// если на странице присутствует таблица финансов (таблица со сменяющимися пунктами)
+// в последнем столбце на мобильных устройствах
 if ($('.finances-table').length){
-
+	// метяем аттрибуты colspan для корректного отображения на всех типах устройств
 	$(window).on('resize load', function(){
 		if(window.matchMedia('(min-width: 568px)').matches){
 			$('.finances-table__explain-expanded').attr("colspan","1");
@@ -18,6 +25,7 @@ if ($('.finances-table').length){
 	})
 }
 
+// функция возвращает высоту самой большой карточки из adc-cards
 function getAdcCardsMaxHeight(){
 	let heights = [];
 	$('.adc-cards .card__text').each(function(){
@@ -26,6 +34,7 @@ function getAdcCardsMaxHeight(){
 	return Math.max(...heights)
 }
 
+// функция для изменения картинки по клику на копку (страница adc.html)
 function changePicture(elem, imgPath){
 	const makeChange = function makeChange() {
 		$('.page-switcher .sort-btn').each(function() {
@@ -38,15 +47,25 @@ function changePicture(elem, imgPath){
 
 	return makeChange()
 }
-// ==========================
+
+// функция, содержащая в себе логику разбиения таблицы финансов на N
+// количество подмассивов (в зависимости от количества колонок в таблице)
+// в каждый из подмассивов попадает контент с классами .real-number для
+// последующего встраивания в колонку и изменения по клику на кнопки-стрелочки
 function getSeparatedTableColumns(){
 
+	// вычисляем общее количество сменяемых элементов в таблице
 	const valuesToSwitch = $('.finances-table .real-number');
+	// вычисляем количество колонок со сменяемым контентом
 	const rowsQuantity = $('.finances-table .finances-table__thead-numeric').length;
 
+	// создаём переменную для итерирования
 	let rowsQuantity_iterable = rowsQuantity;
 
+	// переменная для финального массива из n-ного количества подмассивов
+	// с контентом - в одном подмассиве - контент одной колонки
 	let separatedTableColumns = [];
+	// создаём изменяющуюся переменную для подмассива
 	let subArr = [];
 
 	for(; rowsQuantity_iterable > 0; rowsQuantity_iterable--){
@@ -60,14 +79,16 @@ function getSeparatedTableColumns(){
 			separatedTableColumns.push(subArr);
 			subArr = [];
 	}
+	// возвращаем массив и количество колонок с изменяющимся контентом
 	return {
 				cols: separatedTableColumns,
 				size: rowsQuantity
 			};
 }
-// =======================
+// создаём счётчик для переключения значений колонок в таблице
 let tableCounter = 0;
 
+// функция возвращает корректное значение счётчика для работы со сменой контента колонок
 function getColCounter(sign){
 	const size = getSeparatedTableColumns().size;
 	if (sign === 'plus') {
@@ -78,7 +99,7 @@ function getColCounter(sign){
 	}
 }
 
-
+// функция меняет значения в мобильной колонке и встраивает контент
 function switchCurrentFinanceColumn(col_index = 0){
 	const columns = getSeparatedTableColumns().cols;
 	const size    = getSeparatedTableColumns().size;
@@ -102,23 +123,30 @@ function switchCurrentFinanceColumn(col_index = 0){
 
 $(function() {
 
+	// вызываем функцию для установления дефолтного индекса колонки (0)
 	switchCurrentFinanceColumn();
 
+	// при клике меняет контент на контент следующей колонки в таблице
 	$('.switch-btn-next').click(() => switchCurrentFinanceColumn(getColCounter('plus')))
+	// при клике меняет контент на контент предыдущей колонки в таблице
 	$('.switch-btn-prev').click(() => switchCurrentFinanceColumn(getColCounter('minus')))
 
 
+	// устанавливаем смену картинок при клике на соответствующие кнопки(adc.html)
 	changePicture('.page-switcher__mobile', './img/mobile.png')
 	changePicture('.page-switcher__desktop', './img/desktop.png')
 
-	const body = $('body');
+	// устанавливаем дефолтные значения прокрутки
+	// нужно для работы с блоком скролла и разрешением скролла
+	// при взаимодействии с некоторыми ui элементами
 	$('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
-	// <МОДАЛЬНЫЕ ОКНА>
+
 	// дефолтная скорость анимации модального окна
 	$.arcticmodal('setDefault', {
 		speed: 200
 	});
 
+	// функции блокировки скролла и разрешения скролла
 	function blockScroll() {
 		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
 	}
@@ -126,9 +154,14 @@ $(function() {
 		return $('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
 	}
 
+	// "костыльная" функция закрытия соответствющих элементов при клике не на них и не
+	// на их детей
 	function closeOnSideTouch(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
 			var div = $(touchWithoutClosing);
+			// if (div[0] === $('.usercard__sidebar')[0]) {
+			//
+			// }
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
@@ -145,6 +178,7 @@ $(function() {
 		})
 	}
 
+	// такая же функция для элементов без овелея
 	function closeOnSideTouch__noOverlay(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
 			var div = $(touchWithoutClosing);
@@ -154,8 +188,9 @@ $(function() {
 		})
 	}
 
+	// инициализируем дейтпикер
 	$('.datepicker-item').datepicker()
-	//
+
 	// функция для объявления нового модального окна
 	// первый параметр - элемент, при нажатии на который открывается окно
 	// второй параметр - ID окна, которое должно показаться при клике на элемент первого параметра
@@ -194,6 +229,7 @@ $(function() {
 	closeOnSideTouch(".search-input .search-list", 'show-results')
 	// </Окно поиска>
 
+	// реализуем аккордион
 	$(".accordion-header").on("click", function() {
 		$(this).toggleClass("accordion-header--active").next().slideToggle();
 	});
@@ -204,6 +240,7 @@ $(function() {
 		return false;
 	});
 
+	// реализуем раскрытие меню
 	$('.usercard__menu-toggle-btn, .usercard__close-nav-btn').click(() => {
 		$('.usercard__sidebar').toggleClass('usercard__sidebar--active');
 		if($('.usercard__sidebar--active').length){
@@ -217,6 +254,7 @@ $(function() {
 
 	closeOnSideTouch('.usercard__sidebar', 'usercard__sidebar--active')
 
+	// фукнция для корректного переноса заголовка страницы с иконкой на мобильных устройствах
 	const makeSeparatedHeading = heading =>{
 		let textArr = heading.text().split(" ").reverse()
 		heading.text("")
@@ -233,6 +271,7 @@ $(function() {
     	event.preventDefault()
 	})
 
+	// инициализация маски для телефона
 	$('.masked-phone-input').mask('+7(999) 999 99 99');
 
 });
