@@ -20,7 +20,8 @@ $negative: #0B0909;
 
 button[class*="--bg-light-accent"]{
 	&:hover{
-		background-color: lighten($light-accent, 5%)!important
+		background-color: lighten($light-accent, 5%)!important;
+		border-color: lighten($light-accent, 5%)!important;
 	}
 }
 // hr в некоторых местах кроссбраузерно фиксит баг с верхними отступами на мобильных устройствах
@@ -637,6 +638,18 @@ button[class*="--bordered"]{
 *[class*="--bg-white"]{
     background-color: $white!important;
 }
+*[class*="--bg-good"]{
+    background-color: $high;
+}
+*[class*="--bg-medium"]{
+    background-color: $medium;
+}
+*[class*="--bg-bad"]{
+    background-color: $low;
+}
+*[class*="--bg-negative"]{
+    background-color: $negative;
+}
 *[class*="--bg-transparent"]{
     background-color: transparent;
 }
@@ -644,32 +657,44 @@ button[class*="--bordered"]{
 
 // color modificators
 *[class*="--color-dark-accent"]{
-    color: $dark-accent;
+    color: $dark-accent!important;
 }
 *[class*="--color-light-accent"]{
-    color: $light-accent;
+    color: $light-accent!important;
 }
 *[class*="--color-dark-acc-lighten"]{
-    color: $dark-accent-lighten;
+    color: $dark-accent-lighten!important;
 }
 *[class*="--color-black"]{
     color: $dark!important;
 }
 *[class*="--color-lighten"]{
-    color: $lighten;
+    color: $lighten!important;
 }
 *[class*="--color-lighter"]{
-    color: $light;
+    color: $light!important;
 }
 *[class*="--color-semi-black"]{
     color: $semi-dark!important;
 }
 *[class*="--color-semi-dark-lighten"]{
-    color: $semi-dark-lighten;
+    color: $semi-dark-lighten!important;
 }
 *[class*="--color-semi-lighten"]{
-    color: $semi-lighten;
+    color: $semi-lighten!important;
 }
 *[class*="--color-white"]{
-    color: $white;
+    color: $white!important;
+}
+*[class*="--color-good"]{
+    color: $high!important;
+}
+*[class*="--color-medium"]{
+    color: $medium!important;
+}
+*[class*="--color-bad"]{
+    color: $low!important;
+}
+*[class*="--color-negative"]{
+    color: $negative!important;
 }

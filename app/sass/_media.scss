@@ -91,7 +91,7 @@
     }
     .modal__content{
         min-width: calc(30rem + 3.5vw);
-        padding: 4rem calc(1rem + 6vw);
+        padding: 4rem calc(1rem + 3vw);
     }
     .contact-us{
         .modal__content{
@@ -572,7 +572,7 @@
 		display: none;
 	}
 	.owner-baner-inner{
-		margin-top: 2rem;
+		margin-top: 1rem;
 		.btn-std{
 			white-space: nowrap;
 			svg{
