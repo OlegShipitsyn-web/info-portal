@@ -159,9 +159,9 @@ $(function() {
 	function closeOnSideTouch(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
 			var div = $(touchWithoutClosing);
-			// if (div[0] === $('.usercard__sidebar')[0]) {
-			//
-			// }
+			if (div[0] === $('.usercard__sidebar')[0]) {
+
+			}
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
@@ -171,6 +171,26 @@ $(function() {
 				blockScroll()
 			}
 			if(div.hasClass(classToRemove)){
+				$('.overlay').css({zIndex: 100, display: 'block'})
+			}else{
+				$('.overlay').css({zIndex: -100, display: 'none'})
+			}
+		})
+	}
+
+	function handleSidebar(touchWithoutClosing, classToRemove){
+		$(document).on('mouseup',function (e){
+			var div = $('.usercard__navigation');
+
+			if (!div.is(e.target) && div.has(e.target).length === 0) {
+				$('.usercard__sidebar').removeClass(classToRemove)
+				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
+				accessScroll()
+			}
+			else {
+				blockScroll()
+			}
+			if($('.usercard__sidebar').hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
 			}else{
 				$('.overlay').css({zIndex: -100, display: 'none'})
@@ -252,7 +272,7 @@ $(function() {
 		}
 	})
 
-	closeOnSideTouch('.usercard__sidebar', 'usercard__sidebar--active')
+	handleSidebar('.usercard__sidebar', 'usercard__sidebar--active')
 
 	// фукнция для корректного переноса заголовка страницы с иконкой на мобильных устройствах
 	const makeSeparatedHeading = heading =>{
