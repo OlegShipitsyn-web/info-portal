@@ -696,7 +696,7 @@
         padding-top: 2rem;
     }
     .header{
-        padding: 1.4rem 0;
+        padding: 1rem 0;
     }
     .heading--huge-adaptive-to-4{
         font-size: 4rem;
@@ -821,6 +821,30 @@
     }
 }
 @media only screen and (min-width : 1200px){
+    .main-block {
+        .config-btn-row{
+            flex-direction: row!important;
+            justify-content: space-between!important;
+            align-items: center!important;
+            margin-top: 2rem;
+        }
+        .btn-wrap{
+            width: auto;
+            margin: 0!important;
+            padding: 0!important;
+            width: unset!important;
+        }
+        .btn-std{
+            padding: .8em .8em;
+        }
+        .config-btn{
+            width: unset!important;
+            margin: 0!important;
+            margin-left: 1rem!important;
+            padding: .4em .9em;
+
+        }
+    }
     .fz-20-to-40{
     	font-size: 4rem!important
     }

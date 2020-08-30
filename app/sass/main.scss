@@ -170,9 +170,10 @@ body{
 }
 .logo{
 	.logo__text{
-		margin-left: 10px;
+		margin-left: 2px;
 		white-space: nowrap;
 		margin-top: 3px;
+		font-size: 2.8rem;
 	}
 	.logo__subtitle{
 		display: none;
@@ -181,6 +182,10 @@ body{
 	.icon-logotype{
 		font-size: 3.4rem;
 	}
+	// .logo__pic{
+	// 	width: 9rem;
+	//
+	// }
 }
 .search-btn-container{
 	position: relative;
@@ -1323,6 +1328,15 @@ body{
 	}
 	.level--high{
 		background: $high;
+	}
+	.level--medium{
+		background: $medium;
+	}
+	.level--bad{
+		background: $low;
+	}
+	.level--negative{
+		background: $negative;
 	}
 	.facts__heading{
 		@extend %heading-default;
