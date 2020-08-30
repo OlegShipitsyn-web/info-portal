@@ -1718,7 +1718,7 @@ td, th{
 }
 
 .filter-wrapper{
-	background: transparent;
+	background: white;
 	border: 1px solid #BDBDBD;
 	border-radius: 4px;
 	width: fit-content;
@@ -1742,7 +1742,12 @@ td, th{
 	background: transparent;
 }
 
-.filter-title, .filter-item, .filter[type='text']{
+.filter-item, .filter[type='text']{
+	@extend %text-default;
+	@extend %adaptive-text-16;
+	color: $dark-accent;
+}
+.filter-title{
 	@extend %text-default;
 	@extend %adaptive-text-16;
 	color: $semi-dark;
@@ -1803,7 +1808,6 @@ td, th{
 	flex-wrap: nowrap;
 	position: relative;
 	z-index: 2;
-	background: transparent;
 }
 
 .select-wrapper > select::-ms-expand{
@@ -1874,7 +1878,7 @@ td, th{
 	.select-wrapper{
 		height: unset;
 		.select-arrow{
-			z-index: 1
+			z-index: 10;
 		}
 	}
 .pagination-wrapper{
