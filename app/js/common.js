@@ -159,9 +159,6 @@ $(function() {
 	function closeOnSideTouch(touchWithoutClosing, classToRemove){
 		$(document).on('mouseup',function (e){
 			var div = $(touchWithoutClosing);
-			if (div[0] === $('.usercard__sidebar')[0]) {
-
-			}
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
