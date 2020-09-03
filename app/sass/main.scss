@@ -216,6 +216,8 @@ body{
 	span{
 		width: 100%;
 		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
 	}
 }
 .scrolltop-btn{
@@ -248,6 +250,9 @@ body{
 	}
 	.footer__translate-row{
 		display: none;
+	}
+	.btn__text{
+		font-size: 1.4rem;
 	}
 }
 .link-list{
