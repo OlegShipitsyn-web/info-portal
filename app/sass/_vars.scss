@@ -412,6 +412,11 @@ div[class*="--d-col"]{
     max-width: calc(100% - 15vw);
 }
 body{
+	.mr-responsive-lg{
+		@media screen and (min-width: 992px){
+			margin-right: calc(2rem + 1vw)
+		}
+	}
 	.mb-0{
 		margin-bottom: 0!important;
 	}
