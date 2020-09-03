@@ -30,10 +30,7 @@
 					<div class="logo row">
 						<a href="#" class="logo row">
 							<div class="logo__pic">
-								<span class="icon-logotype"></span>
-							</div>
-							<div class="logo__text">
-								<span href="#" class="text text--color-white">InnCo</span>
+								<img src="./img/logotype.svg" alt="">
 							</div>
 						</a>
 					</div>
@@ -157,6 +154,11 @@
 										</div>
 									</a>
 								</li>
+								<div class="d-row search-list__metasearch">
+									<a class="--color-dark-acc-lighten fz-11-to-16 ul" href="">Смотреть все</a>
+									<a class="--color-dark-acc-lighten fz-11-to-16 ul" href="">Юр. Лица(7857)</a>
+									<a class="--color-dark-acc-lighten fz-11-to-16 ul" href="">ИП(1830)</a>
+								</div>
 							</ul>
 						</div>
 					</div>
@@ -336,6 +338,11 @@
 
 						<!-- CONTAINERS FOR TRANSITIONING BLOCKS FROM CENTRAL PART TO SIDEBAR -->
 						<div class="owner-baner-placeholder w-100"></div>
+						<!-- ADC BANER -->
+						<div class="adc-baner mb-0">
+							<img class="img-responsive" src="https://via.placeholder.com/230x330.png" alt="">
+						</div>
+						<!-- /ADC BANER -->
 						<div class="courts-placeholder w-100"></div>
 						<div class="debts-placeholder w-100"></div>
 						<div class="licenses-placeholder w-100"></div>
@@ -436,12 +443,13 @@
 						</div>
 						<!-- /ADC BANER -->
 
+
 						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block main-block--alert">
 								<div class="main-block__header">
 									<div class="main-block__heading">
-										<h2 class="main-block__title">Ликвидация</h2>
+										<h2 class="main-block__title --color-bad">Ликвидация</h2>
 									</div>
 								</div>
 
@@ -458,6 +466,9 @@
 											<span class="way">Прекращение деятельности юридического лица в связи с исключением из ЕГРЮЛ на основании п.2 ст.21.1 Федерального закона от 08.08.2001 №129-ФЗ</span>
 										</p>
 									</div>
+									<a href="#" class="d-row">
+										<span class="main-block__link-text fz-12-to-14 uc bold --color-dark-acc-lighten ml-0">Подробнее в выписке из ЕГРЮЛ</span>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -467,7 +478,7 @@
 						<div class="container owner-baner">
 							<div class="main-block --bg-acc-light-gradient owner-baner-inner" data-da="owner-baner-placeholder,1,768,min">
 								<div class="main-block__header">
-									<div class="main-block__heading">
+									<div class="owner-baner__heading">
 										<h2 class="main-block__title main-block__title--color-white">Это ваша компания?</h2>
 									</div>
 								</div>
@@ -493,11 +504,11 @@
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Реквизиты</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
+								<div class="main-block__content--accent-header">
 									<div class="main-block__info">
 										<div class="main-block__info-content">
 											<div class="main-block__info-item info-item">
@@ -592,11 +603,11 @@
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Виды деятельности</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
+								<div class="main-block__content--accent-header">
 									<p class="main-block__text">Виды деятельности в соответствии с классификатором ОКВЭД.</p>
 									<div class="main-block__info">
 										<div class="text-block">
@@ -623,29 +634,28 @@
 						<div class="container hide-767">
 							<div class="raiting-block main-block" data-da="courts-placeholder,1,768,min">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Рейтинг и факты</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
+								<div class="main-block__content--accent-header">
 									<ul class="facts__list facts__list--nowrapper">
 										<li class="facts__item fact flex d-col">
-											<span class="fact__key bold">Дисквалифицированные лица</span>
-											<span class="fact__value --color-good">Нет в реестре</span>
+											<span class="fact__key mr-1">Дисквалифицированные лица</span>
+											<span class="fact__value --color-light-accent mr-auto ml-0">Нет в реестре</span>
 										</li>
 										<li class="facts__item fact flex d-col">
-											<span class="fact__key bold">Массовые учредители</span>
-											<span class="fact__value --color-good">Нет в реестре</span>
+											<span class="fact__key mr-1">Массовые учредители</span>
+											<span class="fact__value --color-light-accent mr-auto ml-0">Нет в реестре</span>
 										</li>
 										<li class="facts__item fact flex d-col">
-											<span class="fact__key bold">Массовые руководители</span>
-											<span class="fact__value --color-good">Нет в реестре</span>
+											<span class="fact__key mr-1">Массовые руководители</span>
+											<span class="fact__value --color-light-accent mr-auto ml-0">Нет в реестре</span>
 										</li>
 									</ul>
 									<a href="#" class="main-block__link row mr-auto ml-0">
 										<span class="main-block__link-text text--color-dark-acc-lighten">Все</span>
-										<img class="main-block__link-img" src="./img/arrow-right-blue.svg"
-											alt="">
+										<img class="main-block__link-img" src="./img/arrow-right-blue.svg" alt="">
 									</a>
 								</div>
 							</div>
@@ -656,24 +666,24 @@
 						<div class="container hide-767">
 							<div class="main-block" data-da="debts-placeholder,1,768,min">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
-										<h2 class="main-block__title main-block__title--color-white">Долги</h2>
+									<div class="main-block__heading main-block__accent-header">
+										<h2 class="main-block__title main-block__title--color-white">Связи</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
-									<p class="main-block__text">Найдены сведения о наличии исполнительных производств в отношении ООО "Лютик":</p>
+								<div class="main-block__content--accent-header">
+									<p class="main-block__text">Выявлена 4 связанных c ИП Кузнецов Сергей Петрович организаций.</p>
 									<ul class="facts__list facts__list--nowrapper">
 										<li class="facts__item fact flex d-row">
-											<span class="fact__key bold">Производств</span>
-											<span class="fact__value --color-bad">23</span>
+											<span class="fact__key bold mr-1">Всего</span>
+											<span class="fact__value fact__value--big --color-light-accent mr-auto">4</span>
 										</li>
 										<li class="facts__item fact flex d-row">
-											<span class="fact__key bold">Штрафы</span>
-											<span class="fact__value --color-medium">4</span>
+											<span class="fact__key bold mr-1">По адресу</span>
+											<span class="fact__value fact__value--big --color-light-accent mr-auto">2</span>
 										</li>
 										<li class="facts__item fact flex d-row">
-											<span class="fact__key bold">Взыскания</span>
-											<span class="fact__value --color-good">2</span>
+											<span class="fact__key bold mr-1">По руководителю</span>
+											<span class="fact__value fact__value--big --color-light-accent mr-auto">2</span>
 										</li>
 									</ul>
 									<a href="#" class="main-block__link row mr-auto ml-0">
@@ -690,18 +700,18 @@
 						<div class="container hide-767">
 							<div class="main-block" data-da="licenses-placeholder,1,768,min">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Лицензии</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
+								<div class="main-block__content--accent-header">
 									<ul class="facts__list facts__list--nowrapper">
 										<li class="facts__item fact flex d-row">
-											<span class="fact__key bold">Всего</span>
-											<span class="fact__value --color-good">262</span>
+											<span class="fact__key bold mr-1">Всего</span>
+											<span class="fact__value  --color-light-accent fact__value--big mr-auto">2</span>
 										</li>
 									</ul>
-									<p class="main-block__text">Организация имеет 262 лицензии по 16 видам лицензируемой деятельности</p>
+									<p class="main-block__text mt-1">Организация имеет 2 лицензии по 2 видам лицензируемой деятельности</p>
 									<a href="#" class="main-block__link row mr-auto ml-0">
 										<span class="main-block__link-text text--color-dark-acc-lighten">Все</span>
 										<img class="main-block__link-img" src="./img/arrow-right-blue.svg"
@@ -717,12 +727,12 @@
 						<div class="container">
 							<div class="main-block changes">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Госзакупки</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
-									<div class="sorts w-100 flex d-row jc-start ai-stretch">
+								<div class="main-block__content--accent-header">
+									<div class="sorts w-100 flex d-row jc-start ai-stretch mt-0">
 										<button class="sort-btn sort-btn--active btn fz-14-to-16 flex ai-center btn-padding-adaptive">Поставщик</button>
 										<button class="sort-btn btn fz-14-to-16 flex ai-center btn-padding-adaptive">Заказчик</button>
 									</div>
@@ -745,13 +755,13 @@
 						<div class="container">
 							<div class="main-block changes">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Похожие ИП</h2>
 									</div>
 								</div>
-								<div class="main-block__content">
+								<div class="main-block__content--accent-header">
 									<div class="text-block d-col ai-start">
-										<a class="mt-15 fw-normal" href="">ИП Волкова Оксана Анатольевна</a>
+										<a class="fw-normal" href="">ИП Волкова Оксана Анатольевна</a>
 										<a class="mt-15 fw-normal" href="">ИП Торлопова Марина Анатольевна</a>
 										<a class="mt-15 fw-normal" href="">ИП Лукша Максим Валентинович</a>
 										<a class="mt-15 fw-normal" href="">ИП Устюжанинов Дмитрий Николаевич</a>
@@ -765,11 +775,11 @@
 						<div class="container">
 							<div class="main-block">
 								<div class="main-block__header --bg-dark-accent">
-									<div class="main-block__heading">
+									<div class="main-block__heading main-block__accent-header">
 										<h2 class="main-block__title main-block__title--color-white">Краткая справка</h2>
 									</div>
 								</div>
-								<div class="main-block__content --color-semi-black">
+								<div class="main-block__content--accent-header --color-semi-black">
 									<p class="main-block__text">ИП Кузнецов Сергей Петрович зарегистрирован 7 июля 1995 г. регистратором МЕЖРАЙОННАЯ ИНСПЕКЦИЯ ФЕДЕРАЛЬНОЙ НАЛОГОВОЙ СЛУЖБЫ № 5 ПО РЕСПУБЛИКЕ КОМИ. Основным видом деятельности является «Аренда и управление собственным или арендованным недвижимым имуществом». ИП присвоены ИНН 110100086635 и ОГРНИП 304110105000077. Полный перечень юридических лиц, в которых участвует Кузнецов Сергей Петрович (ИНН 110100086635).</p>
 									<p class="main-block__text">Полный перечень юридических лиц, в которых участвует <a class="--color-dark-accent ul" href="">Кузнецов Сергей Петрович (ИНН 110100086635).</a></p>
 								</div>
@@ -801,10 +811,7 @@
 							<div class="logo__wrap d-row">
 								<a href="#" class="logo row">
 									<div class="logo__pic">
-										<span class="icon-logotype"></span>
-									</div>
-									<div class="logo__text">
-										<span href="#" class="text text--color-white">InnCo</span>
+										<img src="./img/logotype.svg" alt="">
 									</div>
 								</a>
 

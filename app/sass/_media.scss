@@ -41,7 +41,13 @@
 }
 @media only screen and (min-width: 320px ){
     %card-padding-adaptive{
-    	padding: 1.5rem 1rem 1.5rem 1rem;
+    	padding: 2rem .5rem 0rem .5rem;
+    }
+    .usercard{
+        .usercard__header{
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
     }
 }
 @media only screen and (min-width: 360px){
@@ -51,6 +57,9 @@
     }
     .sorts--four-items .sort-btn{
         padding: .6em 1.1em;
+    }
+    .fz-11-to-16{
+        font-size: 1.25rem;
     }
 }
 
@@ -173,6 +182,21 @@
 }
 
 @media only screen and (min-width: 576px){
+    .usercard{
+        .usercard__header{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    .owner-baner-inner{
+        .main-block__title{
+            padding-left: .5rem;
+        }
+		.btn-std{
+			white-space: nowrap;
+            margin-top: 0!important;
+		}
+	}
     .fz-11-to-16{
     	font-size: 1.4rem;
     }
@@ -208,7 +232,7 @@
     .main-sources__cards-equal{
         .card{
             width: 30%;
-            padding: 4rem 2rem;
+            padding: 4rem 1.5rem;
             margin-left: 1rem;
             margin-right: 1rem;
             text-align: center;
@@ -256,7 +280,7 @@
 
 // DYNAMIC PADDINGS
     %card-padding-adaptive{
-        padding: 1.7rem 1.2rem 1.7rem 1.2rem;
+        padding: 2rem 1.2rem 0rem 1.2rem;
     }
     %adaptive-text-14{
         font-size: 1.4rem;
@@ -322,11 +346,12 @@
 	.owner-baner{
 		.owner-baner__content{
 			flex-direction: row;
-			margin-top: -2.5rem;
+			// margin-top: -2.5rem;
 		}
 		.btn-std{
 			margin-left: 3.5rem;
     		white-space: nowrap;
+            transform: translateY(-50%);
 			svg{
 				margin-left: 1rem;
 
@@ -399,7 +424,7 @@
         font-size: 1.6rem;
     }
     %card-padding-adaptive{
-        padding: 2rem 1.5rem 2rem 1,5rem;
+        padding: 2rem 1.5rem 0rem 1,5rem;
     }
     .more{
         margin-left: 1.4rem;
@@ -575,6 +600,8 @@
 		margin-top: 1rem;
 		.btn-std{
 			white-space: nowrap;
+            margin-top: 0!important;
+            transform: translateY(0%);
 			svg{
 				margin-left: 1rem;
 
@@ -584,12 +611,11 @@
 	.owner-baner__content{
 		flex-direction: column;
 		.main-block__info-item{
-			margin-top: -2.5rem!important;
+			// margin-top: -2.5rem!important;
 			margin-bottom: 2.5rem;
 		}
 	}
 	.main-block__text{
-		padding-top: 1.5rem;
 	}
 
 	body{
@@ -629,11 +655,51 @@
     .fz-20-to-40{
     	font-size: 2.8rem!important;
     }
+    .owner-baner-inner{
+        .main-block__header{
+            padding-top: 2rem!important;
+        }
+        .main-block__title{
+            font-size: 2.2rem!important;
+            line-height: 115%!important;
+            text-transform: none;
+        }
+        .main-block__info-item{
+            line-height: 145%;
+        }
+        .main-block__info-item{
+            margin-bottom: 1.5rem;
+        }
+        button{
+            text-transform: uppercase;
+            padding: .8em!important;
+        }
+    }
 }
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px){
+    .owner-baner-inner{
+        .main-block__header{
+            padding-top: 3rem!important;
+        }
+        .main-block__title{
+            font-size: 2.2rem!important;
+            line-height: 115%!important;
+            text-transform: none;
+        }
+        .main-block__info-item{
+            line-height: 145%;
+        }
+        .main-block__info-item{
+            margin-bottom: 1.5rem;
+        }
+        button{
+            text-transform: uppercase;
+            padding: .8em!important;
+        }
+    }
     .text-block{
         p{
             &:last-child{
@@ -760,7 +826,6 @@
         }
     }
 	.main-block__text{
-		padding-top: 2rem;
 	}
 	// reliability
 	body{
@@ -781,11 +846,8 @@
 			margin-left: 0;
 		}
 	}
-    .main-block__title{
-        font-size: 2rem;
-    }
     %card-padding-adaptive{
-        padding: 2rem 2rem 2rem 2rem;
+        padding: 2rem 2rem 0rem 2rem;
     }
     .btn-padding-adaptive{
     	padding: .7em 1.3em;
@@ -805,6 +867,12 @@
     .fz-20-to-40{
     	font-size: 3.2rem!important;
     }
+    .main-block .main-block__header{
+    	// @extend %card-padding-adaptive;
+    	flex-direction: row;
+    	align-items: flex-start;
+    	padding: 1rem 2rem 0rem 2rem!important;
+    }
 }
 
 
@@ -821,6 +889,79 @@
     }
 }
 @media only screen and (min-width : 1200px){
+    .usercard{
+        .usercard__header{
+    		margin-top: 2.5rem;
+    		margin-bottom: 2.5rem;
+    	}
+        .usercard__heading__text{
+            font-size: 2.5rem;
+            .usercard__status{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .owner-baner-inner{
+        padding-bottom: 1.5rem!important;
+        .main-block__header{
+            padding-top: 2rem!important;
+        }
+        .main-block__title{
+            font-size: 2.5rem!important;
+            line-height: 115%!important;
+            text-transform: none;
+        }
+        .main-block__info-item{
+            line-height: 145%;
+        }
+        button{
+            text-transform: uppercase;
+            padding: 1em!important;
+        }
+    }
+    .registration__btn{
+        letter-spacing: 0.1em;
+        line-height: 145%;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 2.2rem;
+    }
+    .registration{
+        padding-top: 3.9rem;
+        padding-bottom: 3.9rem;
+    }
+    .registration__heading{
+        font-size: 2.5rem;
+    }
+
+    .search-input--cross-section{
+        .search-input__btn{
+    		padding: 1.4rem 3.1rem;
+        }
+        .search-text{
+            font-size: 1.6rem;
+            letter-spacing: 0.07em;
+        }
+        input{
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            padding: 1.4rem;
+        }
+    }
+    .main-info__cards .card__heading{
+        font-weight: 600;
+    }
+    .main-info__cards .card__img{
+        img{
+            object-fit: contain;
+            width: 5.6rem;
+            height: 5.2rem;
+        }
+    }
+    .main-info__cards .card__number{
+        font-weight: 600;
+        font-size: 3rem;
+    }
     .main-block {
         .config-btn-row{
             flex-direction: row!important;
@@ -835,7 +976,10 @@
             width: unset!important;
         }
         .btn-std{
-            padding: .8em .8em;
+            padding: 0.75em .8em;
+            img{
+                margin-right: .5rem;
+            }
         }
         .config-btn{
             width: unset!important;
@@ -855,7 +999,7 @@
         font-size: 1.8rem;
     }
     %card-padding-adaptive{
-        padding: 2rem 2rem 2rem 2rem;
+        padding: 2rem 2rem 0rem 2rem;
     }
     .usercard__content{
         padding-left: 2.4rem;
@@ -892,7 +1036,7 @@
         width: 100%;
     }
     .container{
-
+        // max-width: 1190px
     }
 	.link-list{
         &__wrapper{

@@ -402,9 +402,6 @@ div[class*="--d-col"]{
 .uc{
     text-transform: uppercase;
 }
-.fw-normal{
-	font-weight: normal!important;
-}
 .tc{
     text-align: center;
 }
@@ -415,6 +412,13 @@ div[class*="--d-col"]{
     max-width: calc(100% - 15vw);
 }
 body{
+	.fw-normal{
+		font-weight: normal!important;
+	}
+	.notranslate{
+		transform: translateX(0)!important;
+		left: 0;
+	}
 	.p-0{
 		padding: 0!important;
 	}
@@ -456,6 +460,9 @@ body{
 	}
 	.mt-15{
 		margin-top: 1.5rem;
+	}
+	.mt-1{
+		margin-top: 1rem;
 	}
 	.mb-15{
 		margin-bottom: 1.5rem;
@@ -518,6 +525,15 @@ body{
 }
 .fz-16-to-18{
 	font-size: 1.6rem;
+}
+.fz-16-to-25{
+	font-size: 1.6rem;
+	@media screen and (min-width: 576px){
+		font-size: 2rem;
+	}
+	@media screen and (min-width: 992px){
+		font-size: 2rem;
+	}
 }
 .btn-padding-adaptive{
 	padding: .6em 1.2em;
@@ -697,4 +713,17 @@ button[class*="--bordered"]{
 }
 *[class*="--color-negative"]{
     color: $negative!important;
+}
+
+.good-status{
+	color: $high!important;
+}
+.medium-status{
+	color: $medium!important;
+}
+.bad-status{
+	color: $low!important;
+}
+.negative-status{
+	color: $negative!important;
 }

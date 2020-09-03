@@ -288,4 +288,11 @@ $(function() {
 	// инициализация маски для телефона
 	$('.masked-phone-input').mask('+7(999) 999 99 99');
 
+	$('.scheme__overlay').each(function(){
+		$(this).css({
+			width: $(this).attr('xWidth'),
+			left: $(this).attr('xPosition')
+		})
+	})
+
 });
