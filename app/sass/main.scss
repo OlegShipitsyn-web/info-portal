@@ -284,6 +284,12 @@ body{
 		margin-top: 1.5rem;
 		padding-bottom: 3rem;
 	}
+	.promo-main-header__text-content{
+		@media screen and (min-width: 780px){
+			margin-top: auto;
+    		margin-bottom: 5rem;
+		}
+	}
 }
 .divider{
 	background: $lighten;
@@ -1914,6 +1920,7 @@ td, th{
 	overflow: hidden;
 	@media screen and (min-width: 992px){
 		width: 220px;
+		max-height: 5.5rem;
 	}
 }
 
