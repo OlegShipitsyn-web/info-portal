@@ -285,9 +285,9 @@ body{
 		padding-bottom: 3rem;
 	}
 	.promo-main-header__text-content{
-		@media screen and (min-width: 780px){
+		@media screen and (min-width: 900px){
 			margin-top: auto;
-    		margin-bottom: 5rem;
+    		margin-bottom: 7rem;
 		}
 	}
 }
@@ -392,6 +392,7 @@ body{
 			margin-right: -1.5rem;
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;
+			margin-top: 0;
 			cursor: pointer;
 			&:hover{
 				background-color: $light;
@@ -1929,7 +1930,7 @@ td, th{
 	@extend %adaptive-text-16;
 	color: $dark-accent;
     width: 100%;
-    padding: .9rem 1rem;
+    padding: .6rem 1rem;
     background: transparent;
     border: 0;
     appearance: none;
@@ -1939,6 +1940,10 @@ td, th{
 	flex-wrap: nowrap;
 	position: relative;
 	z-index: 2;
+}
+
+.handbook2 .select-wrapper > select {
+    padding: .9rem 1rem;
 }
 
 .select-wrapper > select::-ms-expand{
