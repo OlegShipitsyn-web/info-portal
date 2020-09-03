@@ -295,4 +295,19 @@ $(function() {
 		})
 	})
 
+	$('.change-coefs').each(function(){
+		$(this).click(function(){
+			$('.change-coefs').removeClass('sort-btn--active')
+			$(this).addClass('sort-btn--active')
+			let thisBtn = $(this)
+			let btnIndex = $(this).index
+			$('.coefs').each(function(){
+				$(this).removeClass('coefs--active')
+				if ($(this).index() === thisBtn.index()) {
+					$(this).addClass('coefs--active')
+				}
+			})
+		})
+	})
+
 });

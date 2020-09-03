@@ -512,80 +512,86 @@
 									</div>
 
 									<div class="sorts w-100 flex d-row jc-start ai-stretch">
-										<button class="sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">Финансовая устойчивость</button>
-										<button class="sort-btn sort-btn--active btn fz-11-to-16 flex ai-center btn-padding-adaptive">Ликвидность</button>
-										<button class="sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">Рентабильность</button>
+										<button class="change-coefs sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">Финансовая устойчивость</button>
+										<button class="change-coefs sort-btn sort-btn--active btn fz-11-to-16 flex ai-center btn-padding-adaptive">Ликвидность</button>
+										<button class="change-coefs sort-btn btn fz-11-to-16 flex ai-center btn-padding-adaptive">Рентабильность</button>
 									</div>
-
-									<div class="coefs">
-										<div class="coef d-col ai-center ai-sm-start">
-											<div class="coef__heading d-row">
-												<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
-													<span class="popup-wrapper">
-													   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
-													   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
-												   </span>
-												</h3>
-											</div>
-											<div class="coef-wrapper">
-												<span class="coef__number heading">8.97</span>
-												<div class="coef__scheme-part">
-													<div class="scheme">
-														<div class="scheme__color-line">
-															<div xWidth="70%" xPosition="0%" class="scheme__overlay"></div>
-														</div>
+									<!-- wrapper for different coefs. Inside this elem they gonna be switching -->
+									<div class="changing-coefs">
+											<div id="coef-group1" class="coefs">Первый набор коэффициентов</div>
+											<div id="coef-group2" class="coefs coefs--active">
+												<div class="coef d-col ai-center ai-sm-start">
+													<div class="coef__heading d-row">
+														<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
+															<span class="popup-wrapper">
+															   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
+															   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
+														   </span>
+														</h3>
 													</div>
-												</div>
-												<span class="coef__mean-number text">1.64</span>
-											</div>
-											<div class="coef__explaination">Среднее значение по отрасли</div>
-										</div>
-
-										<div class="coef d-col ai-center ai-sm-start">
-											<div class="coef__heading d-row">
-												<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
-													<span class="popup-wrapper">
-													   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
-													   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
-												   </span>
-												</h3>
-											</div>
-											<div class="coef-wrapper">
-												<span class="coef__number heading">8.97</span>
-												<div class="coef__scheme-part">
-													<div class="scheme">
-														<div class="scheme__color-line">
-															<div xWidth="60%" xPosition="70%" class="scheme__overlay"></div>
+													<div class="coef-wrapper">
+														<span class="coef__number heading">8.97</span>
+														<div class="coef__scheme-part">
+															<div class="scheme">
+																<div class="scheme__color-line">
+																	<div xWidth="70%" xPosition="0%" class="scheme__overlay"></div>
+																</div>
+															</div>
 														</div>
+														<span class="coef__mean-number text">1.64</span>
 													</div>
+													<div class="coef__explaination">Среднее значение по отрасли</div>
 												</div>
-												<span class="coef__mean-number text">1.64</span>
-											</div>
-											<div class="coef__explaination">Среднее значение по отрасли</div>
-										</div>
 
-										<div class="coef d-col ai-center ai-sm-start">
-											<div class="coef__heading d-row">
-												<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
-													<span class="popup-wrapper">
-													   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
-													   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
-												   </span>
-												</h3>
-											</div>
-											<div class="coef-wrapper">
-												<span class="coef__number heading">8.97</span>
-												<div class="coef__scheme-part">
-													<div class="scheme">
-														<div class="scheme__color-line">
-															<div xWidth="60%" xPosition="50%" class="scheme__overlay"></div>
-														</div>
+												<div class="coef d-col ai-center ai-sm-start">
+													<div class="coef__heading d-row">
+														<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
+															<span class="popup-wrapper">
+															   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
+															   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
+														   </span>
+														</h3>
 													</div>
+													<div class="coef-wrapper">
+														<span class="coef__number heading">8.97</span>
+														<div class="coef__scheme-part">
+															<div class="scheme">
+																<div class="scheme__color-line">
+																	<div xWidth="60%" xPosition="70%" class="scheme__overlay"></div>
+																</div>
+															</div>
+														</div>
+														<span class="coef__mean-number text">1.64</span>
+													</div>
+													<div class="coef__explaination">Среднее значение по отрасли</div>
 												</div>
-												<span class="coef__mean-number text">1.64</span>
+
+												<div class="coef d-col ai-center ai-sm-start">
+													<div class="coef__heading d-row">
+														<h3 class="fz-14-to-16 text-with-link">1. Коэффициент текущей ликвидности
+															<span class="popup-wrapper">
+															   <img class="mention__link-img" src="./img/question.svg" width=12 alt="">
+															   <div class="popup lh-md">Показывает насколько организация независима от кредитов <br><br> <b>Коэффициент автономии = Собственный капитал/Активы</b></div>
+														   </span>
+														</h3>
+													</div>
+													<div class="coef-wrapper">
+														<span class="coef__number heading">8.97</span>
+														<div class="coef__scheme-part">
+															<div class="scheme">
+																<div class="scheme__color-line">
+																	<div xWidth="60%" xPosition="50%" class="scheme__overlay"></div>
+																</div>
+															</div>
+														</div>
+														<span class="coef__mean-number text">1.64</span>
+													</div>
+													<div class="coef__explaination">Среднее значение по отрасли</div>
+												</div>
+												<!-- /coefs -->
 											</div>
-											<div class="coef__explaination">Среднее значение по отрасли</div>
-										</div>
+											<div id="coef-group3" class="coefs">Третий набор коэффициентов</div>
+									</div>
 
 										<div class="main-block__info-item info-item info-item--single strict-column">
 											<div class="info-item__key strict-w-100 pb-little fz-16-to-18">Ежегодная бухгалтерская отчетность</div>
