@@ -59,9 +59,9 @@ body{
 }
 .popup-wrapper .popup{
 	font-weight: lighter;
-	display: none;
+	display: none!important;
 	position: absolute;
-	top: 47px;
+	top: 45px;
 	left: 35%;
 	transform: translate(-50%, 0%);
 	background: #F8FAFF;
@@ -79,10 +79,10 @@ body{
 		position: absolute;
 		width: 0;
 		height: 0;
-		left: 50%;
-		top: -12px;
-		border: 6px solid;
-		border-color: black transparent transparent black;
+		left: 56%;
+		top: -16px;
+		border: 8px solid;
+		border-color: #000 transparent transparent transparent;
 		transform: rotate(180deg) translateX(100%);
 	}
 	&:after {
@@ -90,16 +90,16 @@ body{
 		position: absolute;
 		width: 0;
 		height: 0;
-		left: 50%;
-		top: -12px;
-		border: 6px solid;
-		border-color: #F8FAFF transparent transparent #F8FAFF;
+		left: 56%;
+		top: -16px;
+		border: 8px solid;
+		border-color: #f8faff transparent #f8faff;
 		transform: rotate(180deg) translateX(100%);
 	}
 }
 .popup-wrapper:hover{
 	.popup{
-		display: block;
+		display: block!important;
 	}
 }
 // charts
