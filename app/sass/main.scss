@@ -2371,6 +2371,9 @@ body{
 .chart{
 	margin-top: 2rem;
 	width: 100%;
+	&:first-child{
+		margin-top: 0;
+	}
 }
 .chart__heading{
 	padding: .5em 0;
