@@ -1567,6 +1567,42 @@ td, th{
 		display: table-row!important;
 	}
 }
+.table-collapse{
+	thead{
+		border-top: 1px solid #ECECEC;
+	}
+	.finances-table__thead-palceholder{
+		border-right: 1px solid #ECECEC;
+	}
+	.translating{
+		text-align: right;
+	}
+	.table__key{
+		width: auto!important;
+		color: $dark;
+	}
+	@media screen and (max-width: 480px){
+		.table__key{
+			border-right: none!important;
+			padding-bottom: 0;
+		}
+		.table__value{
+			padding-top: 0;
+			font-size: 1.6rem;
+			font-weight: 600;
+		}
+		thead{
+			border-bottom: 1px solid #ECECEC;
+		}
+		.finances-table__thead-palceholder{
+			font-weight: normal!important;
+			padding-bottom: 0;
+		}
+		.translating{
+			padding-left: 0;
+		}
+	}
+}
 // /Table
 
 // adc
