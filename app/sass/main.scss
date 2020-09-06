@@ -356,6 +356,9 @@ select{
 		width: 100%;
 		font-size: 1.4rem;
 		z-index: 10;
+		@media screen and (min-width: 992px){
+			font-size: 1.6rem!important;
+		}
 	}
 	.search-input__btn{
 		height: 100%;
