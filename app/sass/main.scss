@@ -172,6 +172,12 @@ select{
 			padding: 0;
 			padding-left: 2rem;
 		}
+		input[type="text"]{
+			font-size: 1.6rem;
+			@media screen and (min-width: 1200px){
+				font-size: 1.8rem;
+			}
+		}
 		.search-input__btn{
 			margin-right: 0;
 		}
@@ -338,6 +344,12 @@ select{
 	z-index: 10;
 	position: relative;
 	padding: .7rem .7rem .7rem 1rem!important;
+	input[type="text"]{
+		font-size: 1.6rem;
+		@media screen and (min-width: 1200px){
+			font-size: 1.8rem;
+		}
+	}
 	.row{
 		padding: 0;
 	}
