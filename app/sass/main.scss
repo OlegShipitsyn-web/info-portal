@@ -1282,6 +1282,9 @@ select{
 }
 .main-block__content--accent-header{
 		padding: 1.5rem 2rem 2rem 2rem;
+		@media screen and (max-width: 578px){
+			padding: 1rem .5rem 1rem .5rem;
+		}
 }
 .main-block__text{
 	@extend %adaptive-text-16;
