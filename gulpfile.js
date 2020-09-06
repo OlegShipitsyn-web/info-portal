@@ -27,7 +27,7 @@ gulp.task('browser-sync', function() {
 function bsReload(done) { browserSync.reload(); done() };
 
 gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.+(sass|scss)')
+	return gulp.src('app/assets/sass/**/*.+(sass|scss)')
 	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({
@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 		overrideBrowserslist: ['last 10 versions']
 	}))
 	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
-	.pipe(gulp.dest('app/css'))
+	.pipe(gulp.dest('app/assets/css'))
 	.pipe(browserSync.stream())
 });
 
@@ -43,13 +43,13 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/dynamic-adapt/dynamic-adapt.js',
-		'app/libs/arcticmodal/jquery.arcticmodal-0.3.min.js',
-		'./app/libs/air-datepicker/datepicker.min.js',
-		'./app/libs/masked-input/jquery.maskedinput.min.js',
+		'app/assets/libs/jquery/dist/jquery.min.js',
+		'app/assets/libs/dynamic-adapt/dynamic-adapt.js',
+		'app/assets/libs/arcticmodal/jquery.arcticmodal-0.3.min.js',
+		'./app/assets/libs/air-datepicker/datepicker.min.js',
+		'./app/assets/libs/masked-input/jquery.maskedinput.min.js',
 
-		'app/js/common.js' // Всегда в конце
+		'app/assets/js/common.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// можете закомментировать babel и uglify для ускорения компиляции в режиме разработки
@@ -58,23 +58,23 @@ gulp.task('js', function() {
 		presets: ['@babel/env']
 	}))
 	.pipe(uglify())
-	.pipe(gulp.dest('app/js'))
+	.pipe(gulp.dest('app/assets/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('imagemin', function() {
-	return gulp.src('app/img/**/*')
+	return gulp.src('app/assets/img/**/*')
 	.pipe(cache(imagemin())) // Cache Images
-	.pipe(gulp.dest('dist/img'));
+	.pipe(gulp.dest('dist/assets/img'));
 });
 
 gulp.task('removedist', function() { return del(['dist'], { force: true }) });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
-gulp.task('buildFiles', function() { return gulp.src(['app/*.html', 'app/.htaccess']).pipe(gulp.dest('dist')) });
-gulp.task('buildCss', function() { return gulp.src(['app/css/main.min.css']).pipe(gulp.dest('dist/css')) });
-gulp.task('buildJs', function() { return gulp.src(['app/js/scripts.min.js']).pipe(gulp.dest('dist/js')) });
-gulp.task('buildFonts', function() { return gulp.src(['app/fonts/**/*']).pipe(gulp.dest('dist/fonts')) });
+gulp.task('buildFiles', function() { return gulp.src(['app/*.html', 'app/assets/.htaccess']).pipe(gulp.dest('dist')) });
+gulp.task('buildCss', function() { return gulp.src(['app/assets/css/main.min.css']).pipe(gulp.dest('dist/assets/css')) });
+gulp.task('buildJs', function() { return gulp.src(['app/assets/js/scripts.min.js']).pipe(gulp.dest('dist/assets/js')) });
+gulp.task('buildFonts', function() { return gulp.src(['app/assets/fonts/**/*']).pipe(gulp.dest('dist/assets/fonts')) });
 
 gulp.task('build', gulp.series('removedist', 'imagemin', 'sass', 'js', 'buildFiles', 'buildCss', 'buildJs', 'buildFonts'));
 
@@ -88,8 +88,8 @@ gulp.task('deploy', function() {
 	});
 
 	var globs = [
-	'dist/**',
-	'dist/.htaccess',
+	'dist/assets/**',
+	'dist/assets/.htaccess',
 	];
 	return gulp.src(globs, {buffer: false})
 	.pipe(conn.dest('/path/to/folder/on/server'));
@@ -97,9 +97,9 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('rsync', function() {
-	return gulp.src('app/')
+	return gulp.src('app/assets/')
 	.pipe(rsync({
-		root: 'dist/',
+		root: 'dist/assets/',
 		hostname: 'username@yousite.com',
 		destination: 'yousite/public_html/',
 		// include: ['*.htaccess'], // Included files
@@ -117,8 +117,8 @@ gulp.task('code', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.+(sass|scss)', gulp.parallel('sass'));
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('js'));
+	gulp.watch('app/assets/sass/**/*.+(sass|scss)', gulp.parallel('sass'));
+	gulp.watch(['libs/**/*.js', 'app/assets/js/common.js'], gulp.parallel('js'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
