@@ -173,7 +173,13 @@ select{
 			padding-left: 2rem;
 		}
 		input[type="text"]{
-			font-size: 1.6rem;
+			font-size: 1.2rem;
+			@media screen and (min-width: 576px){
+				font-size: 1.4rem;
+			}
+			@media screen and (min-width: 768px){
+				font-size: 1.6rem;
+			}
 			@media screen and (min-width: 1200px){
 				font-size: 1.8rem;
 			}
@@ -330,9 +336,25 @@ select{
 	input{
 		margin-left: 1rem;
 		line-height: 145%;
+		@media screen and (min-width: 768px){
+		}
+
 		@media screen and (max-width: 576px){
 			box-sizing: content-box;
 			padding: 7px;
+		}
+	}
+	input[type="text"]{
+		font-size: 1.2rem;
+		line-height: 145%;
+		@media screen and (min-width: 480px){
+			font-size: 1.4rem;
+		}
+		@media screen and (min-width: 768px){
+			font-size: 1.6rem;
+		}
+		@media screen and (min-width: 1200px){
+			font-size: 1.8rem;
 		}
 	}
 }
@@ -345,7 +367,13 @@ select{
 	position: relative;
 	padding: .7rem .7rem .7rem 1rem!important;
 	input[type="text"]{
-		font-size: 1.6rem;
+		font-size: 1.2rem;
+		@media screen and (min-width: 576px){
+			font-size: 1.4rem;
+		}
+		@media screen and (min-width: 768px){
+			font-size: 1.6rem;
+		}
 		@media screen and (min-width: 1200px){
 			font-size: 1.8rem;
 		}
@@ -435,7 +463,7 @@ select{
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;
 			margin-top: 0;
-			padding: 2px 15px 10px 15px;
+			padding: 6px 15px 6px 15px;
 			cursor: pointer;
 			&:hover{
 				background-color: $light;
@@ -916,6 +944,33 @@ select{
 	img{
 		width: 1.2rem;
 		margin-left: .6rem;
+	}
+}
+.handbook-2-accordion-header{
+	justify-content: flex-start!important;
+	align-items: flex-start!important;
+	.accordion-header__count{
+		margin-top: .3rem;
+		margin-right: 1.2rem;
+		@media screen and (min-width: 768px){
+			margin-right: 2.2rem;
+		}
+	}
+}
+.handbook-2-accordion{
+	.xs-list__heading, .xs-item__code-number{
+		width: 3rem!important;
+	}
+	.extended-search__list{
+		@media screen and (min-width: 576px){
+			margin-left: 1.5rem;
+		}
+		@media screen and (min-width: 768px){
+			margin-left: 2rem;
+		}
+		@media screen and (min-width: 1200px){
+			margin-left: 2.5rem;
+		}
 	}
 }
 .sorting-btn-naming{
@@ -1602,6 +1657,7 @@ body{
 	@extend %adaptive-text-18;
 	border: 1px solid #ECECEC;
 	border-bottom: 0;
+	font-weight: 600!important;
 }
 
 .table{
@@ -2112,9 +2168,6 @@ td, th{
 	@media screen and (min-width: 992px){
 		margin-top: 3rem;
 	}
-	&:hover{
-		background: $light;
-	}
 }
 .process__heading{}
 .process__main-heading-part{
@@ -2226,6 +2279,40 @@ td, th{
 		margin-top: .3em;
 	}
 }
+.handbook-accordion{
+	.accordion-header{
+		padding-bottom: 1rem;
+		@media screen and (min-width: 992px){
+			padding-bottom: 1.5rem;
+		}
+	}
+	.accordion-content{
+		padding-top: 0!important;
+		padding-left: 3rem!important;
+		padding-right: 1.5rem!important;
+		@media screen and (min-width: 992px){
+			padding-top: 0!important;
+		    padding-left: 4rem!important;
+		    padding-right: 1.5rem!important;
+		}
+		.xs-item__code-number{
+			@media screen and (max-width:480px){
+				width: 3rem;
+			}
+			@media screen and (min-width:481px){
+				width: 5rem;
+			}
+		}
+		.xs-list__heading h4{
+			@media screen and (max-width:480px){
+				width: 3rem;
+			}
+			@media screen and (min-width:481px){
+				width: 5rem;
+			}
+		}
+	}
+}
 .handbook{
 	.accordion-content{
 		padding-left: 0;
@@ -2242,10 +2329,43 @@ td, th{
 	margin-right: 2rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	margin-left: 4rem;
+	@media screen and (max-width: 576px){
+		margin-left: auto;
+		margin-top: 0;
+	}
 }
 .part-wrapper{
 }
-
+.handbook2-search-list{
+	li{
+		margin-left: -1.5rem;
+	    padding-left: 1.5rem;
+	    margin-top: -1.5rem;
+	    padding-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		margin-right: -1.5rem;
+		padding-right: 1.5rem;
+		@media screen and (max-width: 992px){
+			margin-left: -1rem;
+		    padding-left: 1rem;
+		    margin-top: -1rem;
+		    padding-top: 1rem;
+			margin-bottom: 1.5rem;
+			margin-right: -1rem;
+			padding-right: 1rem;
+		}
+		@media screen and (max-width: 576px){
+			margin-left: -.5rem;
+		    padding-left: .5rem;
+		    margin-top: -.5rem;
+		    padding-top: .5rem;
+			margin-bottom: 1rem;
+			margin-right: -.5rem;
+			padding-right: .5rem;
+		}
+	}
+}
 .promo-block{
 
 }

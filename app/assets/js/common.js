@@ -6,7 +6,7 @@ if ($('.adc-page').length) {
 	// при загрузке и ресайзе запускаем функции для выравнивания высоты
 	// adc cards и смены изображений по клику
 	$(window).on('load resize', function(){
-		changePicture('.page-switcher__desktop', './img/desktop.png');
+		changePicture('.page-switcher__desktop', '/assets/img/desktop.png');
 		$('.page-pictures__show').css({marginLeft: `${$('.mobile').offset().left}px`})
 		$('.adc-cards .card').height(getAdcCardsMaxHeight())
 	})
@@ -133,8 +133,8 @@ $(function() {
 
 
 	// устанавливаем смену картинок при клике на соответствующие кнопки(adc.html)
-	changePicture('.page-switcher__mobile', './img/mobile.png')
-	changePicture('.page-switcher__desktop', './img/desktop.png')
+	changePicture('.page-switcher__mobile', '/assets/img/mobile.png')
+	changePicture('.page-switcher__desktop', '/assets/img/desktop.png')
 
 	// устанавливаем дефолтные значения прокрутки
 	// нужно для работы с блоком скролла и разрешением скролла
@@ -278,10 +278,20 @@ $(function() {
 	$('.masked-phone-input').mask('+7(999) 999 99 99');
 
 	$('.scheme__overlay').each(function(){
-		$(this).css({
-			width: $(this).attr('xWidth'),
-			left: $(this).attr('xPosition')
-		})
+		let coef = Number( $(this).attr('coef') )
+
+		return ( coef > 0 ) ? $(this).css({
+			width: coef + "%",
+			left: 50 + ( coef / 2 ) + "%"
+		}) : $(this).css({
+			width: -coef + "%",
+			left: 50 - ( -coef / 2 ) + "%" })
+
+
+		// $(this).css({
+		// 	width: $(this).attr('xWidth'),
+		// 	left: $(this).attr('xPosition')
+		// })
 	})
 
 	$('.change-coefs').each(function(){

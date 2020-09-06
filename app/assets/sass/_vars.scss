@@ -68,7 +68,10 @@ hr{
     }
 }
 
-.usercard__content .container--first{
+.usercard__content .container:first-child{
+	margin-top: 0rem!important;
+}
+.usercard__content .adc-baner{
 	margin-top: 0rem!important;
 }
 .title-std-container{
