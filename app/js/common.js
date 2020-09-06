@@ -310,4 +310,6 @@ $(function() {
 		})
 	})
 
+	$('.search-input__delete-close-btn').click(() => $('.mobile-search input').val(''))
+
 });
