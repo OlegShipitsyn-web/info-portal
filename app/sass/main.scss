@@ -408,6 +408,9 @@ select{
 			margin-bottom: 1rem;
 			margin-top: 1rem;
 			color: #999999!important;
+			span{
+				@extend %adaptive-text-14;
+			}
 		}
 		.search-list__item, .search-item{
 			padding-top: 1rem;
@@ -432,6 +435,9 @@ select{
 			color: $dark-accent;
 			font-size: 1.6rem;
 			line-height: 125%;
+			@media screen and (min-width: 1200px){
+				font-size: 1.8rem;
+			}
 		}
 		.search-item__status{
 			margin-bottom: 0rem;
@@ -439,6 +445,10 @@ select{
 			// margin-top: .5rem;
 			font-size: 1.2rem;
 			display: block;
+			@media screen and (min-width: 1200px){
+				font-size: 1.4rem;
+				margin-top: .1rem;
+			}
 		}
 		.bad-status{
 			color: #D31A1A;
@@ -452,18 +462,27 @@ select{
 			margin-right: 2rem;
 			font-size: 1.4rem;
 			margin-bottom: .5rem;
+			@media screen and (min-width: 1200px){
+				font-size: 1.6rem;
+			}
 		}
 		.identification-number__type, .search-item__key{
 			color: $semi-dark;
 			text-transform: uppercase;
 			font-size: 1.4rem;
 			line-height: 145%;
+			@media screen and (min-width: 1200px){
+				font-size: 1.6rem;
+			}
 		}
 		.identification-number__number, .search-item__value{
 			color: $dark;
 			margin-left: 1rem;
 			font-size: 1.4rem;
 			line-height: 145%;
+			@media screen and (min-width: 1200px){
+				font-size: 1.6rem;
+			}
 		}
 	}
 
@@ -510,9 +529,7 @@ select{
 	color: $dark-accent;
 	font-size: 1.6rem;
 	line-height: 125%;
-}
-@media screen and (min-width: 1200px){
-	.search-item__heading{
+	@media screen and (min-width: 1200px){
 		font-size: 1.8rem;
 	}
 }
