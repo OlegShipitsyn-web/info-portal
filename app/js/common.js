@@ -147,12 +147,6 @@ $(function() {
 	});
 
 	// функции блокировки скролла и разрешения скролла
-	function blockScroll() {
-		return $('html, body').css({maxHeight: '100vh', overflowY: 'hidden'})
-	}
-	function accessScroll() {
-		return $('html, body').css({maxHeight: 'unset', overflowY: 'initial'})
-	}
 
 	// "костыльная" функция закрытия соответствющих элементов при клике не на них и не
 	// на их детей
@@ -162,10 +156,9 @@ $(function() {
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
-				accessScroll()
 			}
 			else {
-				blockScroll()
+
 			}
 			if(div.hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
@@ -182,10 +175,8 @@ $(function() {
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				$('.usercard__sidebar').removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
-				accessScroll()
 			}
 			else {
-				blockScroll()
 			}
 			if($('.usercard__sidebar').hasClass(classToRemove)){
 				$('.overlay').css({zIndex: 100, display: 'block'})
@@ -258,10 +249,8 @@ $(function() {
 	$('.usercard__menu-toggle-btn, .usercard__close-nav-btn').click(() => {
 		$('.usercard__sidebar').toggleClass('usercard__sidebar--active');
 		if($('.usercard__sidebar--active').length){
-			blockScroll()
 			$('.overlay').css({zIndex: 100, display: 'block'})
 		} else{
-			accessScroll()
 			$('.overlay').css({zIndex: -100,  display: 'none'})
 		}
 	})
