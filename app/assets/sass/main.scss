@@ -1319,6 +1319,19 @@ select{
 		padding-top: 1rem;
 	}
 }
+.main-block .main-block__header--small {
+	padding: .1rem .5rem 0rem .5rem;
+	@media screen and (min-width: 567px){
+		padding: .2rem 1rem 0rem 1rem;
+	}
+	@media screen and (min-width: 992px){
+		 padding: .3rem 2rem 0 2rem!important;
+	}
+	.main-block__title{
+		padding-bottom: 0rem;
+		padding-top: .3rem;
+	}
+}
 .main-block .main-block__updated{
 	display: none;
 	margin-left: auto;
@@ -1350,6 +1363,11 @@ select{
 		padding: 1.5rem 2rem 2rem 2rem;
 		@media screen and (max-width: 578px){
 			padding: 1rem .5rem 1rem .5rem;
+		}
+		.search-list__item{
+			&:hover{
+				background: white;
+			}
 		}
 }
 .main-block__text{

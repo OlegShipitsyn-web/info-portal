@@ -16,6 +16,7 @@
 	<link rel="apple-touch-icon" href="/assets/img/favicon/favicon-icon-24x24.png">
 
 	<link rel="stylesheet" href="/assets/css/main.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 </head>
 
@@ -370,10 +371,11 @@
 								<div class="main-block__content pt-0">
 									<div class="charts-and-table d-col d-xl-row ai-start">
 										<div class="charts-part">
-											<div class="chart">
+
 												<h1 class="chart__heading text fz-16-to-18">Выручка</h1>
-												<img class="img-responsive" src="/assets/img/chart.png" alt="">
-											</div>
+												<!-- <h1 class="chart__heading text fz-16-to-18">Выручка</h1>
+												<img class="img-responsive" src="/assets/img/chart.png" alt=""> -->
+												<canvas id="speedChart" width="600" height="400"></canvas>
 
 											<div class="chart">
 												<h1 class="chart__heading text fz-16-to-18">Выручка</h1>
