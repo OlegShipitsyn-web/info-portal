@@ -299,7 +299,7 @@ $(function() {
 	var typingTimer;
 	var doneTypingInterval = 1000;
 
-	$('input').each(function(){
+	$('.search-input input').each(function(){
 		$(this).on('keyup', function () {
 		 clearTimeout(typingTimer);
 		 typingTimer = setTimeout(doneTyping, doneTypingInterval);
