@@ -156,6 +156,8 @@ $(function() {
 			if (!div.is(e.target) && div.has(e.target).length === 0) {
 				div.removeClass(classToRemove)
 				$('.search-input').css({borderRadius: '5px 5px 5px 5px'})
+				$('.search-input input').val('')
+				$('.search-input__search-list').css({display: 'none'})
 			}
 			else {
 
@@ -296,8 +298,40 @@ $(function() {
 
 	// =========================================
 
+	function getSearchItem_TEMPLATE(){
+		return	`
+		<li class="search-list__item search-item">
+			<a class="d-col ai-start" href="#">
+				<span class="search-item__heading">${this.name || ''}</span>
+				<span class="search-item__status ${this.status || ''}">${this.statusText || ''}</span>
+				<div class="row search-item__row">
+					<div class="search-item__city">${this.city || ''}</div>
+					<div class="search-item__identification-number identification-number row">
+						<span class="identification-number__type">ИНН</span>
+						<span class="identification-number__number">${this.inn || ''}</span>
+					</div>
+					<div class="search-item__identification-number identification-number row">
+						<span class="identification-number__type">ОГРН</span>
+						<span class="identification-number__number">${this.ogrn || ''}</span>
+					</div>
+				</div>
+			</a>
+		</li>`
+	}
+
 	var typingTimer;
 	var doneTypingInterval = 1000;
+
+	// функция для проверки оригинальности заголовка
+	// function isHeadingExisting( headings, compare ){
+	//
+	// 	let existing = []
+	// 	headings.each(function(){
+	// 		( $(this).text().trim() === compare.trim() ) && existing.push(compare)
+	// 	})
+	//
+	// 	return Boolean(existing.length)
+	// }
 
 	$('.search-input input').each(function(){
 		$(this).on('keyup', function () {
@@ -310,10 +344,24 @@ $(function() {
 		});
 
 		function doneTyping () {
-			alert(1)
+			const searchList = $('.search-items')
+			if ($('.search-input input').val() === '') {
+				$('.search-items').html('')
+				$('.show-results').css({display: 'none'})
+				$('.search-input__search-list').css({display: 'none'})
+			} else {
+				$.ajax({
+					url: 'http://localhost:8080/',
+					cache: true,
+					success: function(json){
+						let data = JSON.parse(json)
+						$('.show-results').css({display: 'block'})
+						data.forEach( elem => searchList.prepend(getSearchItem_TEMPLATE.call(elem) ))
+					}
+				})
+			}
 		}
 	})
-
 	// ========================================
 
 	$('.change-coefs').each(function(){
