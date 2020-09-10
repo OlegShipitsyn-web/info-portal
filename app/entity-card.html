@@ -16,6 +16,7 @@
 	<link rel="apple-touch-icon" href="/assets/img/favicon/favicon-icon-24x24.png">
 
 	<link rel="stylesheet" href="/assets/css/main.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 </head>
 
@@ -668,7 +669,38 @@
 									</div>
 								</div>
 								<div class="main-block__content--accent-header">
+									<div class="entity-chart-wrapper">
+										<canvas class="entity-chart entity-chart--current" id="entityChart1" width="100%"height="50%"></canvas>
+										<canvas class="entity-chart" id="entityChart2" width="100%"height="50%"></canvas>
+										<canvas class="entity-chart" id="entityChart3" width="100%"height="50%"></canvas>
+									</div>
+									<div class="chart-controls d-row jc-between ai-start">
+										<div class="chart-info">
+											<button class="chart-btn chart-btn--filled chart-switcher"><span>Выручка</span></button>
+											<div class="chart-current-info">
+												<span class="value">16</span>
+												млн.руб
+											</div>
+											<div class="chart-difference --color-good">+7 млн.руб</div>
+										</div>
 
+										<div class="chart-info">
+											<button class="chart-btn chart-btn--empty chart-switcher"><span>Прибыль</span></button>
+											<div class="chart-current-info">
+												<span class="value">16</span>
+												млн.руб
+											</div>
+											<div class="chart-difference --color-bad">-17 млн.руб.</div>
+										</div>
+
+										<div class="chart-info">
+											<button class="chart-btn chart-btn--pale chart-switcher"><span>Стоимость</span></button>
+											<div class="chart-current-info">
+												<span class="value">0</span>
+												млн.руб
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
