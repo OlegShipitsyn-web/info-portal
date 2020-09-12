@@ -741,6 +741,9 @@ button[class*="--bordered"]{
 *[class*="--color-bad"]{
     color: $low!important;
 }
+*[class*="--color-bright-bad"]{
+    color: #FC2200!important;
+}
 *[class*="--color-negative"]{
     color: $negative!important;
 }

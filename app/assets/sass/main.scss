@@ -125,6 +125,15 @@ body{
 			border-color: transparent;
 			color: $dark-accent-lighten;
 		}
+		@media screen and (max-width: 768px){
+			font-size: 1.2rem;
+		}
+		@media screen and (max-width: 576px){
+			font-size: 1.1rem;
+		}
+		@media screen and (max-width: 375px){
+			font-size: 1rem;
+		}
 	}
 	.chart-btn--filled{
 		border-color: $light-accent;
@@ -147,6 +156,26 @@ body{
 		@media screen and (max-width: 992px){
 			width: 100%;
 		}
+		@media screen and (max-width: 768px){
+			width: 80%;
+		}
+		@media screen and (max-width: 576px){
+			margin: 0;
+			padding: 2.5rem 1rem;
+			width: 100%;
+		}
+		@media screen and (max-width: 576px){
+			margin: 0;
+			padding: 2.5rem 1rem;
+			width: 100%;
+		}
+		@media screen and (max-width: 374px){
+			margin: 0;
+			padding: 2.5rem 0;
+		}
+	}
+	.chart-info{
+		width: 33%;
 	}
 	.entity-chart{
 		display: none!important;
@@ -163,6 +192,7 @@ body{
 			font-size: 1.4rem;
 			color: $dark;
 			font-weight: bold;
+			letter-spacing: .02em;
 			@media screen and (min-width: 567px){
 				font-size: 2rem;
 			}
@@ -172,6 +202,70 @@ body{
 		line-height: 145%;
 		font-size: 1.2rem;
 		padding-top: .3rem;
+		letter-spacing: .03em;
+	}
+	.fns-info{
+		width: 80%;
+		@media screen and (max-width: 992px){
+			width: 100%;
+		}
+		@media screen and (max-width: 768px){
+			width: 80%;
+		}
+		@media screen and (max-width: 576px){
+			width: 100%;
+		}
+		@media screen and (max-width: 576px){
+			width: 100%;
+		}
+		@media screen and (max-width: 374px){
+			margin: 0;
+		}
+	}
+	.fns-info__title{
+		@extend %adaptive-text-16;
+		line-height: 145%;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: $dark;
+	}
+	.fns-info__boxes{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.fns-info__box{
+		width: 33%;
+		margin-bottom: 1.5rem;
+	}
+	.fns-box__title{
+		color: $dark;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 145%;
+	}
+	.fns-info__title{
+		color: $dark;
+		letter-spacing: 0.04em;
+		line-height: 145%;
+		text-transform: none;
+		font-weight: 600;
+		padding: 1.5rem 0;
+	}
+	.fns-box__value{
+		@extend %adaptive-text-16;
+		color: $semi-dark;
+		line-height: 145%;
+		padding-top: .5rem;
+		letter-spacing: .02em;
+		.value{
+			font-size: 1.4rem;
+			font-weight: bold;
+			@media screen and (min-width: 567px){
+				font-size: 2rem;
+			}
+		}
 	}
 // /charts
 .overlay{
@@ -1264,7 +1358,7 @@ select{
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	}
 	.usercard__heading__text{
-		display: flex;
+		display: inherit;
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: center;

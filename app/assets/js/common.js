@@ -1,6 +1,6 @@
 // функции и эвент-листенеры вынесены за пределы jquery.ready
 // блока для корректной работы в firefox
-
+let x;
 // если мы находимлся на странице adc.html
 if ($('.adc-page').length) {
 	// при загрузке и ресайзе запускаем функции для выравнивания высоты
@@ -120,7 +120,6 @@ function switchCurrentFinanceColumn(col_index = 0){
 		$('.switch-btn-prev').show()
 	}
 }
-
 $(function() {
 
 	// вызываем функцию для установления дефолтного индекса колонки (0)
@@ -258,13 +257,13 @@ $(function() {
 	handleSidebar('.usercard__sidebar', 'usercard__sidebar--active')
 
 	// фукнция для корректного переноса заголовка страницы с иконкой на мобильных устройствах
-	const makeSeparatedHeading = heading =>{
-		let textArr = heading.text().split(" ").reverse()
-		heading.text("")
-		textArr.forEach((word) => heading.prepend(`<span>${word}&nbsp;</span>`) && $('.usercard__status').appendTo(heading))
-
-	}
-	makeSeparatedHeading($('.usercard__heading__text'))
+	// const makeSeparatedHeading = heading =>{
+	// 	let textArr = heading.text().split(" ").reverse()
+	// 	heading.text("")
+	// 	textArr.forEach((word) => heading.prepend(`<span>${word}&nbsp;</span>`) && $('.usercard__status').appendTo(heading))
+	//
+	// }
+	// makeSeparatedHeading($('.usercard__heading__text'))
 
 
 	closeOnSideTouch__noOverlay('.mobile-search, .call-search-btn', 'mobile-search--active')
@@ -385,7 +384,9 @@ $(function() {
 
 
 	Chart.defaults.global.defaultFontFamily = "sans";
-	Chart.defaults.global.defaultFontSize = 12;
+	Chart.defaults.global.defaultFontSize = 10;
+
+
 
 	entityChartJson1 = JSON.stringify([
 		{val: 350, year: 2015},
@@ -436,12 +437,16 @@ $(function() {
 		{val: 460, year: 2020},
 	])
 
-	createDefaultChart($('#entityChart1'), entityChartJson1)
-	createDefaultChart($('#entityChart2'), entityChartJson2)
-	createDefaultChart($('#entityChart3'), entityChartJson3)
-	createDefaultChart($('#financesChart1'), financesChartJson1)
-	createDefaultChart($('#financesChart2'), financesChartJson2)
-	createDefaultChart($('#financesChart3'), financesChartJson3)
+	if ($('.entity-chart').length) {
+		x = createDefaultChart($('#entityChart1'), entityChartJson1)
+		createDefaultChart($('#entityChart2'), entityChartJson2)
+		createDefaultChart($('#entityChart3'), entityChartJson3)
+	}
+	if ($('.finances-chart').length) {
+		createDefaultChart($('#financesChart1'), financesChartJson1)
+		createDefaultChart($('#financesChart2'), financesChartJson2)
+		createDefaultChart($('#financesChart3'), financesChartJson3)
+	}
 
 	function createDefaultChart(elem, json) {
 
@@ -506,17 +511,33 @@ $(function() {
 		        }],
 		    },
 			tooltips: {
-				backgroundColor: '#F8FAFF',
-				titleFontColor: '#1A237E',
-				bodyFontColor: '#212121',
-				borderColor: '#d6d8e4',
-				borderWidth: 1,
-				caretSize: 6,
-				cornerRadius: 2,
-				xPadding: 10,
-				yPadding: 8,
-				displayColors: false
-			}
+	 callbacks: {
+	   title: function(tooltipItem, data) {
+		 return data['labels'][tooltipItem[0]['index']];
+	   },
+	   label: function(tooltipItem, data) {
+		 return data['datasets'][0]['data'][tooltipItem['index']] + ' млн';
+	   },
+	   afterLabel: function(tooltipItem, data) {
+		 console.log(chartOptions.tooltips.callbacks);
+		 var dataset = data['datasets'][0];
+		 let current = (data['datasets'][0]['data'][tooltipItem['index']] - (data['datasets'][0]['data'][tooltipItem['index']-1])) || 0;
+		 return (current >= 0) ? '+' + current + ' млн. руб.' : current + ' млн. руб.'
+	   },
+	 },
+	 	backgroundColor: '#F8FAFF',
+	 	titleFontColor: '#86be16',
+	 	bodyFontColor: '#5c6ac0',
+	 	borderColor: '#d6d8e4',
+	 	borderWidth: 1,
+	 	caretSize: 6,
+	 	cornerRadius: 2,
+	 	xPadding: 10,
+	 	yPadding: 8,
+	 	displayColors: false,
+	 	titleFontSize: 12,
+	 	bodyFontSize: 13
+   }
 		};
 
 		return new Chart(elem, {
