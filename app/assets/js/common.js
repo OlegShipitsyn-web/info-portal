@@ -1,6 +1,7 @@
 // функции и эвент-листенеры вынесены за пределы jquery.ready
 // блока для корректной работы в firefox
 // если мы находимлся на странице adc.html
+let x;
 if ($('.adc-page').length) {
 	// при загрузке и ресайзе запускаем функции для выравнивания высоты
 	// adc cards и смены изображений по клику
@@ -236,7 +237,7 @@ $(function() {
 	$(".accordion-header").on("click", function() {
 		$(this).toggleClass("accordion-header--active").next().slideToggle();
 	});
-	$(".accordion-header--active").next().slideToggle()
+	$(".accordion-header--active").next().css({display: 'block'})
 
 	$('.scrolltop-btn').click(function(){
 		$("html, body").animate({ scrollTop: 0 }, 200);
@@ -436,18 +437,18 @@ $(function() {
 		{val: 460, year: 2020},
 	])
 
+	// creates diagrams depending on the presence of a chart element on the page
 	if ($('.entity-chart').length) {
-		createDefaultChart($('#entityChart1'), entityChartJson1)
-		createDefaultChart($('#entityChart2'), entityChartJson2)
-		createDefaultChart($('#entityChart3'), entityChartJson3)
+		createDefaultChart($('#entityChart1'), entityChartJson1, 4)
+		createDefaultChart($('#entityChart2'), entityChartJson2, 4)
+		createDefaultChart($('#entityChart3'), entityChartJson3, 5)
 	}
 	if ($('.finances-chart').length) {
-		createDefaultChart($('#financesChart1'), financesChartJson1)
-		createDefaultChart($('#financesChart2'), financesChartJson2)
-		createDefaultChart($('#financesChart3'), financesChartJson3)
+		createDefaultChart($('#financesChart1'), financesChartJson1, 4)
+		createDefaultChart($('#financesChart2'), financesChartJson2, 4)
+		createDefaultChart($('#financesChart3'), financesChartJson3, 4)
 	}
-
-	function createDefaultChart(elem, json) {
+	function createDefaultChart(elem, json, size) {
 
 		const jsonData = JSON.parse(json)
 		const labelsFromJSON = jsonData.map( obj => obj.year )
@@ -469,10 +470,22 @@ $(function() {
 		    pointHitRadius: 30,
 		    pointBorderWidth: 1,
 		    pointStyle: 'circle',
+			zeroLineBorderDashOffset: 20.20
 		  }]
 		};
 
+		// let fullPath = (Math.max(...pointsFromJSON)) - (Math.min(...pointsFromJSON))
+		// let percent = (fullPath / 100)
+		// let step = Math.round((percent * (100 / size)))
+		// let roundedStep = ( step - (step % 5) )
+		// console.log(roundedStep);
+
 		var chartOptions = {
+			gridLines: {
+				ticks: {
+					// zeroLineBorderDashOffset: 20.20
+				}
+			},
 			responsive: true,
 		    legend: {
 		        display: false,
@@ -496,7 +509,13 @@ $(function() {
 					},
 		            ticks: {
 	      				padding: 10,
-		            },
+						// beginAtZero: true,
+						// zeroLineBorderDashOffset: 2.2
+                        // stepSize: roundedStep,
+						// min: Math.min(...pointsFromJSON),
+						// max: Math.max(...pointsFromJSON),
+						maxTicksLimit: size
+		            }
 		        }],
 		        xAxes: [{
 					position: 'top',
@@ -506,6 +525,8 @@ $(function() {
 					},
 		            ticks: {
 	      				padding: 10,
+						// beginAtZero: true,
+						// zeroLineBorderDashOffset: 2.2
 		            },
 		        }],
 		    },
@@ -542,8 +563,10 @@ $(function() {
 		return new Chart(elem, {
 		  type: 'line',
 		  data: speedData,
-		  options: chartOptions
-		});
+		  options: chartOptions,
+		  scaleOverride : true,
+	  })
 	}
+
 
 });

@@ -413,6 +413,7 @@ select{
 	transform: translateY(180%);
 }
 .footer{
+	margin-top: auto;
 	position: relative;
 	.row-upper{
 		.footer__feedback-btn{
@@ -1091,6 +1092,11 @@ select{
 		display: flex;
 	}
 }
+// .handbook-2-accordion{
+// 	.accordion-content{
+// 		display: block!important;
+// 	}
+// }
 .sorting-btn{
 	margin-bottom: 1rem;
 	display: flex;

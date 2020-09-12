@@ -36,6 +36,13 @@ hr{
 .global-wrapper{
     overflow-y: auto;
     overflow-x: hidden;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.global-wrapper--indexHTML{
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .mt-card-outer-margin{
 	margin-top: 2rem;
