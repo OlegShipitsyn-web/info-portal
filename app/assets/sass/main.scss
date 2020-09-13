@@ -1127,8 +1127,24 @@ select{
 	}
 }
 .handbook-2-accordion{
-	.xs-list__heading, .xs-item__code-number{
-		width: 3rem!important;
+	.xs-list__item{
+		width: 100%;
+	}
+	.xs-list__heading{
+		width: 100%;
+	}
+	.xs-list__heading h4, .xs-item__code-number{
+		width: 17%!important;
+		@media screen and (min-width: 576px){
+			width: 10%!important;
+		}
+		@media screen and (min-width: 768px){
+			width: 7%!important;
+		}
+
+	}
+	.xs-item__code-number{
+		word-wrap: break-word;
 	}
 	.extended-search__list{
 		@media screen and (min-width: 576px){
@@ -1252,7 +1268,7 @@ select{
 		align-items: flex-start;
 	}
 	.xs-item__code-number{
-		width: 6rem;
+		min-width: 6rem;
 		font-family: 'rawline', sans-serif;
 		font-style: normal;
 		font-weight: 500;
