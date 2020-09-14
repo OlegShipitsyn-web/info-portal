@@ -1054,6 +1054,45 @@
 	<div class="overlay"></div>
 	<!-- overlay -->
 	<script src="/assets/js/scripts.min.js"></script>
+		<script>
+
+	const financesChartJson1 = JSON.stringify([
+			{val: 380, year: 2015},
+			{val: 420, year: 2016},
+			{val: 370, year: 2017},
+			{val: 430, year: 2018},
+			{val: 390, year: 2019},
+			{val: 460, year: 2020},
+	])
+	const financesChartJson2 = JSON.stringify([
+			{val: 350, year: 2015},
+			{val: 400, year: 2016},
+			{val: 370, year: 2017},
+			{val: 430, year: 2018},
+			{val: 390, year: 2019},
+			{val: 460, year: 2020},
+	])
+	const financesChartJson3 = JSON.stringify([
+			{val: 450, year: 2015},
+			{val: 400, year: 2016},
+			{val: 370, year: 2017},
+			{val: 430, year: 2018},
+			{val: 590, year: 2019},
+			{val: 460, year: 2020},
+	])
+
+		$(function(){
+			// дефолтные глобальные стили
+			Chart.defaults.global.defaultFontFamily = "sans";
+			Chart.defaults.global.defaultFontSize = 10;
+
+			// создаём графики (элемент | json | количество линий)
+			createDefaultChart($('#financesChart1'), financesChartJson1, 4)
+			createDefaultChart($('#financesChart2'), financesChartJson2, 4)
+			createDefaultChart($('#financesChart3'), financesChartJson3, 4)
+		})
+
+	</script>
 
 </body>
 

@@ -121,8 +121,6 @@
 	  })
 	}
 
-
-let x;
 if ($('.adc-page').length) {
 	// при загрузке и ресайзе запускаем функции для выравнивания высоты
 	// adc cards и смены изображений по клику
@@ -518,71 +516,5 @@ $(function() {
 
 	$('.search-input__delete-close-btn').click(() => $('.mobile-search input').val(''))
 
-
-
-	entityChartJson1 = JSON.stringify([
-		{val: 350, year: 2015},
-		{val: 400, year: 2016},
-		{val: 370, year: 2017},
-		{val: 430, year: 2018},
-		{val: 390, year: 2019},
-		{val: 460, year: 2020},
-	])
-	entityChartJson2 = JSON.stringify([
-		{val: 450, year: 2015},
-		{val: 400, year: 2016},
-		{val: 370, year: 2017},
-		{val: 430, year: 2018},
-		{val: 590, year: 2019},
-		{val: 460, year: 2020},
-	])
-	entityChartJson3 = JSON.stringify([
-		{val: 250, year: 2015},
-		{val: 300, year: 2016},
-		{val: 570, year: 2017},
-		{val: 480, year: 2018},
-		{val: 390, year: 2019},
-		{val: 360, year: 2020},
-	])
-	financesChartJson1 = JSON.stringify([
-		{val: 380, year: 2015},
-		{val: 420, year: 2016},
-		{val: 370, year: 2017},
-		{val: 430, year: 2018},
-		{val: 390, year: 2019},
-		{val: 460, year: 2020},
-	])
-	financesChartJson2 = JSON.stringify([
-		{val: 350, year: 2015},
-		{val: 400, year: 2016},
-		{val: 370, year: 2017},
-		{val: 430, year: 2018},
-		{val: 390, year: 2019},
-		{val: 460, year: 2020},
-	])
-	financesChartJson3 = JSON.stringify([
-		{val: 450, year: 2015},
-		{val: 400, year: 2016},
-		{val: 370, year: 2017},
-		{val: 430, year: 2018},
-		{val: 590, year: 2019},
-		{val: 460, year: 2020},
-	])
-
-	// creates diagrams depending on the presence of a chart element on the page
-	if ($('.entity-chart').length) {
-		Chart.defaults.global.defaultFontFamily = "sans";
-		Chart.defaults.global.defaultFontSize = 10;
-		createDefaultChart($('#entityChart1'), entityChartJson1, 4)
-		createDefaultChart($('#entityChart2'), entityChartJson2, 4)
-		createDefaultChart($('#entityChart3'), entityChartJson3, 5)
-	}
-	if ($('.finances-chart').length) {
-		Chart.defaults.global.defaultFontFamily = "sans";
-		Chart.defaults.global.defaultFontSize = 10;
-		createDefaultChart($('#financesChart1'), financesChartJson1, 4)
-		createDefaultChart($('#financesChart2'), financesChartJson2, 4)
-		createDefaultChart($('#financesChart3'), financesChartJson3, 4)
-	}
 
 });
