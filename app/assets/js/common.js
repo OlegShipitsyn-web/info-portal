@@ -1,6 +1,127 @@
 // функции и эвент-листенеры вынесены за пределы jquery.ready
 // блока для корректной работы в firefox
 // если мы находимлся на странице adc.html
+	function createDefaultChart(elem, json, size) {
+
+		const jsonData = JSON.parse(json)
+		const labelsFromJSON = jsonData.map( obj => obj.year )
+		const pointsFromJSON = jsonData.map( obj => obj.val )
+
+		var speedData = {
+		  labels: labelsFromJSON,
+		  datasets: [{
+		    label: "млн, руб",
+		    data: pointsFromJSON,
+			lineTension: 0,
+		    fill: false,
+		    borderColor: 'rgba(0, 81, 255, .3)',
+		    backgroundColor: 'transparent',
+		    pointBorderColor: '#86BE16',
+		    pointBackgroundColor: '#86BE16',
+		    pointRadius: 4,
+		    pointHoverRadius: 5,
+		    pointHitRadius: 30,
+		    pointBorderWidth: 1,
+		    pointStyle: 'circle',
+			zeroLineBorderDashOffset: 20.20
+		  }]
+		};
+
+		// let fullPath = (Math.max(...pointsFromJSON)) - (Math.min(...pointsFromJSON))
+		// let percent = (fullPath / 100)
+		// let step = Math.round((percent * (100 / size)))
+		// let roundedStep = ( step - (step % 5) )
+		// console.log(roundedStep);
+
+		var chartOptions = {
+			gridLines: {
+				ticks: {
+					// zeroLineBorderDashOffset: 20.20
+				}
+			},
+			responsive: true,
+		    legend: {
+		        display: false,
+		        position: 'top',
+		        labels: {
+		            boxWidth: 80,
+		            fontColor: '#666666',
+		        },
+		    },
+			layout: {
+
+			},
+		    scales: {
+		        yAxes: [{
+					gridLines: {
+						display: true,
+						borderDash: [5],
+						borderDashOffset: 2.10,
+						padding: 0,
+						lineWidth: 1,
+					},
+		            ticks: {
+	      				padding: 10,
+						// beginAtZero: true,
+						// zeroLineBorderDashOffset: 2.2
+                        // stepSize: roundedStep,
+						// min: Math.min(...pointsFromJSON),
+						// max: Math.max(...pointsFromJSON),
+						maxTicksLimit: size
+		            }
+		        }],
+		        xAxes: [{
+					position: 'top',
+					gridLines: {
+						color: '#FFFFFF',
+						zeroLineColor: '#fff'
+					},
+		            ticks: {
+	      				padding: 10,
+						// beginAtZero: true,
+						// zeroLineBorderDashOffset: 2.2
+		            },
+		        }],
+		    },
+			tooltips: {
+				   callbacks: {
+				   title: function(tooltipItem, data) {
+					 return data['labels'][tooltipItem[0]['index']];
+				   },
+				   label: function(tooltipItem, data) {
+					 return data['datasets'][0]['data'][tooltipItem['index']] + ' млн';
+				   },
+				   afterLabel: function(tooltipItem, data) {
+					 console.log(chartOptions.tooltips.callbacks);
+					 var dataset = data['datasets'][0];
+					 let current = (data['datasets'][0]['data'][tooltipItem['index']] - (data['datasets'][0]['data'][tooltipItem['index']-1])) || 0;
+					 return (current >= 0) ? '+' + current + ' млн. руб.' : current + ' млн. руб.'
+				   },
+				 },
+			 	backgroundColor: '#F8FAFF',
+			 	titleFontColor: '#86be16',
+			 	bodyFontColor: '#5c6ac0',
+			 	borderColor: '#d6d8e4',
+			 	borderWidth: 1,
+			 	caretSize: 6,
+			 	cornerRadius: 2,
+			 	xPadding: 10,
+			 	yPadding: 8,
+			 	displayColors: false,
+			 	titleFontSize: 12,
+			 	bodyFontSize: 13
+		 }
+	 };
+
+		return new Chart(elem, {
+		  type: 'line',
+		  data: speedData,
+		  options: chartOptions,
+		  scaleOverride : true,
+	  })
+	}
+
+
 let x;
 if ($('.adc-page').length) {
 	// при загрузке и ресайзе запускаем функции для выравнивания высоты
@@ -463,125 +584,5 @@ $(function() {
 		createDefaultChart($('#financesChart2'), financesChartJson2, 4)
 		createDefaultChart($('#financesChart3'), financesChartJson3, 4)
 	}
-	function createDefaultChart(elem, json, size) {
-
-		const jsonData = JSON.parse(json)
-		const labelsFromJSON = jsonData.map( obj => obj.year )
-		const pointsFromJSON = jsonData.map( obj => obj.val )
-
-		var speedData = {
-		  labels: labelsFromJSON,
-		  datasets: [{
-		    label: "млн, руб",
-		    data: pointsFromJSON,
-			lineTension: 0,
-		    fill: false,
-		    borderColor: 'rgba(0, 81, 255, .3)',
-		    backgroundColor: 'transparent',
-		    pointBorderColor: '#86BE16',
-		    pointBackgroundColor: '#86BE16',
-		    pointRadius: 4,
-		    pointHoverRadius: 5,
-		    pointHitRadius: 30,
-		    pointBorderWidth: 1,
-		    pointStyle: 'circle',
-			zeroLineBorderDashOffset: 20.20
-		  }]
-		};
-
-		// let fullPath = (Math.max(...pointsFromJSON)) - (Math.min(...pointsFromJSON))
-		// let percent = (fullPath / 100)
-		// let step = Math.round((percent * (100 / size)))
-		// let roundedStep = ( step - (step % 5) )
-		// console.log(roundedStep);
-
-		var chartOptions = {
-			gridLines: {
-				ticks: {
-					// zeroLineBorderDashOffset: 20.20
-				}
-			},
-			responsive: true,
-		    legend: {
-		        display: false,
-		        position: 'top',
-		        labels: {
-		            boxWidth: 80,
-		            fontColor: '#666666',
-		        },
-		    },
-			layout: {
-
-			},
-		    scales: {
-		        yAxes: [{
-					gridLines: {
-						display: true,
-						borderDash: [5],
-						borderDashOffset: 2.10,
-						padding: 0,
-						lineWidth: 1,
-					},
-		            ticks: {
-	      				padding: 10,
-						// beginAtZero: true,
-						// zeroLineBorderDashOffset: 2.2
-                        // stepSize: roundedStep,
-						// min: Math.min(...pointsFromJSON),
-						// max: Math.max(...pointsFromJSON),
-						maxTicksLimit: size
-		            }
-		        }],
-		        xAxes: [{
-					position: 'top',
-					gridLines: {
-						color: '#FFFFFF',
-						zeroLineColor: '#fff'
-					},
-		            ticks: {
-	      				padding: 10,
-						// beginAtZero: true,
-						// zeroLineBorderDashOffset: 2.2
-		            },
-		        }],
-		    },
-			tooltips: {
-				   callbacks: {
-				   title: function(tooltipItem, data) {
-					 return data['labels'][tooltipItem[0]['index']];
-				   },
-				   label: function(tooltipItem, data) {
-					 return data['datasets'][0]['data'][tooltipItem['index']] + ' млн';
-				   },
-				   afterLabel: function(tooltipItem, data) {
-					 console.log(chartOptions.tooltips.callbacks);
-					 var dataset = data['datasets'][0];
-					 let current = (data['datasets'][0]['data'][tooltipItem['index']] - (data['datasets'][0]['data'][tooltipItem['index']-1])) || 0;
-					 return (current >= 0) ? '+' + current + ' млн. руб.' : current + ' млн. руб.'
-				   },
-				 },
-			 	backgroundColor: '#F8FAFF',
-			 	titleFontColor: '#86be16',
-			 	bodyFontColor: '#5c6ac0',
-			 	borderColor: '#d6d8e4',
-			 	borderWidth: 1,
-			 	caretSize: 6,
-			 	cornerRadius: 2,
-			 	xPadding: 10,
-			 	yPadding: 8,
-			 	displayColors: false,
-			 	titleFontSize: 12,
-			 	bodyFontSize: 13
-		 }
-	 };
-
-		return new Chart(elem, {
-		  type: 'line',
-		  data: speedData,
-		  options: chartOptions,
-		  scaleOverride : true,
-	  })
-	}
-
 
 });

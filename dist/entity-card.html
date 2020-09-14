@@ -910,6 +910,12 @@
 						</div>
 						<!-- /CENTRAL PART BLOCK -->
 
+						<div class="container">
+							<div class="main-block">
+								<canvas id="randomGraph" width="100%"height="50%"></canvas>
+							</div>
+						</div>
+
 						<!-- CENTRAL PART BLOCK -->
 						<div class="container">
 							<div class="main-block">
@@ -1187,6 +1193,22 @@
 	<div class="overlay"></div>
 	<!-- overlay -->
 	<script src="/assets/js/scripts.min.js"></script>
+	<script>
+
+	const data = JSON.stringify([
+			{val: 350, year: 2015},
+			{val: 400, year: 2016},
+			{val: 370, year: 2017},
+			{val: 430, year: 2018},
+			{val: 390, year: 2019},
+			{val: 460, year: 2020},
+		]);
+
+		$(function(){
+			createDefaultChart($('#randomGraph'), data, 4)
+		})
+		
+	</script>
 
 </body>
 
