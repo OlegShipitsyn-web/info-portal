@@ -1190,7 +1190,7 @@
 	<script>
 
 	const entityChartJson1 = JSON.stringify([
-			{val: 350, year: 2015},
+			{val: 3655, year: 2015},
 			{val: 400, year: 2016},
 			{val: 370, year: 2017},
 			{val: 430, year: 2018},
@@ -1218,6 +1218,7 @@
 			// дефолтные глобальные стили
 			Chart.defaults.global.defaultFontFamily = "sans";
 			Chart.defaults.global.defaultFontSize = 10;
+			// Add method to prototype. this allows you to use this function on numbers and strings directly
 
 			// создаём графики (элемент | json | количество линий)
 			createDefaultChart($('#entityChart1'), entityChartJson1, 4)

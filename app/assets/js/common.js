@@ -1,16 +1,34 @@
-// функции и эвент-листенеры вынесены за пределы jquery.ready
-// блока для корректной работы в firefox
-// если мы находимлся на странице adc.html
+
+		Number.prototype.commarize = commarize
+		String.prototype.commarize = commarize
+		function commarize(min) {
+	  min = min || 1e3;
+	  // Alter numbers larger than 1k
+	  if (this >= min) {
+	    var units = [" тыс.", " млн.", " млрд.", " трлн."];
+
+	    var order = Math.floor(Math.log(this) / Math.log(1000));
+
+	    var unitname = units[(order - 1)];
+	    var num = (this / 1000 ** order)
+	    // output number remainder + unitname
+	    return num + unitname
+	  }
+
+	  // return formatted original number
+	  return this.toLocaleString()
+	}
+
 	function createDefaultChart(elem, json, size) {
 
 		const jsonData = JSON.parse(json)
 		const labelsFromJSON = jsonData.map( obj => obj.year )
-		const pointsFromJSON = jsonData.map( obj => obj.val )
+		const pointsFromJSON = jsonData.map( obj => obj.val * 1000 )
 
 		var speedData = {
 		  labels: labelsFromJSON,
 		  datasets: [{
-		    label: "млн, руб",
+		    label: "",
 		    data: pointsFromJSON,
 			lineTension: 0,
 		    fill: false,
@@ -67,7 +85,10 @@
                         // stepSize: roundedStep,
 						// min: Math.min(...pointsFromJSON),
 						// max: Math.max(...pointsFromJSON),
-						maxTicksLimit: size
+						maxTicksLimit: size,
+						callback: function(value, index, values) {
+                        return String(value).commarize(); 
+                    	}
 		            }
 		        }],
 		        xAxes: [{
@@ -89,12 +110,12 @@
 					 return data['labels'][tooltipItem[0]['index']];
 				   },
 				   label: function(tooltipItem, data) {
-					 return data['datasets'][0]['data'][tooltipItem['index']] + ' млн';
+					 return data['datasets'][0]['data'][tooltipItem['index']].commarize(); ;
 				   },
 				   afterLabel: function(tooltipItem, data) {
 					 var dataset = data['datasets'][0];
 					 let current = (data['datasets'][0]['data'][tooltipItem['index']] - (data['datasets'][0]['data'][tooltipItem['index']-1])) || 0;
-					 return (current >= 0) ? '+' + current + ' млн. руб.' : current + ' млн. руб.'
+					 return (current >= 0) ? '+' + current.commarize() : '-' + Math.abs(current).commarize()
 				   },
 				 },
 			 	backgroundColor: '#F8FAFF',
