@@ -136,9 +136,9 @@ body{
 		}
 	}
 	.chart-btn--filled{
-		border-color: $light-accent;
-		background-color: $light-accent;
-		color: $white;
+		border-color: $light-accent!important;
+		background-color: $light-accent!important;
+		color: $white!important;
 	}
 	.chart-btn--empty{
 		border-color: $light-accent;
@@ -1118,6 +1118,10 @@ select{
 .handbook-2-accordion-header{
 	justify-content: flex-start!important;
 	align-items: flex-start!important;
+	.accordion-header__heading{
+		max-width: 100%!important;
+		margin-bottom: 1rem;
+	}
 	.accordion-header__count{
 		margin-top: .3rem;
 		margin-right: 1.2rem;
@@ -1125,6 +1129,7 @@ select{
 			margin-right: 2.2rem;
 		}
 	}
+
 }
 .handbook-2-accordion{
 	.xs-list__item{
@@ -2817,6 +2822,36 @@ body{
 		}
 	}
 }
+.handbook-table{
+	.table{
+		border: none!important;
+		thead{
+			td{
+				display: table-cell!important;
+				border: none;
+			}
+		}
+		tr{
+			display: table-row!important;
+			border: none;
+		}
+		td{
+			border: none!important;
+			a{
+				color: $dark-accent!important;
+				&:hover {
+					color: $rare-accent!important
+				}
+			}
+		}
+		.table__value{
+			border: none!important;
+		}
+		.table__key{
+			width: auto!important;
+		}
+	}	
+}
 .charts-and-table, .table-responsive{
 	.table__key{
 		width: 100%;
@@ -2827,6 +2862,7 @@ body{
 		@media screen and (min-width: 1200px){
 			width: 61%;
 			letter-spacing: -0.02em;
+
 		}
 	}
 	.table__value{

@@ -92,7 +92,6 @@
 					 return data['datasets'][0]['data'][tooltipItem['index']] + ' млн';
 				   },
 				   afterLabel: function(tooltipItem, data) {
-					 console.log(chartOptions.tooltips.callbacks);
 					 var dataset = data['datasets'][0];
 					 let current = (data['datasets'][0]['data'][tooltipItem['index']] - (data['datasets'][0]['data'][tooltipItem['index']-1])) || 0;
 					 return (current >= 0) ? '+' + current + ' млн. руб.' : current + ' млн. руб.'
@@ -510,8 +509,15 @@ $(function() {
 	const chartSwitchers = $('.chart-switcher').toArray()
 	const entityCharts = $('.entity-chart').toArray()
 	const removeActiveClassesFromCharts = () => entityCharts.map( chart => chart.classList.remove('entity-chart--current') )
+	const removeActiveClassesSwitchers  = () => chartSwitchers.map( chart => chart.classList.remove('chart-btn--filled') )
 
-	chartSwitchers.forEach((item, i) => item.onclick = () => removeActiveClassesFromCharts() && entityCharts[i].classList.add('entity-chart--current'));
+	chartSwitchers.forEach((item, i) => item.onclick = () => {
+		removeActiveClassesFromCharts()
+		removeActiveClassesSwitchers()
+		entityCharts[i].classList.add('entity-chart--current')
+		chartSwitchers[i].classList.add('chart-btn--filled');
+	})
+									
 
 
 	$('.search-input__delete-close-btn').click(() => $('.mobile-search input').val(''))
