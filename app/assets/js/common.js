@@ -1,21 +1,17 @@
 
 		Number.prototype.commarize = commarize
 		String.prototype.commarize = commarize
-		function commarize(min) {
+	function commarize(min) {
 	  min = min || 1e3;
-	  // Alter numbers larger than 1k
 	  if (this >= min) {
 	    var units = [" тыс.", " млн.", " млрд.", " трлн."];
-
 	    var order = Math.floor(Math.log(this) / Math.log(1000));
-
 	    var unitname = units[(order - 1)];
 	    var num = (this / 1000 ** order)
-	    // output number remainder + unitname
+
 	    return num + unitname
 	  }
 
-	  // return formatted original number
 	  return this.toLocaleString()
 	}
 
