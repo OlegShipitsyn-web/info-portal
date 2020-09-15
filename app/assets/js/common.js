@@ -1,14 +1,16 @@
 
-		Number.prototype.commarize = commarize
-		String.prototype.commarize = commarize
+	Number.prototype.commarize = commarize
+	String.prototype.commarize = commarize
+
 	function commarize(min) {
 	  min = min || 1e3;
-	  if (this >= min) {
+	  var absolute = Math.abs(this);
+	  if (absolute >= min) {
 	    var units = [" тыс.", " млн.", " млрд.", " трлн."];
-	    var order = Math.floor(Math.log(this) / Math.log(1000));
+	    var order = Math.floor(Math.log(absolute) / Math.log(1000));
 	    var unitname = units[(order - 1)];
-	    var num = (this / 1000 ** order)
-
+	    var num = (absolute / 1000 ** order)
+	    return ( this > 0 ) ? num + unitname : -num + unitname
 	    return num + unitname
 	  }
 
