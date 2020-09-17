@@ -2402,7 +2402,11 @@ td, th{
 }
 .process__details{
 	li{
+		span{
+			line-height:145%;
+		}
 		margin-top: .5rem;
+		line-height: 145%;
 		@media screen and (min-width: 576px){
 			margin-top: .5rem;
 		}
