@@ -1590,7 +1590,7 @@ select{
 	margin-top: .5rem;
 	margin-bottom: .5rem;
 	line-height: 145%;
-	color: $semi-dark-lighten;
+	//color: $semi-dark-lighten;
 	@extend %adaptive-text-14;
 	span{
 		margin-right: .8rem;
@@ -3311,6 +3311,45 @@ body{
 	cursor: pointer;
 
 }
+
+[class^="icon-is-"], [class*=" icon-is-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon2' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-is-in-process:before {
+	content: "\e900";
+	color: rgb(240, 111, 17);
+  }
+  .icon-is-in-process:after {
+	content: "\e901";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+  }
+  .icon-is-good:before {
+	content: "\e902";
+	color: #86be16;
+  }
+  .icon-is-destroyed:before {
+	content: "\e903";
+	color: rgb(211, 26, 26);
+  }
+  .icon-is-destroyed:after {
+	content: "\e904";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+  }
+  
 
 // your styles end
 @import "media"; // IT SHOULD ALWAYS BE IN THE END OF THE DOCUMENT
