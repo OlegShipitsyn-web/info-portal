@@ -690,10 +690,10 @@ select{
 	}
 
 	.search-input__search-list{
-		display: none;
+		display: none!important;
 	}
 	.show-results{
-		display: block;
+		display: block!important;
 	}
 	.search-input__delete-close-btn{
 		position: absolute;
