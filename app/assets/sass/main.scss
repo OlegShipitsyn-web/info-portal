@@ -331,6 +331,24 @@ select{
 		input{
 			padding: 0;
 			padding-left: 2rem;
+			padding-top: 0.25rem;
+		}
+		.input-font::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			font-family: 'Raleway';
+			font-style: normal;
+			font-weight: 500;
+			opacity: 1; /* Firefox */
+		}
+
+		.input-font:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			font-family: 'Raleway';
+			font-style: normal;
+			font-weight: 500;
+		}
+		.input-font::-ms-input-placeholder { /* Microsoft Edge */
+			font-family: 'Raleway';
+			font-style: normal;
+			font-weight: 500;
 		}
 		input[type="text"]{
 			font-size: 1.2rem;
@@ -976,7 +994,7 @@ select{
 	}
 	.card__description{
 		text-align: left;
-		font-family: 'rawline', sans-serif;
+		font-family: 'Raleway', sans-serif;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 1.4rem;
@@ -1003,7 +1021,7 @@ select{
 	transform: translateY(-50%);
 }
 .title-side-description__text{
-	font-family: 'rawline', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 1.2rem;
@@ -1258,7 +1276,7 @@ select{
 		margin-bottom: 2rem;
 		h4{
 			width: 6rem;
-			font-family: 'rawline', sans-serif;
+			font-family: 'Raleway', sans-serif;
 			font-style: normal;
 			font-weight: normal;
 			font-size: 1.4rem;
@@ -1274,7 +1292,7 @@ select{
 	}
 	.xs-item__code-number{
 		min-width: 6rem;
-		font-family: 'rawline', sans-serif;
+		font-family: 'Raleway', sans-serif;
 		font-style: normal;
 		font-weight: 500;
 		font-size: 1.4rem;
@@ -1285,7 +1303,7 @@ select{
 	}
 	.xs-item__activity-type{
 		margin-top: -3px;
-		font-family: 'rawline', sans-serif;
+		font-family: 'Raleway', sans-serif;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 1.4rem;
@@ -1308,7 +1326,7 @@ select{
 	.tag{
 		margin-right: 2rem;
 		font-size: 1.4rem;
-		font-family: 'rawline', sans-serif;
+		font-family: 'Raleway', sans-serif;
 		font-style: normal;
 		font-weight: 500;
 		line-height: 145%;
@@ -1346,11 +1364,11 @@ select{
 		position: relative;
 		margin-left: 2.5rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 2rem;
 		line-height: 145%;
 		flex-direction: row;
-		color: $dark;
+		color: #333333;
 	}
 	.usercard__menu-toggle-btn{
 		margin-top: .3em;

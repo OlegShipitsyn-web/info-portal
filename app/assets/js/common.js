@@ -21,7 +21,7 @@
 
 		const jsonData = JSON.parse(json)
 		const labelsFromJSON = jsonData.map( obj => obj.year )
-		const pointsFromJSON = jsonData.map( obj => obj.val * 1000 )
+		const pointsFromJSON = jsonData.map( obj => obj.val )
 
 		var speedData = {
 		  labels: labelsFromJSON,
