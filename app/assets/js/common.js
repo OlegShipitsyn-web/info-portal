@@ -378,7 +378,7 @@ $(function() {
 		return (query.matches) ? input.attr("placeholder", bigText) : input.attr("placeholder", smallText);
 	}
 	// При ресайзе и загрузке страницы запускам функцию changeSearchPlaceholder, с нужными параметрами
-	$(window).on("resize load", () => changeSearchPlaceholder("Название, адрес, руководитель", "Искать по названию, адресу, ФИО, ОГРН и ИНН"))
+	$(window).on("resize load", () => changeSearchPlaceholder("Название, ОГРН и ИНН", "Искать по названию, ОГРН и ИНН, адресу, руководителю"))
 
 	input.click(() => $('.search-input .search-list').addClass('show-results') && $('.search-input').css({borderRadius: '5px 5px 0 0'}))
 
