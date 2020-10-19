@@ -304,8 +304,16 @@
         .multi{
             flex-direction: row;
         }
+
+        a:link { color: #5C6AC0; }
+        a:visited { color: #5C6AC0; }
+        a:visited:hover { color: #1A237E; }
+        a:hover { color: #1A237E; }
+        a:active { color: #1A237E; }
+
         .main-block__link{
             margin-left: 35%;
+
         }
         .main-block__link-text{
             margin-right: .8rem;
@@ -494,6 +502,7 @@
         }
         .xs-table__code-number, .xs-item__activity-type{
             font-size: 1.6rem;
+            font-weight: 500;
         }
     }
     .accordion-content{
@@ -841,6 +850,7 @@
 		}
 		.fact__value{
 			margin-left: 0;
+            font-size: 1.9rem;
 		}
 	}
     %card-padding-adaptive{
